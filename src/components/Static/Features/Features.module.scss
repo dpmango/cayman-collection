@@ -1,0 +1,51 @@
+.intro {
+  position: relative;
+  margin: 80px 0;
+  padding: 140px 0;
+  background: #fafafa;
+  border-top: 1px solid $borderColor;
+}
+
+.grid {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.content {
+  max-width: 455px;
+}
+
+.menu {
+  list-style: none;
+  margin: -10px;
+  padding: 0;
+  li {
+    display: block;
+    margin-bottom: 12px;
+  }
+  a {
+    position: relative;
+    display: inline-block;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 1.2;
+    padding: 10px;
+    letter-spacing: 0.015em;
+    color: $colorGray;
+    transition: color 0.25s $ease;
+    &:hover {
+      color: $colorPrimary;
+    }
+    &::after {
+      display: inline-block;
+      content: ' ';
+      position: absolute;
+      bottom: 4px;
+      left: 10px;
+      right: 10px;
+      height: 3px;
+      background: $colorPrimary;
+    }
+  }
+}

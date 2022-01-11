@@ -14,6 +14,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-new VersionCheck();
-new BrowserInfo();
-new History();
+// new VersionCheck();
+// new BrowserInfo();
+// new History();

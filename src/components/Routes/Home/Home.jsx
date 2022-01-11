@@ -6,6 +6,8 @@ import { useQuery } from '@hooks';
 import { UiStoreContext, SessionStoreContext } from '@store';
 
 import HeroBanner from '@c/HeroBanner';
+import { StaticIntro, StaticFeatures } from '@c/Static';
+import { content } from './Content.js';
 
 const HomePage = observer(() => {
   const query = useQuery();
@@ -16,10 +18,13 @@ const HomePage = observer(() => {
         <title>Главная страница</title>
       </Helmet>
 
-      <HeroBanner
-        theme="main"
-        title="Protect your net worth. Invest in the Cayman Islands for a secure future."
-        description="Cayman Collection will help you invest in property and attain legal residence in the Cayman Islands."
+      <HeroBanner theme="main" title={content.banner.title} description={content.banner.description} />
+
+      <StaticIntro cols={content.intro} />
+      <StaticFeatures
+        title={content.features.title}
+        content={content.features.content}
+        links={content.features.links}
       />
     </>
   );

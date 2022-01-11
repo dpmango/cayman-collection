@@ -2,17 +2,16 @@ import React, { useContext, useState, useRef, useCallback, useMemo, useEffect } 
 import { Link, NavLink } from 'react-router-dom';
 import { observer } from 'mobx-react';
 import cns from 'classnames';
-import debounce from 'lodash/debounce';
+import throttle from 'lodash/throttle';
 
 import { SvgIcon, Button } from '@ui';
-import { useOnClickOutside, useWindowSize } from '@hooks';
+import { useOnClickOutside, useEventListener, useWindowSize } from '@hooks';
 import { UiStoreContext } from '@store';
 
 import styles from './Header.module.scss';
 import { ReactComponent as Logo } from '@assets/logo.svg';
 
 const Header = observer(({ className }) => {
-  const [scroll, setScroll] = useState(0);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpened, setMenuOpened] = useState(false);
   const { width } = useWindowSize();
@@ -21,6 +20,28 @@ const Header = observer(({ className }) => {
   const uiContext = useContext(UiStoreContext);
 
   const headerRef = useRef(null);
+
+  const handleScroll = useCallback(
+    throttle((e) => {
+      // const nearFooter = window.scrollY + window.innerHeight > document.body.scrollHeight - 375;
+      const startStickyAt = 0;
+
+      if (window.scrollY > startStickyAt) {
+        if (!scrolled) {
+          setScrolled(true);
+          document.body.classList.add('scrolled');
+        }
+      } else {
+        if (scrolled) {
+          setScrolled(false);
+          document.body.classList.remove('scrolled');
+        }
+      }
+    }, 100),
+    [scrolled, setScrolled, width]
+  );
+
+  useEventListener('scroll', handleScroll);
 
   useOnClickOutside(
     headerRef,

@@ -4,11 +4,11 @@
   background: white;
   transition: transform 0.25s $ease;
   will-change: transform;
-  // backface-visibility: hidden;
+  backface-visibility: hidden;
   &._scrolled {
-    transform: translate3d(0, -74px, 0);
+    transform: translate3d(0, -28px, 0);
     .wrapper {
-      padding-bottom: 15px;
+      padding-bottom: 24px;
     }
   }
 }
@@ -16,7 +16,8 @@
 .wrapper {
   display: flex;
   justify-content: space-between;
-  padding: 53px 0;
+  padding: 52px 0 53px;
+  transition: 0.25s $ease;
 }
 
 .logo {
@@ -32,6 +33,8 @@
 
 .hamburger {
   flex: 0 0 60px;
+  display: flex;
+  align-items: center;
 }
 
 .cta {
