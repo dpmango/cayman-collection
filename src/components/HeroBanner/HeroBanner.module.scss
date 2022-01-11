@@ -1,0 +1,19 @@
+.banner {
+  position: relative;
+}
+
+.box {
+  background: #e0ece4;
+  min-height: 724px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.description {
+  margin-top: 60px;
+}
+
+.content {
+  max-width: 888px;
+}

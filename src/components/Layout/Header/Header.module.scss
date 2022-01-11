@@ -1,0 +1,39 @@
+.header {
+  display: block;
+  z-index: 9;
+  background: white;
+  transition: transform 0.25s $ease;
+  will-change: transform;
+  // backface-visibility: hidden;
+  &._scrolled {
+    transform: translate3d(0, -74px, 0);
+    .wrapper {
+      padding-bottom: 15px;
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 53px 0;
+}
+
+.logo {
+  flex: 0 0 auto;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 0;
+  img,
+  svg {
+    max-width: 100%;
+  }
+}
+
+.hamburger {
+  flex: 0 0 60px;
+}
+
+.cta {
+  flex: 0 0 60px;
+}
