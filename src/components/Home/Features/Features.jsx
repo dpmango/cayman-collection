@@ -4,9 +4,9 @@ import cns from 'classnames';
 
 import styles from './Features.module.scss';
 
-const Features = ({ title, content, links }) => {
+const Features = ({ className, title, content, links }) => {
   return (
-    <div className={cns(styles.intro)}>
+    <div className={cns(styles.intro, className)}>
       <div className="container-inner">
         <div className="h2-title tac">{title}</div>
         <div className={styles.grid}>

@@ -5,8 +5,8 @@ import { Helmet } from 'react-helmet';
 import { useQuery } from '@hooks';
 import { UiStoreContext, SessionStoreContext } from '@store';
 
-import HeroBanner from '@c/HeroBanner';
-import { StaticIntro, StaticFeatures } from '@c/Static';
+import { HeroBanner, CtaBanner, TextBanner } from '@c/Banners';
+import { HomeIntro, HomeFeatures, HomeInformation } from '@c/Home';
 import { content } from './Content.js';
 
 const HomePage = observer(() => {
@@ -18,14 +18,13 @@ const HomePage = observer(() => {
         <title>Главная страница</title>
       </Helmet>
 
-      <HeroBanner theme="main" title={content.banner.title} description={content.banner.description} />
+      <HeroBanner theme="main" {...content.banner} />
 
-      <StaticIntro cols={content.intro} />
-      <StaticFeatures
-        title={content.features.title}
-        content={content.features.content}
-        links={content.features.links}
-      />
+      <HomeIntro className="mt-5" {...content.intro} />
+      <HomeFeatures {...content.features} />
+      <TextBanner {...content.textBanner} />
+      <HomeInformation {...content.information} />
+      <CtaBanner {...content.ctaBanner} />
     </>
   );
 });

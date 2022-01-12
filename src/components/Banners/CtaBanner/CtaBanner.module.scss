@@ -1,0 +1,73 @@
+.banner {
+  position: relative;
+  background: url('./decor-ctaBanner.svg') no-repeat left bottom;
+  background-color: #f4f3fa;
+}
+
+.title {
+  margin-top: -8px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  grid-gap: 30px;
+  padding: 40px 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  form {
+    position: relative;
+    width: 100%;
+    max-width: 404px;
+    margin-left: auto;
+  }
+}
+
+.formInput {
+  -webkit-appearance: none;
+  display: block;
+  width: 100%;
+  padding: 18px 70px 27px 0;
+  font-size: 21px;
+  line-height: 25px;
+  letter-spacing: -0.286364px;
+  color: $fontColor;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-bottom: 1px solid $borderColor;
+  transition: border 0.25s $ease;
+  &::placeholder {
+    color: rgba($colorGray, 0.5);
+  }
+  &:active,
+  &:focus {
+    border-color: $colorGray;
+  }
+  &.error {
+    color: $colorRed;
+    border-color: $colorRed;
+  }
+}
+
+.formButton {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70px;
+  height: 70px;
+  padding: 0;
+  border-radius: 11px 11px 0 0;
+  background: $colorGray;
+  color: white;
+  transition: background 0.25s $ease;
+  :global .svg-icon {
+    font-size: 20px;
+  }
+  &:hover {
+    background: $colorPrimary;
+  }
+}

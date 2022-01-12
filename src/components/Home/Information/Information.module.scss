@@ -1,0 +1,31 @@
+.container {
+  position: relative;
+  padding: 140px 0;
+  background: #e0ece4;
+}
+
+.menu {
+  list-style: none;
+  margin: 100px 0 0;
+  padding: 0;
+  li {
+    position: relative;
+    display: block;
+    margin-bottom: 12px;
+    font-size: 34px;
+    line-height: 1.2;
+    padding-left: 52px;
+    color: $colorGray;
+    &::before {
+      display: inline-block;
+      content: ' ';
+      position: absolute;
+      left: 22px;
+      top: 16px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: $colorGray;
+    }
+  }
+}

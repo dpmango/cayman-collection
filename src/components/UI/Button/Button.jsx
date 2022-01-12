@@ -25,10 +25,6 @@ const Variants = {
 const ThemeClasses = {
   [Themes.PRIMARY]: styles._primary,
   [Themes.ACCENT]: styles._accent,
-  [Themes.LINK]: styles._link,
-  [Themes.GRAY]: styles._gray,
-  [Themes.DANGER]: styles._danger,
-  [Themes.SUCCESS]: styles._success,
   [Themes.DARK]: styles._dark,
 };
 

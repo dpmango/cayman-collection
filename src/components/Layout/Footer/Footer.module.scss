@@ -1,3 +1,163 @@
 .footer {
-  background: #eaecf5;
+  position: relative;
+  background: #f4f3fa;
+  padding-bottom: 80px;
+  border-top: 2px solid $borderColor;
+}
+
+.menuTitle {
+  color: $colorGray;
+}
+
+.main {
+  padding: 80px 0;
+  border-bottom: 2px solid $borderColor;
+}
+
+.menuList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    display: block;
+    margin-top: 20px;
+  }
+  a {
+    display: inline-block;
+    position: relative;
+    padding: 6px 0;
+    font-family: $robotoFont;
+    font-size: 21px;
+    line-height: (25 / 21);
+    color: $colorGray;
+    transition: color 0.25s $ease;
+    &:hover {
+      color: $colorPrimary;
+    }
+  }
+}
+
+.subscribe {
+  position: relative;
+  max-width: 345px;
+  form {
+    position: relative;
+    margin-top: 42px;
+    width: 100%;
+  }
+}
+
+.subscribeInput {
+  -webkit-appearance: none;
+  display: block;
+  width: 100%;
+  padding: 18px 70px 27px 0;
+  font-size: 21px;
+  line-height: 25px;
+  letter-spacing: -0.286364px;
+  color: $fontColor;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-bottom: 1px solid $borderColor;
+  transition: border 0.25s $ease;
+  &::placeholder {
+    color: rgba($colorGray, 0.5);
+  }
+  &:active,
+  &:focus {
+    border-color: $colorGray;
+  }
+  &.error {
+    color: $colorRed;
+    border-color: $colorRed;
+  }
+}
+
+.subscribeButton {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70px;
+  height: 70px;
+  padding: 0;
+  border-radius: 11px 11px 0 0;
+  background: $colorGray;
+  color: white;
+  transition: background 0.25s $ease;
+  :global .svg-icon {
+    font-size: 20px;
+  }
+  &:hover {
+    background: $colorPrimary;
+  }
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+}
+
+.bottomMenu {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  li {
+    display: block;
+    margin-right: 56px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  a {
+    display: inline-block;
+    position: relative;
+    padding: 6px 0;
+    color: $colorGray;
+    font-weight: 300;
+    font-size: 21px;
+    line-height: (31 / 21);
+    transition: color 0.25s $ease;
+    &:hover {
+      color: $colorPrimary;
+    }
+  }
+}
+
+.bottomSocials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: -6px;
+  padding: 0;
+  li {
+    display: block;
+    margin-right: 42px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  a {
+    display: inline-block;
+    position: relative;
+    padding: 6px;
+    color: $colorGray;
+    transition: color 0.25s $ease;
+    &:hover {
+      color: $colorPrimary;
+    }
+    :global .svg-icon {
+      font-size: 24px;
+      &--social-facebook {
+        font-size: 27px;
+      }
+      &--social-instagram {
+        font-size: 30px;
+      }
+    }
+  }
 }

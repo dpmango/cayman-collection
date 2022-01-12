@@ -3,7 +3,7 @@
   font-size: 14px;
   line-height: 1.25;
   padding: 14px 25px;
-  border-radius: 5px;
+  border-radius: 0;
   transition: background 0.25s $ease, color 0.25s $ease;
   &._primary {
     background: $colorPrimary;
@@ -13,8 +13,8 @@
     }
     &._outline {
       background: transparent;
-      border: 1px solid $colorPrimary;
-      padding: 13px 24px;
+      border: 2px solid $colorPrimary;
+      padding: 14px 24px;
       color: $colorPrimary;
       &:hover {
         color: white;
@@ -50,96 +50,7 @@
       }
     }
   }
-  &._link {
-    background: $colorLink;
-    color: white;
-    &:hover {
-      background: #4d74fd;
-    }
-    &._outline {
-      background: transparent;
-      border: 1px solid $colorLink;
-      padding: 13px 24px;
-      color: $colorLink;
-      &:hover {
-        color: white;
-        background: $colorPrimary;
-      }
-    }
-    &[disabled] {
-      color: white;
-      background-color: #789fff;
-      cursor: not-allowed;
-      pointer-events: none;
-      &:hover {
-        background: #789fff;
-      }
-    }
-  }
-  &._gray {
-    background: $colorGray;
-    color: white;
-    &:hover {
-      background: rgba($colorGray, 0.8);
-    }
-    &._outline {
-      background: transparent;
-      border: 1px solid $colorGray;
-      color: $colorGray;
-      &:hover {
-        color: white;
-        background: $colorGray;
-      }
-    }
-  }
-  &._danger {
-    background: $colorRed;
-    color: white;
-    &:hover {
-      background: rgba($colorRed, 0.8);
-    }
-    &._outline {
-      background: transparent;
-      border: 1px solid $colorRed;
-      color: $colorRed;
-      &:hover {
-        color: white;
-        background: $colorRed;
-      }
-    }
-  }
-  &._success {
-    background: $colorGreen;
-    color: white;
-    &:hover {
-      background: rgba($colorGreen, 0.8);
-    }
-    &._outline {
-      background: transparent;
-      border: 1px solid $colorGreen;
-      color: $colorGreen;
-      &:hover {
-        color: white;
-        background: $colorGreen;
-      }
-    }
-  }
-  &._dark {
-    background: $fontColor;
-    color: white;
-    &:hover {
-      background: rgba($fontColor, 0.8);
-    }
-    &._outline {
-      background: transparent;
-      border: 1px solid $fontColor;
-      color: $fontColor;
-      &:hover {
-        color: white;
-        background: $fontColor;
-      }
-    }
-  }
+
   // variants
   &._small {
     padding: 7px 15px;

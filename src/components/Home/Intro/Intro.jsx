@@ -4,9 +4,9 @@ import cns from 'classnames';
 
 import styles from './Intro.module.scss';
 
-const Info = ({ cols }) => {
+const Info = ({ className, cols }) => {
   return (
-    <div className={cns(styles.intro)}>
+    <div className={cns(styles.intro, className)}>
       <div className="container">
         <div className={styles.box}>
           <div className="container-inner">

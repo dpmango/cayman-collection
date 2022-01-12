@@ -22,7 +22,7 @@ const App = observer(() => {
 
   return (
     <>
-      <ToastProvider autoDismiss={true} placement="top-center" autoDismissTimeout={10000} components={{ Toast: Toast }}>
+      <ToastProvider autoDismiss={true} placement="top-right" autoDismissTimeout={10000} components={{ Toast: Toast }}>
         <Routes />
       </ToastProvider>
     </>

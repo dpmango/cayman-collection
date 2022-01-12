@@ -71,7 +71,7 @@ const Header = observer(({ className }) => {
               <Logo />
             </Link>
             <div className={styles.cta}>
-              <Button>
+              <Button outline>
                 <SvgIcon name="phone" />
               </Button>
             </div>
