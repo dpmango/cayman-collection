@@ -37,7 +37,7 @@ const Testimonials = ({ className, title, list }) => {
               list.map((slide, idx) => (
                 <SwiperSlide className={styles.slide} key={slide.id}>
                   <div className={styles.slideContent}>
-                    {slide.title && <div className="h2-title c-primary">{slide.title}</div>}
+                    {slide.title && <div className="h1-title c-primary">{slide.title}</div>}
                     {slide.description && <p className="p-huge">{slide.description}</p>}
                     {slide.logo && <img className={styles.slideLogo} src={LogoImage[slide.logo]} />}
                   </div>

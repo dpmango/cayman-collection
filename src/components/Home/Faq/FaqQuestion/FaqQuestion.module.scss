@@ -1,7 +1,7 @@
 .question {
   position: relative;
   padding: 28px 0;
-  border-top: 1px solid $borderColor;
+  border-top: 1px solid rgba($colorPrimaryDark, 0.3);
   &:first-child {
     border-top: 0;
   }
@@ -37,7 +37,7 @@
     width: 15px;
     height: 3px;
     top: 50%;
-    right: 0;
+    right: 20px;
     background: $colorPrimaryDark;
     transition: transform 0.25s $ease;
   }

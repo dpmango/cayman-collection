@@ -6,12 +6,14 @@ import { useQuery } from '@hooks';
 import { UiStoreContext, SessionStoreContext } from '@store';
 
 import { HeroBanner, CtaBanner, TextBanner, ScheduleCallBanner } from '@c/Banners';
+import { PaginationBar } from '@c/Pagination';
 import {
   HomeIntro,
   HomeFeatures,
   HomeInformation,
   HomeSteps,
   HomeInfoBlock,
+  HomeInfoBlockAlt,
   HomeStats,
   HomeTestimonials,
   HomeFaq,
@@ -40,7 +42,10 @@ const HomePage = observer(() => {
       <HomeStats className="mt-4" {...content.stats} />
       <CtaBanner {...content.ctaBanner} />
 
-      <HomeTestimonials {...content.testimonials} />
+      <HomeInfoBlockAlt className="mt-4" {...content.infoBlockAlt} />
+      <ScheduleCallBanner className="mt-3" />
+      <PaginationBar {...content.paginationBar} />
+      <HomeTestimonials className="mt-4" {...content.testimonials} />
       <HomeFaq {...content.faq} />
       <CtaBanner {...content.ctaBanner} />
     </>

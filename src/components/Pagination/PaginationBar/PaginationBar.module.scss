@@ -1,0 +1,20 @@
+.container {
+  position: relative;
+}
+
+.box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: url('./assets/decor-paginationBar.svg') no-repeat center bottom;
+  background-color: $colorAccent;
+  padding: 56px 52px;
+  color: white;
+  :global .h4-title {
+    margin-right: 42px;
+  }
+  :global .svg-icon {
+    font-size: 46px;
+  }
+}

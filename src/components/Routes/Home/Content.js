@@ -80,6 +80,18 @@ export const content = {
       { id: 3, title: '$100M+', description: 'Wealth  managed' },
     ],
   },
+  infoBlockAlt: {
+    list: [
+      'The Cayman Islands is the place to secure your future.',
+      'The government aims to increase the population by 25% before 2030. This is the best opportunity you will have to create an appreciating asset.',
+      'With limited land mass to cater to the increased real estate demand and stock of apartments to meet the permanent residency requirements, don’t let this opportunity to secure your financial future pass you by.',
+      'The time to act is now!',
+    ],
+  },
+  paginationBar: {
+    title: 'Go to the Plan',
+    link: '#',
+  },
   testimonials: {
     title: 'What are people saying',
     list: [

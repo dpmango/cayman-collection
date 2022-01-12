@@ -1,6 +1,6 @@
 .intro {
   position: relative;
-  padding: 140px 0;
+  padding: 140px 0 180px;
   background: url('./decor-features.svg') no-repeat right bottom;
   background-color: #fafafa;
 }
@@ -21,7 +21,10 @@
   padding: 0;
   li {
     display: block;
-    margin-bottom: 12px;
+    margin-bottom: 24px;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
   a {
     position: relative;
