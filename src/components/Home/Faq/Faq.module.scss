@@ -1,0 +1,16 @@
+.container {
+  position: relative;
+  padding: 120px 0 90px;
+  background: url('./assets/decor-faq.svg') no-repeat right top;
+}
+
+.list {
+  position: relative;
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  li {
+    display: block;
+    margin-bottom: 12px;
+  }
+}

@@ -6,7 +6,7 @@ import { useQuery } from '@hooks';
 import { UiStoreContext, SessionStoreContext } from '@store';
 
 import { HeroBanner, CtaBanner, TextBanner, ScheduleCallBanner } from '@c/Banners';
-import { HomeIntro, HomeFeatures, HomeInformation, HomeSteps, HomeInfoBlock, HomeStats } from '@c/Home';
+import { HomeIntro, HomeFeatures, HomeInformation, HomeSteps, HomeInfoBlock, HomeStats, HomeFaq } from '@c/Home';
 import { content } from './Content.js';
 
 const HomePage = observer(() => {
@@ -15,7 +15,7 @@ const HomePage = observer(() => {
   return (
     <>
       <Helmet>
-        <title>Главная страница</title>
+        <title>Home Page</title>
       </Helmet>
 
       <HeroBanner theme="main" {...content.banner} />
@@ -31,6 +31,7 @@ const HomePage = observer(() => {
       <HomeStats className="mt-4" {...content.stats} />
       <CtaBanner {...content.ctaBanner} />
 
+      <HomeFaq {...content.faq} />
       <CtaBanner {...content.ctaBanner} />
     </>
   );

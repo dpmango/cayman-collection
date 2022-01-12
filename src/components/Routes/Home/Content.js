@@ -80,4 +80,39 @@ export const content = {
       { id: 3, title: '$100M+', description: 'Wealth  managed' },
     ],
   },
+  faq: {
+    title: 'Commonly Asked Questions',
+    list: [
+      {
+        id: 1,
+        title: 'How long does the process take?',
+        content:
+          'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.',
+      },
+      {
+        id: 2,
+        title: 'Is this legal?',
+        content:
+          'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.',
+      },
+      {
+        id: 3,
+        title: 'Do I need an attorney?',
+        content:
+          'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.',
+      },
+      {
+        id: 4,
+        title: 'Can I make updates to my documents?',
+        content:
+          'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.',
+      },
+      {
+        id: 5,
+        title: 'Is my information secure?',
+        content:
+          'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.',
+      },
+    ],
+  },
 };
