@@ -1,0 +1,21 @@
+.banner {
+  position: relative;
+  background: transparent;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+
+  :global .h5-title {
+    padding-right: 30px;
+  }
+}
+
+.cta {
+  flex: 0 0 auto;
+  :global .svg-icon {
+    font-size: 20px;
+  }
+}

@@ -43,4 +43,41 @@ export const content = {
   ctaBanner: {
     title: 'Download our brochure for additional information.',
   },
+  steps: {
+    title: 'Starting is as simple as 1,2,3.',
+    list: [
+      {
+        id: 1,
+        title: 'Schedule a call with our team. We’ll show you how easy the process is and get you started.',
+      },
+      {
+        id: 2,
+        title:
+          'Choose a portfolio that works for you. You’ll have access to our full selection of properties and financing options.',
+      },
+      {
+        id: 3,
+        title:
+          'Sit back and let us take care of everything. From property management to residency applications, we’ll do the hard work for you!',
+      },
+    ],
+  },
+  infoBlock: {
+    list: [
+      'Having legal residency in a tax neutral jurisdiction is key for your financial future. But investing overseas can be difficult and exhausting if you’re doing it alone.',
+      'At Cayman Collection our packages include everything you need to create a safe harbor in the Cayman Islands. Our package is an end-to-end service specifically with you in mind.',
+    ],
+  },
+  stats: {
+    title: 'A global team of experience for your investment journey',
+    cols: [
+      {
+        id: 1,
+        title: '$70M+',
+        description: 'in real estate sales',
+      },
+      { id: 2, title: '$100M+', description: 'in business deals' },
+      { id: 3, title: '$100M+', description: 'Wealth  managed' },
+    ],
+  },
 };

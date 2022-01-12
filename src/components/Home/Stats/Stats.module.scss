@@ -1,0 +1,58 @@
+.container {
+  position: relative;
+  padding: 110px 0;
+  background: url('./assets/decor-stats.svg') no-repeat right top;
+  background-color: #f4f3fa;
+  border-bottom: 2px solid $borderColor;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  margin-top: 45px;
+}
+
+.title {
+  max-width: 790px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  &::after {
+    display: inline-block;
+    content: ' ';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -15px;
+    width: 1px;
+    background: $borderColor;
+  }
+  &:last-child {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.colTitle {
+  font-weight: 300;
+  font-size: 75px;
+  line-height: 1.2;
+  color: $colorGray;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.colDescription {
+  margin: 10px 0 0;
+  font-weight: 300;
+  font-size: 35px;
+  line-height: (50 / 35);
+  color: $colorGray;
+}

@@ -9,10 +9,6 @@ import styles from './Button.module.scss';
 const Themes = {
   PRIMARY: 'primary',
   ACCENT: 'accent',
-  LINK: 'link',
-  GRAY: 'gray',
-  DANGER: 'danger',
-  SUCCESS: 'success',
   DARK: 'dark',
 };
 

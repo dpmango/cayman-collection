@@ -1,8 +1,9 @@
 .btn {
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1.25;
-  padding: 14px 25px;
+  font-weight: 500;
+  font-family: $baseFont;
+  font-size: 28px;
+  line-height: 1;
+  padding: 24px 30px 26px;
   border-radius: 0;
   transition: background 0.25s $ease, color 0.25s $ease;
   &._primary {
@@ -11,6 +12,7 @@
     &:hover {
       background: #4d74fd;
     }
+
     &._outline {
       background: transparent;
       border: 2px solid $colorPrimary;
@@ -73,12 +75,12 @@
   }
   &._iconLeft {
     svg {
-      margin-right: 14px;
+      margin-right: 16px;
     }
   }
   &._iconRight {
     svg {
-      margin-left: 14px;
+      margin-left: 16px;
     }
   }
   &._loading {

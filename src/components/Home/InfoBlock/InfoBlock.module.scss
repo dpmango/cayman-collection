@@ -1,0 +1,37 @@
+.container {
+  position: relative;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+}
+
+.col {
+  width: 100%;
+  flex: 0 0 50%;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.block {
+  flex: 1 0 auto;
+  background: #f8ece3;
+  padding: 50px 60px;
+  margin-bottom: 20px;
+  min-height: 174px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &.blockImage1 {
+    background: url('./assets/decor-infoBlock-1.svg') no-repeat right top;
+    background-color: rgba(#f8ece3, 0.5);
+  }
+  &.blockImage2 {
+    background: url('./assets/decor-infoBlock-2.svg') no-repeat left bottom;
+    background-color: rgba(#f8ece3, 0.5);
+  }
+}
