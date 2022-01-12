@@ -19,7 +19,13 @@ const FaqQuestion = ({ className, title, content, defaultOpened }) => {
   );
 };
 
-FaqQuestion.PropTypes = {
+FaqQuestion.propsTypes = {
+  title: PropTypes.string,
+  content: PropTypes.string,
+  defaultOpened: PropTypes.bool,
+};
+
+FaqQuestion.defaultProps = {
   defaultOpened: false,
 };
 

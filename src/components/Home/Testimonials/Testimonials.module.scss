@@ -1,0 +1,53 @@
+.container {
+  position: relative;
+  padding: 100px 0 130px 0;
+  background: #f4f3fa;
+}
+
+.slider {
+  padding: 10px !important;
+  margin: 45px -10px -10px !important;
+  :global .swiper-wrapper {
+    padding-top: 60px;
+  }
+  :global .swiper-button-prev {
+    color: $colorPrimaryDark;
+    left: 70px;
+  }
+  :global .swiper-button-next {
+    color: $colorPrimaryDark;
+    right: 70px;
+  }
+}
+
+.sliderIcon {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  color: $colorAccent;
+  pointer-events: none;
+  :global .svg-icon {
+    font-size: 107px;
+  }
+}
+
+.slide {
+  flex: 1 0 100%;
+  display: flex;
+  height: auto !important;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 100px 120px;
+  text-align: center;
+  :global .h2-title + .p-huge {
+    margin-top: 45px;
+  }
+}
+
+.slideLogo {
+  margin-top: 60px;
+}

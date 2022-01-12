@@ -80,6 +80,33 @@ export const content = {
       { id: 3, title: '$100M+', description: 'Wealth  managed' },
     ],
   },
+  testimonials: {
+    title: 'What are people saying',
+    list: [
+      {
+        id: 1,
+        title: '“one of the world’s most sophisticated banking centers”',
+        description: `“Cayman’s appeal is obvious. The country, a British Overseas Territory, levies no income or corporate taxes, and, since the 1960s, it has become one of the world’s most sophisticated banking centers.”`,
+        logo: 'NyTimes',
+      },
+      {
+        id: 2,
+        title: `Cayman Islands' housing market is robust, with good yields, and limited supply`,
+        logo: 'GlobalPropertyGuide',
+      },
+      {
+        id: 3,
+        title: `“Cayman Islands is an excellent place to consider for your second residency.”`,
+        description: `With plentiful natural beauty, excellent infrastructure and legal services, a high level of tax-friendliness, and world-class lifestyle options, the Cayman Islands is an excellent place to consider for your second residency.`,
+        logo: 'NomdaCapitalist',
+      },
+      {
+        id: 4,
+        description: `“A solid legal framework, access to professional service providers, a stable political and economic climate, modern infrastructure and advanced communications systems are many of the assets that stimulate and attract foreign investors to the Cayman Islands.”`,
+        logo: 'LloydsBank',
+      },
+    ],
+  },
   faq: {
     title: 'Commonly Asked Questions',
     list: [
