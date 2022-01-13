@@ -14,13 +14,26 @@ import { ReactComponent as Logo } from '@assets/logo.svg';
 const Header = observer(({ className }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpened, setMenuOpened] = useState(false);
+  const [openedId, setOpenedId] = useState(null);
+
   const { width } = useWindowSize();
 
   const { activeModal } = useContext(UiStoreContext);
   const uiContext = useContext(UiStoreContext);
 
   const headerRef = useRef(null);
+  const menuRef = useRef(null);
 
+  const handleMenuNestedClick = useCallback(
+    (id) => {
+      if (openedId === id) {
+        setOpenedId(null);
+      } else {
+        setOpenedId(id);
+      }
+    },
+    [openedId]
+  );
   const handleScroll = useCallback(
     throttle((e) => {
       // const nearFooter = window.scrollY + window.innerHeight > document.body.scrollHeight - 375;
@@ -44,14 +57,12 @@ const Header = observer(({ className }) => {
   useEventListener('scroll', handleScroll);
 
   useOnClickOutside(
-    headerRef,
+    menuRef,
     useCallback(
       (e) => {
-        if (width >= 768) {
-          setMenuOpened(false);
-        }
+        setMenuOpened(false);
       },
-      [setMenuOpened, width]
+      [setMenuOpened]
     )
   );
 
@@ -61,7 +72,7 @@ const Header = observer(({ className }) => {
         <div className="container">
           <div className={styles.wrapper}>
             <div className={styles.hamburger}>
-              <div className={cns('hamburger', menuOpened && 'is-active')}>
+              <div className={cns('hamburger', menuOpened && 'is-active')} onClick={() => setMenuOpened(!menuOpened)}>
                 <span></span>
                 <span></span>
                 <span></span>
@@ -78,6 +89,67 @@ const Header = observer(({ className }) => {
           </div>
         </div>
       </header>
+
+      <div className={cns(styles.menu, menuOpened && styles._active)}>
+        <div className={styles.menuWrapper} ref={menuRef}>
+          <div className={cns('hamburger', menuOpened && 'is-active')} onClick={() => setMenuOpened(!menuOpened)}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul className={styles.menuList}>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">The Plan</a>
+            </li>
+            <li>
+              <a href="#">The Process</a>
+            </li>
+            <li>
+              <a href="#">The Property</a>
+            </li>
+            <li
+              className={cns(styles.menuNested, openedId === 1 && styles._active)}
+              onClick={() => handleMenuNestedClick(1)}>
+              <a href="#">About</a>
+              <ul onClick={(e) => e.stopPropagation()}>
+                <li>
+                  <a href="#">Your team</a>
+                </li>
+                <li>
+                  <a href="#">Why Cayman</a>
+                </li>
+                <li>
+                  <a href="#">Blog</a>
+                </li>
+              </ul>
+            </li>
+            <li
+              className={cns(styles.menuNested, openedId === 2 && styles._active)}
+              onClick={() => handleMenuNestedClick(2)}>
+              <a href="#">Help</a>
+              <ul onClick={(e) => e.stopPropagation()}>
+                <li>
+                  <a href="#">Your team</a>
+                </li>
+                <li>
+                  <a href="#">Why Cayman</a>
+                </li>
+                <li>
+                  <a href="#">Blog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div className={styles.menuCta}>
+            <Button theme="accent" block>
+              Login
+            </Button>
+          </div>
+        </div>
+      </div>
     </>
   );
 });
