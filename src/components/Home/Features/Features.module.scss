@@ -1,4 +1,4 @@
-.intro {
+.container {
   position: relative;
   padding: 140px 0 180px;
   background: url('./decor-features.svg') no-repeat right bottom;
@@ -13,6 +13,7 @@
 
 .content {
   max-width: 455px;
+  padding-right: 30px;
 }
 
 .menu {
@@ -35,19 +36,76 @@
     padding: 10px;
     letter-spacing: 0.015em;
     color: $colorGray;
+    text-decoration: underline;
+    text-decoration-color: $colorPrimary;
+    text-decoration-thickness: 3px;
     transition: color 0.25s $ease;
     &:hover {
       color: $colorPrimary;
     }
-    &::after {
-      display: inline-block;
-      content: ' ';
-      position: absolute;
-      bottom: 4px;
-      left: 10px;
-      right: 10px;
-      height: 3px;
-      background: $colorPrimary;
+    // &::after {
+    //   display: inline-block;
+    //   content: ' ';
+    //   position: absolute;
+    //   bottom: 4px;
+    //   left: 10px;
+    //   right: 10px;
+    //   height: 3px;
+    //   background: $colorPrimary;
+    // }
+  }
+}
+
+@include r($xl) {
+  .container {
+    padding: 100px 0 120px;
+  }
+  .grid {
+    margin-top: 60px;
+  }
+  .menu {
+    a {
+      font-size: 32px;
+    }
+  }
+}
+
+@include r($lg) {
+  .container {
+    :global .h2-title {
+      text-align: left;
+    }
+  }
+  .grid {
+    display: block;
+  }
+  .menu {
+    margin-top: 40px;
+  }
+}
+
+@include r($md) {
+  .container {
+    padding: 50px 0 70px;
+    background-image: none;
+  }
+
+  .grid {
+    margin-top: 32px;
+  }
+
+  .content {
+    max-width: 290px;
+    padding-right: 0;
+  }
+
+  .menu {
+    li {
+      margin-bottom: 12px;
+    }
+    a {
+      font-size: 21px;
+      text-decoration-thickness: 2px;
     }
   }
 }

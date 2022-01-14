@@ -17,3 +17,28 @@
 .content {
   max-width: 888px;
 }
+
+@include r($xl) {
+  .box {
+    min-height: 600px;
+  }
+  .content {
+    max-width: 620px;
+  }
+  .description {
+    margin-top: 40px;
+  }
+}
+
+@include r($md) {
+  .box {
+    min-height: 460px;
+    padding: 30px 46px;
+  }
+  .description {
+    margin-top: 20px;
+  }
+  .content {
+    max-width: 420px;
+  }
+}

@@ -32,7 +32,7 @@
   width: 100%;
   padding: 18px 70px 27px 0;
   font-size: 21px;
-  line-height: 25px;
+  line-height: (25 / 21);
   letter-spacing: -0.286364px;
   font-family: $robotoFont;
   color: $fontColor;
@@ -70,5 +70,33 @@
   }
   &:hover {
     background: $colorPrimary;
+  }
+}
+
+@include r($lg) {
+  .banner {
+    background-image: none;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .form {
+    form {
+      margin-left: 0;
+    }
+  }
+}
+
+@include r($md) {
+  .formInput {
+    padding: 14px 54px 21px 0;
+    font-size: 18px;
+  }
+
+  .formButton {
+    width: 54px;
+    height: 54px;
   }
 }

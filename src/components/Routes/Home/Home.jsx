@@ -30,7 +30,7 @@ const HomePage = observer(() => {
       </Helmet>
 
       <HeroBanner theme="main" {...content.banner} />
-      <HomeIntro className="mt-5" {...content.intro} />
+      <HomeIntro className="mt-5 mt-md-2" {...content.intro} />
       <TextBanner {...content.textBanner} />
       <HomeFeatures {...content.features} />
       <HomeInformation {...content.information} />

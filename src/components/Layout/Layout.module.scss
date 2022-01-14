@@ -17,8 +17,14 @@
   padding-top: 160px;
 }
 
+@include r($xl) {
+  .main {
+    padding-top: 115px;
+  }
+}
+
 @include r($md) {
   .main {
-    padding-top: 0;
+    padding-top: 82px;
   }
 }

@@ -10,3 +10,15 @@
     margin-top: 12px;
   }
 }
+
+@include r($lg) {
+  .banner {
+    padding: 52px 0 40px;
+    background-image: none;
+  }
+  .content {
+    p {
+      margin-top: 16px;
+    }
+  }
+}

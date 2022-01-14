@@ -2,8 +2,6 @@ import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import cns from 'classnames';
 
-import { SvgIcon } from '@ui';
-
 import styles from './TextBanner.module.scss';
 
 const Themes = {
