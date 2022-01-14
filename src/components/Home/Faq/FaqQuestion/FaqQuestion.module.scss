@@ -50,3 +50,26 @@
   margin-top: 6px;
   margin-bottom: 12px;
 }
+
+@include r($xl) {
+  .question {
+    padding: 22px 0;
+  }
+  .questionToggle {
+    font-size: 26px;
+  }
+}
+
+@include r($md) {
+  .question {
+    padding: 16px 0;
+  }
+  .questionToggle {
+    font-size: 20px;
+    padding: 8px 40px 8px 0;
+    &::after,
+    &::before {
+      right: 0;
+    }
+  }
+}

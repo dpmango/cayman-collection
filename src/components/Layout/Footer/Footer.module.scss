@@ -7,6 +7,16 @@
 
 .menuTitle {
   color: $colorGray;
+  :global .svg-icon {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 22px;
+    font-size: 16px;
+    color: rgba($colorGray, 0.2);
+    pointer-events: none;
+    transition: color 0.25s $ease, transform 0.25s $ease;
+  }
 }
 
 .main {
@@ -39,7 +49,8 @@
 
 .subscribe {
   position: relative;
-  max-width: 345px;
+  max-width: 375px;
+  padding-right: 30px;
   form {
     position: relative;
     margin-top: 42px;
@@ -159,5 +170,144 @@
         font-size: 30px;
       }
     }
+  }
+}
+
+@include r($xl) {
+  .footer {
+    padding-bottom: 70px;
+  }
+  .menuList {
+    a {
+      font-size: 18px;
+    }
+  }
+  .bottomMenu {
+    a {
+      font-size: 18px;
+    }
+  }
+}
+
+@include r($lg) {
+  .main {
+    padding: 52px 0;
+    :global .col-5 {
+      order: 2;
+    }
+  }
+  .subscribe {
+    margin-top: 24px;
+    form {
+      margin-top: 24px;
+    }
+  }
+  .menuList {
+    a {
+      font-size: 18px;
+    }
+  }
+  .bottomSocials {
+    li {
+      margin-right: 24px;
+    }
+  }
+}
+
+@include r($md) {
+  .main {
+    padding: 40px 0 52px 0;
+    border-bottom: 0;
+  }
+
+  .menuTitle {
+    position: relative;
+    padding: 20px 0;
+    transition: color 0.25s $ease;
+    :global .svg-icon {
+      display: block;
+    }
+    &:hover {
+      color: $colorPrimary;
+      :global .svg-icon {
+        color: $colorPrimaryDark;
+      }
+    }
+    &::after,
+    &::before {
+      display: inline-block;
+      content: ' ';
+      position: absolute;
+    }
+    &::after {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: $borderColor;
+      transition: opacity 0.15s $ease, transform 0.15s $ease;
+      will-change: transform;
+    }
+    &._active {
+      color: $fontColor;
+      &::after {
+        opacity: 0;
+        transform: translateY(-4px);
+      }
+      :global .svg-icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .menuList {
+    display: none;
+    li {
+      margin-top: 8px;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    &._active {
+      display: block;
+    }
+  }
+
+  .subscribe {
+    margin-top: 18px;
+    padding-right: 0;
+    form {
+      margin-top: 18px;
+    }
+    :global .h5-title {
+      font-size: 21px;
+    }
+  }
+
+  .subscribeInput {
+    padding: 14px 54px 21px 0;
+    font-size: 18px;
+  }
+
+  .subscribeButton {
+    width: 54px;
+    height: 54px;
+  }
+
+  .bottom {
+    flex-direction: column-reverse;
+    padding-top: 0;
+  }
+
+  .bottomMenu {
+    justify-content: space-between;
+    a {
+      font-size: 16px;
+    }
+  }
+
+  .bottomSocials {
+    margin-bottom: 16px;
+    justify-content: center;
   }
 }

@@ -14,3 +14,16 @@
     margin-bottom: 12px;
   }
 }
+
+@include r($xl) {
+  .container {
+    padding: 90px 0 80px;
+    background-image: none;
+  }
+}
+
+@include r($md) {
+  .container {
+    padding: 50px 0 56px;
+  }
+}

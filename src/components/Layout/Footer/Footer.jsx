@@ -17,6 +17,18 @@ const Footer = observer(({ className }) => {
   const { addToast } = useToasts();
 
   const [loading, setLoading] = useState(false);
+  const [menuActive, setMenuActive] = useState(null);
+
+  const handleMenuTitleClick = useCallback(
+    (id) => {
+      if (menuActive === id) {
+        setMenuActive(null);
+      } else {
+        setMenuActive(id);
+      }
+    },
+    [menuActive]
+  );
 
   const handleValidation = (values) => {
     const errors = {};
@@ -55,7 +67,7 @@ const Footer = observer(({ className }) => {
         <div className="container-inner">
           <div className={styles.main}>
             <div className="row">
-              <div className="col col-5">
+              <div className="col col-5 col-lg-12">
                 <div className={styles.subscribe}>
                   <div className="h5-title c-gray">Subscribe to our newsletter</div>
 
@@ -89,11 +101,16 @@ const Footer = observer(({ className }) => {
                 </div>
               </div>
 
-              <div className="col col-7">
+              <div className="col col-7 col-lg-12">
                 <div className="row">
-                  <div className="col col-4">
-                    <div className={cns(styles.menuTitle, 'h6-title')}>Navigation</div>
-                    <ul className={styles.menuList}>
+                  <div className="col col-4 col-md-12">
+                    <div
+                      className={cns(styles.menuTitle, menuActive === 1 && styles._active, 'h6-title')}
+                      onClick={() => handleMenuTitleClick(1)}>
+                      Navigation
+                      <SvgIcon name="arrow-down" />
+                    </div>
+                    <ul className={cns(styles.menuList, menuActive === 1 && styles._active)}>
                       <li>
                         <a href="#">Home</a>
                       </li>
@@ -108,9 +125,14 @@ const Footer = observer(({ className }) => {
                       </li>
                     </ul>
                   </div>
-                  <div className="col col-4">
-                    <div className={cns(styles.menuTitle, 'h6-title')}>About</div>
-                    <ul className={styles.menuList}>
+                  <div className="col col-4 col-md-12">
+                    <div
+                      className={cns(styles.menuTitle, menuActive === 2 && styles._active, 'h6-title')}
+                      onClick={() => handleMenuTitleClick(2)}>
+                      About
+                      <SvgIcon name="arrow-down" />
+                    </div>
+                    <ul className={cns(styles.menuList, menuActive === 2 && styles._active)}>
                       <li>
                         <a href="#">Your Team</a>
                       </li>
@@ -122,9 +144,14 @@ const Footer = observer(({ className }) => {
                       </li>
                     </ul>
                   </div>
-                  <div className="col col-4">
-                    <div className={cns(styles.menuTitle, 'h6-title')}>Help</div>
-                    <ul className={styles.menuList}>
+                  <div className="col col-4 col-md-12">
+                    <div
+                      className={cns(styles.menuTitle, menuActive === 3 && styles._active, 'h6-title')}
+                      onClick={() => handleMenuTitleClick(3)}>
+                      Help
+                      <SvgIcon name="arrow-down" />
+                    </div>
+                    <ul className={cns(styles.menuList, menuActive === 3 && styles._active)}>
                       <li>
                         <a href="#">FAQs</a>
                       </li>

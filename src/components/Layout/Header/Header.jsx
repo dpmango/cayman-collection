@@ -34,6 +34,7 @@ const Header = observer(({ className }) => {
     },
     [openedId]
   );
+
   const handleScroll = useCallback(
     throttle((e) => {
       // const nearFooter = window.scrollY + window.innerHeight > document.body.scrollHeight - 375;

@@ -232,3 +232,48 @@
     }
   }
 }
+
+@include r($md) {
+  .menuWrapper {
+    padding: 36px 42px 24px 36px;
+    :global .hamburger {
+      top: 34px;
+      right: 34px;
+    }
+  }
+
+  .menuList {
+    a {
+      font-size: 22px;
+      padding: 24px 0;
+    }
+  }
+
+  .menuNested {
+    &::after,
+    &::before {
+      top: 34px;
+      right: 8px;
+    }
+    &::before {
+      transform: rotate(90deg);
+    }
+    ul {
+      li {
+        position: relative;
+        border-top: 0;
+        padding-left: 40px;
+        margin-bottom: 20px;
+        &::before {
+          left: 20px;
+          top: 50%;
+          width: 5px;
+          height: 5px;
+        }
+      }
+      a {
+        padding: 6px 0;
+      }
+    }
+  }
+}
