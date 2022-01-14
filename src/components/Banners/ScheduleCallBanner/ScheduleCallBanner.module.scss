@@ -19,3 +19,24 @@
     font-size: 20px;
   }
 }
+
+@include r($lg) {
+  .content {
+    display: block;
+  }
+}
+
+@include r($md) {
+  .content {
+    padding: 42px 0;
+  }
+}
+
+@include r($sm) {
+  .content {
+    :global .btn {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+}

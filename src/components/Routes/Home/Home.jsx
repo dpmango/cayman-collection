@@ -39,13 +39,13 @@ const HomePage = observer(() => {
       <HomeSteps {...content.steps} />
       <ScheduleCallBanner />
       <HomeInfoBlock {...content.infoBlock} />
-      <HomeStats className="mt-4" {...content.stats} />
+      <HomeStats className="mt-4 mt-md-3" {...content.stats} />
       <CtaBanner {...content.ctaBanner} />
 
       <HomeInfoBlockAlt className="mt-4" {...content.infoBlockAlt} />
-      <ScheduleCallBanner className="mt-3" />
+      <ScheduleCallBanner className="mt-3 mt-md-0" />
       <PaginationBar {...content.paginationBar} />
-      <HomeTestimonials className="mt-4" {...content.testimonials} />
+      <HomeTestimonials className="mt-4 mt-md-3" {...content.testimonials} />
       <HomeFaq {...content.faq} />
       <CtaBanner {...content.ctaBanner} />
     </>

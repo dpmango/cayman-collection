@@ -41,3 +41,19 @@
     background-color: rgba(#f8ece3, 0.5);
   }
 }
+
+@include r($lg) {
+  .col {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .block {
+    padding: 34px 42px;
+    min-height: 96px;
+    &.blockImage1 {
+      order: 2;
+      margin-top: 20px;
+    }
+  }
+}

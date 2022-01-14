@@ -56,3 +56,52 @@
   line-height: (50 / 35);
   color: $colorGray;
 }
+
+@include r($xl) {
+  .container {
+    padding: 80px 0;
+  }
+  .colTitle {
+    font-size: 64px;
+  }
+
+  .colDescription {
+    font-size: 30px;
+  }
+}
+
+@include r($lg) {
+  .container {
+    padding: 60px 0;
+    background-image: none;
+  }
+
+  .grid {
+    margin-top: 0;
+    grid-gap: 12px;
+    grid-template-columns: 1fr;
+  }
+
+  .col {
+    padding: 32px 0 38px;
+    &::after {
+      top: auto;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 1px;
+    }
+  }
+}
+
+@include r($md) {
+  .colTitle {
+    font-size: 54px;
+    text-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
+  }
+
+  .colDescription {
+    font-size: 26px;
+  }
+}

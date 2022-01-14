@@ -16,7 +16,7 @@ const ScheduleCallBanner = ({ className }) => {
               Speak with Bec today to learn more about this investment opportunity
             </div>
 
-            <div className={styles.cta}>
+            <div className={cns('mt-lg-2', styles.cta)}>
               <Button theme="accent" type="submit" iconRight="arrow-right" className={styles.formButton}>
                 Schedule a call
               </Button>

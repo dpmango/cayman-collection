@@ -79,6 +79,7 @@
     flex-basis: 46px;
     :global .hamburger {
       transform: scale(0.6);
+      transform-origin: left center;
     }
   }
   .logo {
@@ -86,6 +87,16 @@
     img,
     svg {
       max-width: 270px;
+      max-height: 28px;
+    }
+  }
+}
+
+@include r($mobile-s) {
+  .logo {
+    img,
+    svg {
+      max-width: 220px;
       max-height: 28px;
     }
   }

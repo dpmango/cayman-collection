@@ -103,3 +103,10 @@
     }
   }
 }
+
+@include r($md) {
+  .btn {
+    font-size: 26px;
+    padding: 20px 26px 20px;
+  }
+}
