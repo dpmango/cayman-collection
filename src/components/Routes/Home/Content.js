@@ -33,7 +33,7 @@ export const content = {
     description: '* Required US$7 Million money under management',
   },
   information: {
-    title: 'We provide the most efficient, transparent & expert service to meet your financial goals.',
+    // title: 'We provide the most efficient, transparent & expert service to meet your financial goals.',
     list: [
       "Property investment in one of the world's most buoyant markets.",
       'Permanent residency in a tax neutral jurisdiction.',
