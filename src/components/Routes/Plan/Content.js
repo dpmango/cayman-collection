@@ -29,4 +29,20 @@ export const content = {
       { id: 8, iconId: 'list', title: '5 Years of property management', more: { to: '#', label: 'Learn more' } },
     ],
   },
+  figures: {
+    title: 'Investment Property Portfolio & Permanent Residency',
+    content: [
+      'Your dedicated team will coordinate between banks, lawyers, government, property managers, interior designers and maintenance to deliver you a seamless & stress free experience. ',
+      'All your paperwork will be handled by our experts to secure your residency in this modern, tax-neutral Caribbean paradise. The result: a hassle free property portfolio under 5 years management in the Cayman Islands’ buoyant property market.',
+    ],
+    list: [
+      { id: 1, label: 'Minimum contribution', value: '$7,000,000' },
+      { id: 2, label: 'Creates Additional Liquidity', value: '$3,500,000' },
+      { id: 3, label: 'LTV', value: '50%' },
+      { id: 4, label: 'Interest Rate', value: '+1.37%' },
+      { id: 5, label: 'Annualised rate of return', value: '4% Capital Return' },
+      { id: 6, label: 'Will increse with inflation', value: '2% Dividends' },
+      { id: 7, label: 'Principal under Management', value: '$7,000,000' },
+    ],
+  },
 };

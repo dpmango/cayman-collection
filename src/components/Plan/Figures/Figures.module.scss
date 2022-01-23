@@ -1,0 +1,78 @@
+.container {
+  position: relative;
+  padding: 115px 0 110px;
+  background: url('./decor-figures.svg') no-repeat right top;
+}
+
+.head {
+  :global .h2-title {
+    max-width: 940px;
+    margin-bottom: 46px;
+  }
+}
+
+.grid {
+  margin-top: 92px;
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 20px;
+}
+
+.content {
+  &._col1 {
+    max-width: 475px;
+  }
+  max-width: 530px;
+}
+
+.listCard {
+  flex: 1 0 auto;
+  background: #fafafa;
+  padding: 54px 20px 62px;
+  display: flex;
+  justify-content: center;
+
+  label {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1;
+    color: $colorGray;
+  }
+}
+
+.listCardWrapper {
+  flex: 0 1 auto;
+}
+
+.listValue {
+  margin: 2px 0 0;
+}
+
+@include r($xl) {
+  // .grid {
+  //   margin-top: 60px;
+  // }
+}
+
+@include r($lg) {
+  .grid {
+    display: block;
+  }
+}
+
+@include r($md) {
+  .container {
+    padding: 50px 0 70px;
+    background-image: none;
+  }
+
+  .grid {
+    display: block;
+    margin-top: 32px;
+  }
+
+  .content {
+    max-width: 290px;
+    padding-right: 0;
+  }
+}

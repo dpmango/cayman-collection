@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 
 import { HeroBanner, CtaBanner, ScheduleCallBanner } from '@c/Banners';
 import { PaginationBar } from '@c/Pagination';
-import { PlanPoints } from '@c/Plan';
+import { PlanPoints, PlanFigures } from '@c/Plan';
 import { content } from './Content.js';
 
 const PlanPage = observer(() => {
@@ -16,8 +16,8 @@ const PlanPage = observer(() => {
 
       <HeroBanner theme="lilac" {...content.banner} />
       <PlanPoints {...content.points} />
-
       <CtaBanner {...content.ctaBanner} />
+      <PlanFigures {...content.figures} />
 
       <ScheduleCallBanner />
       <PaginationBar {...content.paginationBar} />
