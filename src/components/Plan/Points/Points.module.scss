@@ -1,14 +1,13 @@
 .container {
   position: relative;
-  margin: 120px 0;
-  background: url('./assets/decor-points.svg') no-repeat left top;
+  padding: 120px 0;
+  background: url('./assets/decor-points.svg') no-repeat left -1.5%;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 0;
-  margin-top: 45px;
 }
 
 .col {
@@ -21,8 +20,14 @@
   border-bottom: 1px solid rgba($colorGray, 0.2);
   padding: 55px 20px;
   transition: background 0.25s $ease;
-  &:nth-child(n + 4) {
+  &:nth-child(4n) {
     border-right: 0;
+  }
+  &:nth-child(5),
+  &:nth-child(6),
+  &:nth-child(7),
+  &:nth-child(8) {
+    border-bottom: 0;
   }
   &:hover {
     background: #f4f3fa;

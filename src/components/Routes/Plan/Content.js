@@ -23,7 +23,10 @@ export const content = {
       },
       { id: 3, iconId: 'stamp', title: 'Stamp Duty', more: { to: '#', label: 'Learn more' } },
       { id: 4, iconId: 'bank', title: 'Conveyancing', more: { to: '#', label: 'Learn more' } },
-      { id: 5, iconId: 'pasport', title: 'Permanent residency application', more: { to: '#', label: 'Learn more' } },
+      { id: 5, iconId: 'safe', title: 'Creative financial structures', more: { to: '#', label: 'Learn more' } },
+      { id: 6, iconId: 'design', title: 'Interior design', more: { to: '#', label: 'Learn more' } },
+      { id: 7, iconId: 'pocket', title: 'Furnishing', more: { to: '#', label: 'Learn more' } },
+      { id: 8, iconId: 'list', title: '5 Years of property management', more: { to: '#', label: 'Learn more' } },
     ],
   },
 };

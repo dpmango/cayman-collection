@@ -10,12 +10,20 @@ import PointPasportSvg from './assets/points-passport.svg';
 import PointsPortfolioSvg from './assets/points-portfolio.svg';
 import PointsStampSvg from './assets/points-stamp.svg';
 import PointsBankSvg from './assets/points-bank.svg';
+import PointsSafeSvg from './assets/points-safe.svg';
+import PointsDesignSvg from './assets/points-design.svg';
+import PointsPocketSvg from './assets/points-pocket.svg';
+import PointsListSvg from './assets/points-list.svg';
 
 const images = {
   pasport: PointPasportSvg,
   portfolio: PointsPortfolioSvg,
   stamp: PointsStampSvg,
   bank: PointsBankSvg,
+  safe: PointsSafeSvg,
+  design: PointsDesignSvg,
+  pocket: PointsPocketSvg,
+  list: PointsListSvg,
 };
 
 const Points = ({ className, title, cols }) => {
