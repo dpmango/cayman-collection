@@ -13,7 +13,7 @@ const ScheduleCallBanner = ({ className }) => {
         <div className="container-inner">
           <div className={styles.content}>
             <div className={cns('h5-title', 'c-primary')}>
-              Speak with Bec today to learn more about this investment opportunity
+              Speak with <i>Bec</i> today to learn more about this investment opportunity
             </div>
 
             <div className={cns('mt-lg-2', styles.cta)}>

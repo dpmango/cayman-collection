@@ -1,5 +1,21 @@
 .banner {
   position: relative;
+  background-repeat: no-repeat;
+  background-position: right top;
+  &._lilac {
+    background-color: #f4f3fa;
+    background-image: url('./assets/heroBanner-decor-lilac.svg');
+
+    .box {
+      background: transparent;
+    }
+    .content {
+      max-width: 1170px;
+      :global .p-caption {
+        max-width: 920px;
+      }
+    }
+  }
 }
 
 .box {

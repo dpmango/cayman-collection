@@ -6,6 +6,8 @@ import Layout from '@c/Layout/';
 
 import NoMatch from './NoMatch';
 import Home from './Home';
+import Plan from './Plan';
+import Process from './Process';
 
 const Routes = () => {
   return (
@@ -13,6 +15,12 @@ const Routes = () => {
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route exact path="/plan">
+          <Plan />
+        </Route>
+        <Route exact path="/process">
+          <Process />
         </Route>
 
         <Route component={NoMatch} />

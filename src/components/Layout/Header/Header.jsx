@@ -100,16 +100,16 @@ const Header = observer(({ className }) => {
           </div>
           <ul className={styles.menuList}>
             <li>
-              <a href="#">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="#">The Plan</a>
+              <Link to="/plan">The Plan</Link>
             </li>
             <li>
-              <a href="#">The Process</a>
+              <Link to="/process">The Process</Link>
             </li>
             <li>
-              <a href="#">The Property</a>
+              <Link to="/property">The Property</Link>
             </li>
             <li
               className={cns(styles.menuNested, openedId === 1 && styles._active)}

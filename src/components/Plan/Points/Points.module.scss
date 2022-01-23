@@ -1,0 +1,127 @@
+.container {
+  position: relative;
+  margin: 120px 0;
+  background: url('./assets/decor-points.svg') no-repeat left top;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 0;
+  margin-top: 45px;
+}
+
+.col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-right: 1px solid rgba($colorGray, 0.2);
+  border-bottom: 1px solid rgba($colorGray, 0.2);
+  padding: 55px 20px;
+  transition: background 0.25s $ease;
+  &:nth-child(n + 4) {
+    border-right: 0;
+  }
+  &:hover {
+    background: #f4f3fa;
+  }
+}
+
+.colImage {
+  font-size: 0;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img,
+  svg {
+    max-width: 100%;
+  }
+}
+
+.colTitle {
+  margin-top: 28px;
+  font-weight: 400;
+  color: $colorPrimaryDark;
+  margin-bottom: 24px;
+  max-width: 210px;
+}
+
+.colDescription {
+  margin: 10px 0 0;
+  font-weight: 300;
+  font-size: 35px;
+  line-height: (50 / 35);
+  color: $colorGray;
+}
+
+.more {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  font-size: 18px;
+  line-height: 17px;
+  letter-spacing: -0.025em;
+  text-decoration-line: underline;
+  color: #7f6644;
+  span {
+    display: inline-block;
+    margin-right: 12px;
+  }
+  :global .svg-icon {
+    font-size: 21px;
+    color: #3cc;
+    transition: color 0.25s $ease;
+  }
+}
+
+@include r($xl) {
+  .container {
+    padding: 80px 0;
+  }
+  .colTitle {
+    font-size: 64px;
+  }
+
+  .colDescription {
+    font-size: 30px;
+  }
+}
+
+@include r($lg) {
+  .container {
+    padding: 60px 0;
+    background-image: none;
+  }
+
+  .grid {
+    margin-top: 0;
+    grid-gap: 12px;
+    grid-template-columns: 1fr;
+  }
+
+  .col {
+    padding: 32px 0 38px;
+    &::after {
+      top: auto;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 1px;
+    }
+  }
+}
+
+@include r($md) {
+  .colTitle {
+    font-size: 54px;
+    text-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
+  }
+
+  .colDescription {
+    font-size: 26px;
+  }
+}
