@@ -1,6 +1,6 @@
 .container {
   position: relative;
-  padding: 115px 0 110px;
+  padding: 115px 0 70px;
   background: url('./decor-figures.svg') no-repeat right top;
 }
 
@@ -31,21 +31,122 @@
   padding: 54px 20px 62px;
   display: flex;
   justify-content: center;
-
-  label {
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 1;
-    color: $colorGray;
-  }
 }
-
 .listCardWrapper {
   flex: 0 1 auto;
 }
-
+.listLabel {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1;
+  color: $colorGray;
+}
 .listValue {
   margin: 2px 0 0;
+}
+
+.ways {
+  margin-top: 70px;
+}
+
+.waysGrid {
+  margin-top: 90px;
+  display: grid;
+  grid-gap: 40px 0;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.wayCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+  &._numed {
+    margin-left: 40px;
+    .wayCardWrapper {
+      padding-left: 36px;
+      padding-right: 36px;
+    }
+    .wayCardIcons {
+      opacity: 1;
+    }
+  }
+}
+.wayCardWrapper {
+  flex: 1 0 auto;
+  position: relative;
+  padding: 54px 40px 64px 54px;
+  background: #fafafa;
+}
+
+.wayCardNum {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  width: 52px;
+  height: 52px;
+  top: -26px;
+  left: -26px;
+  background: #fafafa;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  color: $colorAccent;
+}
+
+.wayCardIcons {
+  position: absolute;
+  z-index: 2;
+  left: -50px;
+  top: 50%;
+  flex: 0 0 auto;
+  opacity: 0;
+  pointer-events: none;
+  :global .svg-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    opacity: 0;
+  }
+  &._equals {
+    :global .svg-icon--equals {
+      opacity: 1;
+    }
+  }
+  &._plus {
+    :global .svg-icon--plus {
+      opacity: 1;
+    }
+  }
+  :global .svg-icon--equals {
+    font-size: 16px;
+  }
+  :global .svg-icon--plus {
+    font-size: 27px;
+  }
+}
+.waysTitle {
+  font-weight: 300;
+  font-size: 66px;
+  line-height: 1.2;
+  color: #9891c5;
+  span {
+    font-size: 96px;
+  }
+}
+
+.total {
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-end;
+  .wayCardWrapper {
+    flex: 0 0 calc(33.333333% - 40px);
+    background: #f4f3fa;
+  }
 }
 
 @include r($xl) {

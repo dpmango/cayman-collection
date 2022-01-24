@@ -44,5 +44,17 @@ export const content = {
       { id: 6, label: 'Will increse with inflation', value: '2% Dividends' },
       { id: 7, label: 'Principal under Management', value: '$7,000,000' },
     ],
+    ways: {
+      title: 'The <span>4</span> ways we generate wealth for you',
+      list: [
+        { id: 1, label: 'Creates Additional Liquidity', value: '$3,500,000' },
+        { id: 2, num: '1', label: 'Rental Income', value: '$1,099,489' },
+        { id: 3, num: '2', label: 'Portfolio Value', value: '$6,367,914' },
+        { id: 4, label: 'Principal under Management', value: '$7,000,000' },
+        { id: 5, num: '3', label: 'Capital Returns', value: '$15,337,862' },
+        { id: 6, num: '4', label: 'Dividends', value: '$10,401,631' },
+      ],
+      total: { label: 'Total Gains', value: '$33,206,896' },
+    },
   },
 };
