@@ -1,5 +1,5 @@
 import React, { useContext, useState, useRef, useCallback, useMemo, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { observer } from 'mobx-react';
 import cns from 'classnames';
 import throttle from 'lodash/throttle';
@@ -16,6 +16,7 @@ const Header = observer(({ className }) => {
   const [menuOpened, setMenuOpened] = useState(false);
   const [openedId, setOpenedId] = useState(null);
 
+  const location = useLocation();
   const { width } = useWindowSize();
 
   const { activeModal } = useContext(UiStoreContext);
@@ -66,6 +67,10 @@ const Header = observer(({ className }) => {
       [setMenuOpened]
     )
   );
+
+  useEffect(() => {
+    setMenuOpened(false);
+  }, [location.key]);
 
   return (
     <>

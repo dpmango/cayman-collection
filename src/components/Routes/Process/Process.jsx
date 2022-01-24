@@ -2,34 +2,27 @@ import React, { useContext, Profiler, useEffect } from 'react';
 import { observer } from 'mobx-react';
 import { Helmet } from 'react-helmet';
 
-import { useQuery } from '@hooks';
-
-import { HeroBanner, CtaBanner, TextBanner, ScheduleCallBanner } from '@c/Banners';
-import {
-  HomeIntro,
-  HomeFeatures,
-  HomeInformation,
-  HomeSteps,
-  HomeInfoBlock,
-  HomeInfoBlockAlt,
-  HomeStats,
-  HomeTestimonials,
-  HomeFaq,
-} from '@c/Home';
+import { HeroBanner, CtaBanner, ScheduleCallBanner } from '@c/Banners';
+import { PaginationBar } from '@c/Pagination';
+import { ProcessTimeline } from '@c/Process';
 import { content } from './Content.js';
 
-const ProcessPage = observer(() => {
-  const query = useQuery();
-
+const PlanPage = observer(() => {
   return (
     <>
       <Helmet>
-        <title>Plan Page</title>
+        <title>The Process</title>
       </Helmet>
 
-      <HeroBanner theme="main" {...content.banner} />
+      <HeroBanner theme="lilac" {...content.banner} />
+      <ProcessTimeline {...content.timelineAcquisition} />
+      <ProcessTimeline {...content.timelineReadiness} />
+
+      <ScheduleCallBanner />
+      <PaginationBar {...content.paginationBar} />
+      <CtaBanner className="mt-4" {...content.ctaBanner} />
     </>
   );
 });
 
-export default ProcessPage;
+export default PlanPage;
