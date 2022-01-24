@@ -15,15 +15,25 @@ const ThemeClasses = {
   [Themes.MAIN]: '',
 };
 
-const PaginationBar = ({ theme, title, link }) => {
+const PaginationBar = ({ theme, prev, next }) => {
   return (
     <div className={cns(styles.container, theme && ThemeClasses[theme])}>
       <div className="container">
         <div className="container-inner">
-          <Link to={link} className={styles.box}>
-            <div className={cns('h4-title', styles.title)}>{title}</div>
-            <SvgIcon name="caret-right" />
-          </Link>
+          <div className={styles.box}>
+            {prev && (
+              <Link to={prev.link}>
+                <SvgIcon name="caret-left" />
+                <div className={cns('h4-title', styles.title)}>{prev.title}</div>
+              </Link>
+            )}
+            {next && (
+              <Link to={next.link}>
+                <div className={cns('h4-title', styles.title)}>{next.title}</div>
+                <SvgIcon name="caret-right" />
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </div>

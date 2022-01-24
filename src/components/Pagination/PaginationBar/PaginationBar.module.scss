@@ -6,37 +6,53 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   background: url('./assets/decor-paginationBar.svg') no-repeat center bottom;
   background-color: $colorAccent;
-  padding: 56px 52px;
   color: white;
-  :global .h4-title {
-    margin-right: 42px;
+  a {
+    display: inline-flex;
+    align-items: center;
+    padding: 56px 52px;
+    transition: color 0.25s $ease;
+    &:hover {
+      color: rgba(white, 0.7);
+    }
   }
   :global .svg-icon {
     font-size: 46px;
+    transform: translateY(4px);
+  }
+  :global .svg-icon--caret-left {
+    margin-right: 42px;
+  }
+  :global .svg-icon--caret-right {
+    margin-left: 42px;
   }
 }
 
 @include r($xl) {
   .box {
-    padding: 42px 52px;
     :global .svg-icon {
       font-size: 36px;
+    }
+    a {
+      padding: 42px 52px;
     }
   }
 }
 
 @include r($md) {
   .box {
-    padding: 42px 52px;
     justify-content: space-between;
     background-image: none;
     padding-left: 26px;
     padding-right: 26px;
     :global .svg-icon {
       font-size: 24px;
+    }
+    a {
+      padding: 42px 52px;
     }
   }
 }

@@ -1,0 +1,77 @@
+.container {
+  position: relative;
+  margin-top: 16px;
+  margin-bottom: 52px;
+}
+
+.title {
+  font-weight: 300;
+  font-size: 66px;
+  line-height: 1.2;
+  color: #9891c5;
+}
+
+.box {
+  margin-top: 52px;
+  background: #f4f3fa;
+  padding: 72px 94px;
+}
+
+.boxTitle {
+  font-weight: 500;
+}
+
+.cols {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 80px;
+}
+
+.colTitle {
+  font-size: 30px;
+  line-height: 1.2;
+  margin-bottom: 32px;
+}
+
+.colDescription {
+  font-family: $robotoFont;
+  font-size: 26px;
+  line-height: 1.3;
+  color: $colorGray;
+}
+
+.colList {
+  list-style: none;
+  margin: 32px 0;
+  padding: 0;
+  li {
+    display: block;
+    position: relative;
+    margin-bottom: 15px;
+    font-family: $robotoFont;
+    font-size: 26px;
+    line-height: 1.3;
+    color: $colorGray;
+    padding-left: 36px;
+    :global .svg-icon {
+      position: absolute;
+      left: 0;
+      top: 8px;
+      color: $colorAccent;
+      font-size: 21px;
+    }
+    &::before {
+      display: inline-block;
+    }
+  }
+}
+
+.colSource {
+  margin-top: 26px;
+  padding-top: 42px;
+  border-top: 1px solid $borderColor;
+  font-family: $robotoFont;
+  font-size: 26px;
+  line-height: 1.3;
+}

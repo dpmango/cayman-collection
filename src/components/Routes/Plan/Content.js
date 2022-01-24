@@ -9,8 +9,14 @@ export const content = {
     title: 'Download our brochure for additional information.',
   },
   paginationBar: {
-    title: 'Go to the Process',
-    link: '/process',
+    prev: {
+      title: 'Back to Overview',
+      link: '/',
+    },
+    next: {
+      title: 'Go to the Process',
+      link: '/process',
+    },
   },
   points: {
     cols: [
@@ -56,5 +62,31 @@ export const content = {
       ],
       total: { label: 'Total Gains', value: '$33,206,896' },
     },
+  },
+  tax: {
+    title: 'Residency in a tax neutral jurisdiction',
+    boxTitle: 'Cayman Island Tax',
+    cols: [
+      {
+        title: 'At a glance',
+        list: [
+          'Corporate Income Tax Rate (%) 0',
+          'Capital Gains Tax Rate (%) 0',
+          'Branch Tax Rate (%) 0',
+          'Withholding Tax (%)',
+          'Dividends 0',
+          'Interest 0',
+          'Royalties from Patents, ',
+          'Know-how, etc. 0',
+          'Branch Remittance Tax 0',
+        ],
+      },
+      {
+        title: 'Taxes on corporate income & gains',
+        description: 'The Cayman Islands does not impose taxes on: ',
+        list: ['Income', 'Profits', 'Wealth', 'Capital gains'],
+        source: '<strong>Source:</strong> EY Global Tax Guides 2021',
+      },
+    ],
   },
 };

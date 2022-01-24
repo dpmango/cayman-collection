@@ -20,7 +20,7 @@ const formInitial = {
   email: '',
 };
 
-const CtaBanner = ({ theme, title }) => {
+const CtaBanner = ({ className, theme, title }) => {
   const { addToast } = useToasts();
 
   const [loading, setLoading] = useState(false);
@@ -57,7 +57,7 @@ const CtaBanner = ({ theme, title }) => {
   }, []);
 
   return (
-    <div className={cns(styles.banner, theme && ThemeClasses[theme])}>
+    <div className={cns(styles.banner, theme && ThemeClasses[theme], className)}>
       <div className="container">
         <div className="container-inner">
           <div className={styles.content}>

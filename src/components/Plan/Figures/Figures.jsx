@@ -7,11 +7,11 @@ import styles from './Figures.module.scss';
 
 const Figures = ({ className, title, content, list, ways }) => {
   return (
-    <div className={cns(styles.container, className)}>
+    <section className={cns(styles.container, className)}>
       <div className="container">
         <div className="container-inner">
           <div className={styles.head}>
-            <div className="h2-title">{title}</div>
+            <h2 className="h2-title">{title}</h2>
             <div className="row">
               <div className="col col-6">
                 <div
@@ -76,7 +76,7 @@ const Figures = ({ className, title, content, list, ways }) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

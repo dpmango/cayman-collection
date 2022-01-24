@@ -89,8 +89,10 @@ export const content = {
     ],
   },
   paginationBar: {
-    title: 'Go to the Plan',
-    link: '/plan',
+    next: {
+      title: 'Go to the Plan',
+      link: '/plan',
+    },
   },
   testimonials: {
     title: 'What are people saying',
