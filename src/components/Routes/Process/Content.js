@@ -10,12 +10,12 @@ export const content = {
   },
   paginationBar: {
     prev: {
-      title: 'Back to Overview',
-      link: '/',
+      title: 'Back to Plan',
+      link: '/plan',
     },
     next: {
-      title: 'Go to the Process',
-      link: '/process',
+      title: 'Go to the Property',
+      link: '/property',
     },
   },
   timelineAcquisition: {
@@ -33,6 +33,14 @@ export const content = {
         { label: 'Interior Design', from: '82', to: '97' },
       ],
     },
+    faq: [
+      {
+        id: 1,
+        title: 'What is acquisition & PR',
+        content:
+          'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.',
+      },
+    ],
   },
   timelineReadiness: {
     title: 'Property Readiness<br/>Property Management',
@@ -48,5 +56,13 @@ export const content = {
         { label: 'Ready for rent', from: '100', to: '100' },
       ],
     },
+    faq: [
+      {
+        id: 1,
+        title: 'What is property readiness & management?',
+        content:
+          'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.',
+      },
+    ],
   },
 };

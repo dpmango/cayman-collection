@@ -9,7 +9,7 @@ const FaqQuestion = ({ className, title, content, defaultOpened }) => {
 
   return (
     <div className={cns(styles.question, opened && styles._opened, className)}>
-      <div className={styles.questionToggle} onClick={() => setOpened(!opened)}>
+      <div className={cns(styles.questionToggle, 'questionToggle')} onClick={() => setOpened(!opened)}>
         {title}
       </div>
       {opened && (

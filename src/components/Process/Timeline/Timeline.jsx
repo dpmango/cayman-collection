@@ -5,9 +5,10 @@ import cns from 'classnames';
 
 import { SvgIcon } from '@ui';
 
+import { FaqQuestion } from '@c/Home/Faq';
 import styles from './Timeline.module.scss';
 
-const Timeline = ({ className, title, timeline }) => {
+const Timeline = ({ className, title, timeline, faq }) => {
   return (
     <div className={cns(styles.container, className)}>
       <div className="container">
@@ -40,6 +41,8 @@ const Timeline = ({ className, title, timeline }) => {
                 ))}
             </div>
           </div>
+
+          <ul className={styles.faq}>{faq && faq.map((question, idx) => <FaqQuestion key={idx} {...question} />)}</ul>
         </div>
       </div>
     </div>
