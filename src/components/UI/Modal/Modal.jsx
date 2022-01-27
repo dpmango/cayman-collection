@@ -138,7 +138,6 @@ const ModalComponent = observer(({ className, variant, modifier, name, children 
         <div className={cns('close', styles.close)} onClick={closeModal}>
           <SvgIcon name="close" />
         </div>
-
         <div className={cns(styles.content, modifier && ModifierClasses[modifier])}>{children}</div>
       </div>
     </Modal>

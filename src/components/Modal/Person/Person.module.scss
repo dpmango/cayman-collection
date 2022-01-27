@@ -43,6 +43,7 @@
   position: relative;
   z-index: 1;
   margin-top: 44px;
+  color: $fontColor;
   p {
     margin: 0;
     & + p {
@@ -147,5 +148,64 @@
     :global .svg-icon--arrow-right {
       font-size: 20px;
     }
+  }
+}
+
+@include r($lg) {
+  .grid {
+    grid-template-columns: 1fr 340px;
+  }
+}
+
+@include r($md) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .content {
+    order: 2;
+    padding: 40px 30px 20px;
+  }
+  .image {
+    min-height: 560px;
+    order: 1;
+    img,
+    picture {
+      object-position: left 10%;
+    }
+  }
+
+  .position {
+    font-size: 18px;
+  }
+
+  .description {
+    margin-top: 24px;
+    font-size: 16px;
+  }
+
+  .socialsLabel {
+    font-size: 20px;
+    margin-right: 20px;
+  }
+
+  .cta {
+    margin-top: 32px;
+    button {
+      width: 100%;
+      margin-right: 0;
+      max-width: 420px;
+    }
+  }
+}
+
+@include r($sm) {
+  .image {
+    min-height: 420px;
+  }
+}
+
+@include r(414) {
+  .image {
+    min-height: 360px;
   }
 }
