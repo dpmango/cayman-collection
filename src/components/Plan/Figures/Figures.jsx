@@ -13,13 +13,13 @@ const Figures = ({ className, title, content, list, ways }) => {
           <div className={styles.head}>
             <h2 className="h2-title">{title}</h2>
             <div className="row">
-              <div className="col col-6">
+              <div className="col col-6 col-lg-12">
                 <div
                   className={cns('p-caption', styles.content, styles._col1)}
                   dangerouslySetInnerHTML={{ __html: content[0] }}
                 />
               </div>
-              <div className="col col-6">
+              <div className="col col-6 col-lg-12">
                 <div className={cns('p-caption', styles.content)} dangerouslySetInnerHTML={{ __html: content[1] }} />
               </div>
             </div>
@@ -67,6 +67,7 @@ const Figures = ({ className, title, content, list, ways }) => {
                   </div>
                 ))}
             </div>
+
             <div className={styles.total}>
               <div className={styles.wayCardWrapper}>
                 <label className={styles.listLabel}>{ways.total.label}</label>

@@ -7258,15 +7258,9 @@ mobx-persist-store@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/mobx-persist-store/-/mobx-persist-store-1.0.4.tgz#233f0c03a708c0f58948c5ff223aa59610a2711a"
 
-mobx-react-lite@^3.2.0:
+mobx-react-lite@^3.2.3:
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/mobx-react-lite/-/mobx-react-lite-3.2.3.tgz#83d2b32ebf4383cd0dc0d397acbf53a8e9c66765"
-
-mobx-react@^7.2.0:
-  version "7.2.1"
-  resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-7.2.1.tgz#e9d4c04dc63d05e1139ce773f5fee7a5b4cb7c78"
-  dependencies:
-    mobx-react-lite "^3.2.0"
 
 mobx-utils@^6.0.4:
   version "6.0.4"

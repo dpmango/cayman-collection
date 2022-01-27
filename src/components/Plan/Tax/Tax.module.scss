@@ -21,7 +21,7 @@
   font-weight: 500;
 }
 
-.cols {
+.grid {
   margin-top: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -57,7 +57,7 @@
     :global .svg-icon {
       position: absolute;
       left: 0;
-      top: 8px;
+      top: 6px;
       color: $colorAccent;
       font-size: 21px;
     }
@@ -74,4 +74,102 @@
   font-family: $robotoFont;
   font-size: 26px;
   line-height: 1.3;
+}
+
+@include r($xl) {
+  .title {
+    font-size: 60px;
+  }
+
+  .box {
+    padding: 60px 38px;
+  }
+
+  .grid {
+    grid-gap: 40px;
+  }
+
+  .colTitle {
+    font-size: 26px;
+  }
+
+  .colDescription {
+    font-size: 22px;
+  }
+
+  .colList {
+    li {
+      font-size: 22px;
+      :global .svg-icon {
+        top: 4px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .colSource {
+    padding-top: 30px;
+    font-size: 22px;
+  }
+}
+
+@include r($lg) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@include r($md) {
+  .container {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+
+  .box {
+    margin-top: 36px;
+    padding: 36px 38px;
+  }
+
+  .boxTitle {
+    font-size: 26px;
+  }
+
+  .grid {
+    margin-top: 20px;
+    grid-gap: 20px;
+  }
+
+  .colTitle {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  .colDescription {
+    font-size: 18px;
+  }
+
+  .colList {
+    margin: 24px 0;
+    li {
+      font-size: 18px;
+      margin-bottom: 14px;
+      padding-left: 32px;
+      :global .svg-icon {
+        top: 4px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .colSource {
+    margin-top: 34px;
+    margin-left: -22px;
+    margin-right: -22px;
+    padding-top: 24px;
+    font-size: 18px;
+  }
 }

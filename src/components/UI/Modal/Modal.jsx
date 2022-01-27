@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import cns from 'classnames';
@@ -14,11 +14,11 @@ const sharedStyles = {
   content: {
     position: 'absolute',
     background: 'white',
-    borderRadius: '5px',
+    borderRadius: '0px',
     padding: 0,
     overflowY: 'auto',
     maxHeight: 'calc(100% - 16px)',
-    boxShadow: '5px 5px 20px rgba(0, 0, 0, 0.25)',
+    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
   },
   overlay: {
     zIndex: 99,
@@ -28,8 +28,8 @@ const sharedStyles = {
 
 const mainStyles = {
   content: {
-    width: 'calc(100% - 16px)',
-    maxWidth: '922px',
+    width: 'calc(100% - 46px)',
+    maxWidth: '1170px',
     top: '50%',
     left: '50%',
     right: 'auto',
@@ -95,7 +95,7 @@ const ModifierClasses = {
   [Modifiers.FULL]: styles._full,
 };
 
-const ModalComponent = observer(({ variant, modifier, name, mobTitle, children }) => {
+const ModalComponent = observer(({ className, variant, modifier, name, children }) => {
   const uiContext = useContext(UiStoreContext);
 
   const afterOpenModal = () => {};
@@ -128,12 +128,15 @@ const ModalComponent = observer(({ variant, modifier, name, mobTitle, children }
       style={CSSinJSstyles}
       // preventScroll={true}
       contentLabel="Modal">
-      <div className={cns(styles.container, variant && VariantClasses[variant], modifier && ModifierClasses[modifier])}>
+      <div
+        className={cns(
+          styles.container,
+          variant && VariantClasses[variant],
+          modifier && ModifierClasses[modifier],
+          className
+        )}>
         <div className={cns('close', styles.close)} onClick={closeModal}>
-          <SvgIcon name="arrow-left" />
-          <span>Назад</span>
           <SvgIcon name="close" />
-          {mobTitle && <div className={styles.mobTitle} dangerouslySetInnerHTML={{ __html: mobTitle }}></div>}
         </div>
 
         <div className={cns(styles.content, modifier && ModifierClasses[modifier])}>{children}</div>
@@ -143,10 +146,10 @@ const ModalComponent = observer(({ variant, modifier, name, mobTitle, children }
 });
 
 ModalComponent.propTypes = {
+  className: PropTypes.string,
   variant: PropTypes.string,
   modifier: PropTypes.string,
   name: PropTypes.string.isRequired,
-  mobTitle: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
 };
 

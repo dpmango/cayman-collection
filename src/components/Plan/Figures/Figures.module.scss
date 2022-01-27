@@ -95,6 +95,7 @@
   border: 3px solid #fff;
   border-radius: 50%;
   color: $colorAccent;
+  font-size: 30px;
 }
 
 .wayCardIcons {
@@ -150,30 +151,129 @@
 }
 
 @include r($xl) {
-  // .grid {
-  //   margin-top: 60px;
+  .container {
+    padding-top: 90px;
+    background-image: none;
+  }
+
+  // .waysGrid {
+  //   // grid-template-columns: 1fr;
   // }
+
+  .wayCard {
+    margin-right: 20px;
+    &._numed {
+      margin-left: 30px;
+      .wayCardWrapper {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+    }
+  }
+
+  .wayCardWrapper {
+    padding: 36px 24px 36px 35px;
+  }
+
+  .wayCardIcons {
+    left: -40px;
+  }
+
+  .waysTitle {
+    font-size: 60px;
+    span {
+      font-size: 82px;
+    }
+  }
 }
 
 @include r($lg) {
   .grid {
-    display: block;
+    margin-top: 60px;
+  }
+
+  .listCard {
+    padding: 36px 32px 36px;
+  }
+
+  .ways {
+    margin-top: 50px;
+  }
+
+  .waysGrid {
+    margin-top: 60px;
+    grid-template-columns: 1fr;
+    grid-gap: 50px;
+  }
+
+  .wayCard {
+    margin-right: 0;
+    &._numed {
+      margin-left: 0;
+      .wayCardWrapper {
+        padding-left: 35px;
+        padding-right: 20px;
+      }
+    }
+    &:nth-child(4) {
+      margin-top: 20px;
+    }
+  }
+
+  .wayCardIcons {
+    left: 46%;
+    top: -25px;
+  }
+
+  .total {
+    margin-top: 70px;
+    .wayCardWrapper {
+      flex-basis: 100%;
+      background: #f4f3fa;
+    }
   }
 }
 
 @include r($md) {
   .container {
     padding: 50px 0 70px;
-    background-image: none;
+  }
+
+  .head {
+    :global .h2-title {
+      margin-bottom: 36px;
+    }
   }
 
   .grid {
-    display: block;
-    margin-top: 32px;
+    margin-top: 44px;
+    grid-gap: 10px;
   }
 
-  .content {
-    max-width: 290px;
-    padding-right: 0;
+  .listLabel {
+    font-size: 18px;
+  }
+
+  .listValue {
+    margin-top: 4px;
+    font-size: 26px;
+  }
+
+  .waysTitle {
+    font-size: 32px;
+    span {
+      font-size: 64px;
+    }
+  }
+
+  .waysGrid {
+    margin-top: 50px;
+  }
+}
+
+@include r($sm) {
+  .listCard {
+    width: 100%;
+    display: block;
   }
 }

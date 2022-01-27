@@ -7,12 +7,7 @@ import '@styles/index.scss';
 import App from '@c/App';
 import { BrowserInfo, History } from '@services';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // new BrowserInfo();
 // new History();

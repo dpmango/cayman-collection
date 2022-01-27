@@ -1,5 +1,5 @@
 import React, { useMemo, useContext, memo } from 'react';
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 import { useHistory, useLocation } from 'react-router-dom';
 import cns from 'classnames';
 

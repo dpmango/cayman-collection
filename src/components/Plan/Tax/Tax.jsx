@@ -15,7 +15,7 @@ const Tax = ({ className, title, boxTitle, cols }) => {
           <div className={styles.box}>
             <div className={cns('h2-title', styles.boxTitle)}>{boxTitle}</div>
 
-            <div className={cns(styles.cols)}>
+            <div className={cns(styles.grid)}>
               {cols &&
                 cols.map((col, idx) => (
                   <div className={styles.col} key={idx}>

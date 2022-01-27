@@ -35,6 +35,11 @@
 }
 
 @include r($xl) {
+  .banner {
+    &._lilac {
+      background-image: none;
+    }
+  }
   .box {
     min-height: 600px;
   }
@@ -47,6 +52,19 @@
 }
 
 @include r($md) {
+  .banner {
+    &._lilac {
+      .box {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      :global .h0-title {
+        br {
+          display: none;
+        }
+      }
+    }
+  }
   .box {
     min-height: 460px;
     padding: 30px 46px;

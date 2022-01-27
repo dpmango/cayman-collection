@@ -1,6 +1,6 @@
 import React, { useContext, useState, useCallback, useMemo } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 import cns from 'classnames';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useToasts } from 'react-toast-notifications';

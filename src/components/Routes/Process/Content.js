@@ -23,22 +23,65 @@ export const content = {
     timeline: {
       head: ['Timeline in Weeks', '01', '02', '03', '04', '05', '06'],
       rows: [
-        { label: 'Onboarding', from: '6', to: '6' },
-        { label: 'Compliance', from: '10', to: '14' },
-        { label: 'Wealth Management', from: '15', to: '30' },
-        { label: 'Bank Facility', from: '17', to: '45' },
-        { label: 'Real Estate', from: '19', to: '75' },
-        { label: 'Residency Application', from: '44', to: '52' },
-        { label: 'Conveyancing', from: '74', to: '97' },
-        { label: 'Interior Design', from: '82', to: '97' },
+        {
+          label: 'Onboarding',
+          from: '6',
+          to: '6',
+          tooltip: { id: 1, title: 'Bec Swanson', image: '/img/avatar/bec.jpg' },
+        },
+        {
+          label: 'Compliance',
+          from: '10',
+          to: '14',
+          tooltip: { id: 2, title: 'Will confirm tomorrow', image: '/img/avatar/fleur.jpg' },
+        },
+        {
+          label: 'Wealth Management',
+          from: '15',
+          to: '30',
+          tooltip: { id: 3, title: 'Phil Stewart', image: '/img/avatar/phil.jpg' },
+        },
+        {
+          label: 'Bank Facility',
+          from: '17',
+          to: '45',
+          tooltip: { id: 4, title: 'Phil Stewart', image: '/img/avatar/phil.jpg' },
+        },
+        {
+          label: 'Real Estate',
+          from: '19',
+          to: '75',
+          tooltip: { id: 5, title: 'Fleur Coleman', image: '/img/avatar/fleur.jpg' },
+        },
+        {
+          label: 'Residency Application',
+          from: '44',
+          to: '52',
+          tooltip: { id: 6, title: 'Wil confirm tomorrow', image: '/img/avatar/fleur.jpg' },
+        },
+        {
+          label: 'Conveyancing',
+          from: '74',
+          to: '97',
+          tooltip: { id: 7, title: 'Stuart Roe', image: '/img/avatar/stuart.jpg' },
+        },
+        {
+          label: 'Interior Design',
+          from: '82',
+          to: '97',
+          tooltip: { id: 8, title: 'Wil confirm tomorrow', image: '/img/avatar/fleur.jpg' },
+        },
       ],
     },
     faq: [
       {
         id: 1,
         title: 'What is acquisition & PR',
-        content:
-          'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.',
+        content: `<ul>
+            <li>Property readiness includes interior design, furnishings, dressing the apartment and having photos taken to advertise the property for rent.</li>
+            <li>Our property managers handle all day-to-day elements of your property ownership maintenance, dealing with tenants, collecting rent, etc. </li>
+            <li>Our packages cover property management for 5 years so you’re stress-free.</li>
+            </ul>`,
       },
     ],
   },
@@ -47,21 +90,59 @@ export const content = {
     timeline: {
       head: ['', '08', '10', '12', '14', '16', '18'],
       rows: [
-        { label: 'Shipping', from: '5', to: '50' },
-        { label: 'Customs', from: '50', to: '60' },
-        { label: 'Furnishing', from: '60', to: '77' },
-        { label: 'Dressing', from: '75', to: '85' },
-        { label: 'Photography', from: '82', to: '93' },
-        { label: 'Ad preparation', from: '95', to: '98' },
-        { label: 'Ready for rent', from: '100', to: '100' },
+        {
+          label: 'Shipping',
+          from: '5',
+          to: '50',
+          tooltip: { id: 1, title: 'Bec Swanson', image: '/img/avatar/bec.jpg' },
+        },
+        {
+          label: 'Customs',
+          from: '50',
+          to: '60',
+          tooltip: { id: 2, title: 'Will confirm tomorrow', image: '/img/avatar/fleur.jpg' },
+        },
+        {
+          label: 'Furnishing',
+          from: '60',
+          to: '77',
+          tooltip: { id: 3, title: 'Phil Stewart', image: '/img/avatar/phil.jpg' },
+        },
+        {
+          label: 'Dressing',
+          from: '75',
+          to: '85',
+          tooltip: { id: 4, title: 'Phil Stewart', image: '/img/avatar/phil.jpg' },
+        },
+        {
+          label: 'Photography',
+          from: '82',
+          to: '93',
+          tooltip: { id: 5, title: 'Fleur Coleman', image: '/img/avatar/fleur.jpg' },
+        },
+        {
+          label: 'Ad preparation',
+          from: '95',
+          to: '98',
+          tooltip: { id: 6, title: 'Wil confirm tomorrow', image: '/img/avatar/fleur.jpg' },
+        },
+        {
+          label: 'Ready for rent',
+          from: '100',
+          to: '100',
+          tooltip: { id: 7, title: 'Stuart Roe', image: '/img/avatar/fleur.jpg' },
+        },
       ],
     },
     faq: [
       {
         id: 1,
         title: 'What is property readiness & management?',
-        content:
-          'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.',
+        content: `<ul>
+            <li>Property readiness includes interior design, furnishings, dressing the apartment and having photos taken to advertise the property for rent.</li>
+            <li>Our property managers handle all day-to-day elements of your property ownership maintenance, dealing with tenants, collecting rent, etc. </li>
+            <li>Our packages cover property management for 5 years so you’re stress-free.</li>
+            </ul>`,
       },
     ],
   },

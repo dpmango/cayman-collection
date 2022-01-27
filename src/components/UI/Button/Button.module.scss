@@ -44,11 +44,12 @@
     }
     &._outline {
       background: transparent;
-      border: 1px solid $colorAccent;
+      border: 2px solid rgba($colorAccent, 0.3);
       color: $colorAccent;
       &:hover {
         color: white;
         background: $colorAccent;
+        border-color: $colorAccent;
       }
     }
   }
@@ -94,12 +95,12 @@
     }
   }
   &[disabled] {
-    background: $colorBg;
-    color: $fontColor;
+    background: rgba($colorGray, 0.3);
+    color: white;
     cursor: not-allowed;
     pointer-events: none;
     &:hover {
-      background: $colorBg;
+      background: rgba($colorGray, 0.3);
     }
   }
 }

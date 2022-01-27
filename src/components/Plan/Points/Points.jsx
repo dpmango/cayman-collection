@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import cns from 'classnames';
 
+import { UiStoreContext } from '@store';
 import { SvgIcon } from '@ui';
 
 import styles from './Points.module.scss';
@@ -27,6 +28,8 @@ const images = {
 };
 
 const Points = ({ className, title, cols }) => {
+  const uiContext = useContext(UiStoreContext);
+
   return (
     <div className={cns(styles.container, className)}>
       <div className="container">
@@ -35,7 +38,7 @@ const Points = ({ className, title, cols }) => {
             {cols &&
               cols.length &&
               cols.map((x) => (
-                <div className={styles.col} key={x.id}>
+                <div className={styles.col} key={x.id} onClick={() => uiContext.setModal('points', x.id)}>
                   <div className={styles.colImage}>{x.iconId && <img src={images[x.iconId]} />}</div>
 
                   <div className={cns('h6-title', styles.colTitle)} dangerouslySetInnerHTML={{ __html: x.title }} />

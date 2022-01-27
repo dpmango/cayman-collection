@@ -1,0 +1,158 @@
+.container {
+  position: relative;
+  background: #f4f3fa;
+}
+
+.slider {
+  :global {
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: $colorPrimaryDark;
+      transition: color 0.25s $ease;
+      &:hover {
+        color: $colorPrimary;
+      }
+    }
+  }
+  :global .swiper-button-prev {
+    left: 45px;
+  }
+  :global .swiper-button-next {
+    right: 45px;
+  }
+}
+
+.slide {
+  padding: 68px 100px 100px;
+  height: auto !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.slideWrapper {
+  flex: 1 0 auto;
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 346px 1fr;
+}
+
+.slideImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background: #d9d5f8 url('./assets/bg-image.svg') no-repeat center center;
+  background-size: cover;
+  img {
+    min-height: 165px;
+  }
+}
+
+.slideContent {
+  padding-left: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.slideDescription {
+  margin-bottom: 40px;
+}
+
+.socialsList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: auto -6px -6px;
+  padding: 0;
+  li {
+    display: block;
+    margin-right: 42px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  a {
+    display: inline-block;
+    position: relative;
+    padding: 6px;
+    color: $colorGray;
+    transition: color 0.25s $ease;
+    &:hover {
+      color: $colorPrimary;
+    }
+    :global .svg-icon {
+      font-size: 24px;
+      &--social-facebook {
+        font-size: 27px;
+      }
+      &--social-instagram {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+@include r($lg) {
+  .slider {
+    :global .swiper-button-prev {
+      left: 15px;
+    }
+    :global .swiper-button-next {
+      right: 15px;
+    }
+  }
+  .slide {
+    padding: 50px 60px 80px;
+  }
+
+  .slideWrapper {
+    margin-top: 34px;
+    grid-template-columns: 300px 1fr;
+  }
+  .slideContent {
+    padding-left: 60px;
+  }
+  .socialsList {
+    li {
+      margin-right: 24px;
+    }
+  }
+}
+
+@include r($md) {
+  .slideWrapper {
+    margin-top: 0;
+    display: block;
+  }
+  .slideImage {
+    min-height: 310px;
+    img {
+      min-height: 125px;
+    }
+  }
+  .slideContent {
+    margin-top: 40px;
+    padding-left: 0;
+  }
+  .slideDescription {
+    margin-top: 22px;
+    margin-bottom: 32px;
+  }
+}
+
+@include r($sm) {
+  .slider {
+    :global {
+      .swiper-button-prev,
+      .swiper-button-next {
+        display: none;
+      }
+    }
+  }
+
+  .slide {
+    padding: 35px 26px 40px;
+  }
+}

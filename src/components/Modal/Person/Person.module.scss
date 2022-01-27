@@ -1,0 +1,151 @@
+.modal {
+  position: relative;
+  :global .close {
+    color: rgba(white, 0.8);
+    &:hover {
+      color: $colorRed;
+    }
+  }
+}
+
+.container {
+  position: relative;
+  background: #f4f3fa;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 466px;
+}
+
+.content {
+  padding: 82px 40px 86px;
+  display: flex;
+  justify-content: center;
+}
+
+.contentWrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 510px;
+}
+
+.name {
+  color: $colorGray;
+}
+
+.position {
+  margin-top: 12px;
+  color: $colorGray;
+}
+
+.description {
+  position: relative;
+  z-index: 1;
+  margin-top: 44px;
+  p {
+    margin: 0;
+    & + p {
+      margin-top: 1.1em;
+    }
+  }
+  &::before {
+    display: inline-block;
+    content: ' ';
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: -30%;
+    height: 65%;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(244, 243, 250, 0) -14.04%, #f4f3fa 30.88%, #f4f3fa 100%);
+  }
+}
+
+.image {
+  position: relative;
+  z-index: 1;
+  font-size: 0;
+  overflow: hidden;
+  user-select: none;
+  img,
+  picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.socials {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.socialsLabel {
+  margin-right: 32px;
+  font-size: 22px;
+  line-height: (28 / 22);
+  color: $colorGray;
+}
+
+.socialsList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: -6px;
+  padding: 0;
+  li {
+    display: block;
+    margin-right: 16px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  a {
+    display: inline-block;
+    position: relative;
+    padding: 6px;
+    color: $colorGray;
+    transition: color 0.25s $ease;
+    &:hover {
+      color: $colorPrimary;
+    }
+    :global .svg-icon {
+      font-size: 24px;
+      &--social-facebook {
+        font-size: 27px;
+      }
+      &--social-instagram {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+.cta {
+  margin-top: 45px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  button {
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    &:last-child {
+      margin-right: 0;
+    }
+    :global .svg-icon--arrow-right {
+      font-size: 20px;
+    }
+  }
+}

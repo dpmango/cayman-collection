@@ -12,7 +12,7 @@
     z-index: 2;
     top: -45px;
     left: -55px;
-    font-size: 244px;
+    font-size: 4em;
     line-height: 0.83;
     color: #e7e7f7;
   }
@@ -25,7 +25,12 @@
 .timeline {
   margin-top: 72px;
   padding-top: 84px;
+  padding-bottom: 80px;
   position: relative;
+}
+
+.timelineNav {
+  display: none;
 }
 
 .timelineHead {
@@ -34,7 +39,7 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 80px;
   display: grid;
   grid-template-columns: 230px 1fr 1fr 1fr 1fr 1fr 1fr;
 }
@@ -89,6 +94,11 @@
   align-items: center;
   padding: 16px 0 16px 18px;
   min-height: 80px;
+  &._active {
+    .rowProgressArrow {
+      opacity: 1;
+    }
+  }
 }
 
 .rowLabel {
@@ -103,13 +113,13 @@
   z-index: 2;
   height: 20px;
   margin-left: -40px;
-  pointer-events: none;
   &::before,
   &::after {
     position: absolute;
     content: ' ';
     top: 50%;
     transform: translateY(-50%);
+    pointer-events: none;
   }
   &::before {
     left: 0;
@@ -136,17 +146,314 @@
   border-radius: 35px;
   height: 20px;
   min-width: 20px;
+  cursor: pointer;
+}
+
+.rowProgressArrow {
+  position: relative;
+  height: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s $ease;
+  &::before,
+  &::after {
+    position: absolute;
+    content: ' ';
+    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $colorAccent;
+  }
+  &::before {
+    top: -4px;
+    width: 10px;
+    height: 10px;
+    transform: translateX(-50%) rotate(45deg);
+  }
+  &::after {
+    top: 0;
+    bottom: -30px;
+    width: 2px;
+  }
+  &[data-position-to-bottom='1']::after {
+    bottom: -110px;
+  }
+  &[data-position-to-bottom='2']::after {
+    bottom: calc((1 * -80px) - 30px - 80px);
+  }
+  &[data-position-to-bottom='3']::after {
+    bottom: calc((2 * -80px) - 30px - 80px);
+  }
+  &[data-position-to-bottom='4']::after {
+    bottom: calc((3 * -80px) - 30px - 80px);
+  }
+  &[data-position-to-bottom='5']::after {
+    bottom: calc((4 * -80px) - 30px - 80px);
+  }
+  &[data-position-to-bottom='6']::after {
+    bottom: calc((5 * -80px) - 30px - 80px);
+  }
+  &[data-position-to-bottom='7']::after {
+    bottom: calc((6 * -80px) - 30px - 80px);
+  }
+  &[data-position-to-bottom='8']::after {
+    bottom: calc((7 * -80px) - 30px - 80px);
+  }
+  &[data-position-to-bottom='9']::after {
+    bottom: calc((8 * -80px) - 30px - 80px);
+  }
 }
 
 .faq {
-  margin-top: 100px;
+  margin-top: 45px;
   padding: 0;
   border-top: 1px solid rgba($colorPrimaryDark, 0.3);
   border-bottom: 1px solid rgba($colorPrimaryDark, 0.3);
   :global .questionToggle {
     color: $colorGray;
+    padding-left: 16px;
     &:hover {
       color: $colorPrimary;
+    }
+  }
+}
+
+// tooltips
+.timelineTooltips {
+  position: relative;
+  min-height: 135px;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  top: 0;
+  width: 100%;
+  max-width: 575px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s $ease;
+  &._active {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.tooltipWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #9891c5;
+  padding: 5px 45px 5px 5px;
+  box-shadow: 0 2px 4px rgba(black, 0.25);
+  color: white;
+  border-radius: 67.5px;
+}
+
+.tooltipImage {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  width: 125px;
+  height: 125px;
+  margin-right: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.tooltipTitle {
+  padding-right: 20px;
+}
+
+.tooltipCta {
+  font-size: 0;
+  margin-left: auto;
+  transition: color 0.25s $ease;
+  cursor: pointer;
+  :global .svg-icon {
+    font-size: 50px;
+  }
+  &:hover {
+    color: $colorPrimary;
+  }
+}
+
+@include r($xl) {
+  .container {
+    margin: 100px 0;
+  }
+  .title {
+    &::before {
+      left: -40px;
+      top: -32px;
+    }
+  }
+}
+
+@include r($lg) {
+  .timeline {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 40px;
+    margin-top: 26px;
+  }
+
+  .timelineNav {
+    margin: 46px -10px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    li {
+      width: 40px;
+      height: 40px;
+      background: #fafafa;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-right: 16px;
+      font-size: 15px;
+      letter-spacing: 1.33758px;
+      color: $colorGray;
+      cursor: pointer;
+      transition: background 0.25s $ease, color 0.25s $ease;
+      &:hover,
+      &._active {
+        background: $colorAccent;
+        color: white;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .timelineHead {
+    grid-template-columns: 180px 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: calc((120px * 6) + 180px);
+    bottom: 40px;
+  }
+
+  .headCol {
+    padding-top: 20px;
+    width: 120px;
+    :global .h6-title {
+      font-size: 18px;
+    }
+    &:first-child {
+      position: sticky;
+      z-index: 3;
+      top: 0;
+      left: 0;
+      width: 180px;
+      padding-left: 8px;
+    }
+  }
+
+  .timelineRow {
+    position: relative;
+    padding: 0;
+    grid-template-columns: 178px 1fr;
+    width: calc((120px * 6) + 180px);
+    min-height: 62px;
+  }
+  .rowLabel {
+    position: sticky;
+    display: inline-flex;
+    align-items: center;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    min-height: 62px;
+    padding-left: 8px;
+    background: #fafafa;
+    font-size: 18px;
+  }
+  .rowProgress {
+    margin-left: 20px;
+  }
+
+  .rowProgressArrow {
+    &[data-position-to-bottom='1']::after {
+      bottom: -110px;
+    }
+    &[data-position-to-bottom='2']::after {
+      bottom: calc((1 * -62px) - 30px - 40px);
+    }
+    &[data-position-to-bottom='3']::after {
+      bottom: calc((2 * -62px) - 30px - 40px);
+    }
+    &[data-position-to-bottom='4']::after {
+      bottom: calc((3 * -62px) - 30px - 40px);
+    }
+    &[data-position-to-bottom='5']::after {
+      bottom: calc((4 * -62px) - 30px - 40px);
+    }
+    &[data-position-to-bottom='6']::after {
+      bottom: calc((5 * -62px) - 30px - 40px);
+    }
+    &[data-position-to-bottom='7']::after {
+      bottom: calc((6 * -62px) - 30px - 40px);
+    }
+    &[data-position-to-bottom='8']::after {
+      bottom: calc((7 * -62px) - 30px - 40px);
+    }
+    &[data-position-to-bottom='9']::after {
+      bottom: calc((8 * -62px) - 30px - 40px);
+    }
+  }
+
+  .timelineTooltips {
+    min-height: 74px;
+  }
+
+  // tooltip
+  .tooltip {
+    right: auto;
+    left: 0;
+    max-width: 460px;
+  }
+  .tooltipWrapper {
+    padding: 3px 25px 3px 3px;
+  }
+  .tooltipImage {
+    width: 68px;
+    height: 68px;
+    margin-right: 15px;
+  }
+  .tooltipTitle {
+    font-size: 21px;
+  }
+  .tooltipCta {
+    :global .svg-icon {
+      font-size: 28px;
+    }
+  }
+}
+
+@include r($md) {
+  .container {
+    margin: 60px 0;
+  }
+  .title {
+    &::before {
+      left: -32px;
+      top: -25px;
+    }
+  }
+
+  .faq {
+    :global .questionToggle {
+      padding-left: 0;
     }
   }
 }
