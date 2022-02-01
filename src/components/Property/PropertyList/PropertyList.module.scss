@@ -1,0 +1,19 @@
+.container {
+  padding: 94px 0;
+  background: $colorPeach;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  :global button {
+    margin-left: auto;
+  }
+}
+
+.grid {
+  margin-top: 52px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 60px;
+}

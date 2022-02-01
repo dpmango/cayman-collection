@@ -1,0 +1,30 @@
+.banner {
+  position: relative;
+  padding: 125px 0 110px;
+}
+
+.content {
+  text-align: center;
+}
+
+.subtitle {
+  text-transform: uppercase;
+}
+
+.text {
+  margin: 52px 0 0;
+  color: #806644;
+}
+
+.sign {
+  margin: 40px 0 0;
+  text-transform: uppercase;
+  color: $colorGray;
+}
+
+@include r($lg) {
+  .banner {
+    padding: 52px 0 40px;
+    background-image: none;
+  }
+}

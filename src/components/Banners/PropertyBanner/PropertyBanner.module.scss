@@ -1,0 +1,44 @@
+.banner {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-image: url('./assets/propertyBanner-decor.svg');
+  background-color: rgba(231, 237, 248, 0.56);
+}
+
+.image {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  font-size: 0;
+  img {
+    max-width: 100%;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  min-height: 760px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 0 40px;
+}
+
+.contentWrapper {
+  max-width: 690px;
+  margin-left: auto;
+}
+
+.subtitle {
+  font-weight: 400;
+  margin-bottom: 22px;
+}
+
+.sign {
+  margin-top: 58px;
+  text-align: right;
+  margin-right: 30px;
+}

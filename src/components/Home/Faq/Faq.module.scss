@@ -2,6 +2,9 @@
   position: relative;
   padding: 120px 0 90px;
   background: url('./assets/decor-faq.svg') no-repeat right top;
+  &._peach {
+    background-color: $colorPeach;
+  }
 }
 
 .list {
