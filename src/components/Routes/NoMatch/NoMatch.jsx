@@ -1,37 +1,58 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { useContext, useEffect, useMemo } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import { Helmet } from 'react-helmet';
 import cns from 'classnames';
 
-import { Button, Breadcrumbs } from '@ui';
-import { UiStoreContext, SessionStoreContext } from '@store';
+import { Button } from '@ui';
 import { useQuery } from '@hooks';
 
 import styles from './NoMatch.module.scss';
 
 const NoMatchPage = observer(() => {
   const history = useHistory();
-  const location = useLocation();
-  const { query } = useQuery();
 
-  const uiContext = useContext(UiStoreContext);
-  const sessionContext = useContext(SessionStoreContext);
+  const handleBackClick = () => {
+    history.goBack();
+  };
 
   return (
     <>
-      <div className="container">
-        <div className={styles.page404}>
-          <div className={styles.page404_Title}>404</div>
-          <div className={styles.page404_Subtitle}>
-            К сожалению, страница <strong>{location.pathname}</strong> не найдена
-          </div>
-        </div>
-      </div>
-
       <Helmet>
         <title>Page not found</title>
       </Helmet>
+
+      <div className={styles.container}>
+        <div className="container">
+          <div className="container-inner">
+            <div className={cns('row', styles.row)}>
+              <div className="col col-6 col-lg-12">
+                <div className={styles.subtitle}>404 error</div>
+                <h1 className={cns('h0-title', styles.title)}>Paradise Lost!</h1>
+                <p className={cns('p-regular', styles.description)}>
+                  Sorry, the page you are looking for doesn't exist. <br /> Here are some helpful links:
+                </p>
+                <div className={styles.cta}>
+                  <Button theme="accent" outline iconLeft="arrow-left" onClick={handleBackClick}>
+                    Go Back
+                  </Button>
+                  <Link to="/">
+                    <Button theme="accent" iconRight="arrow-right">
+                      Take Me Home
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+              <div className="col col-6 col-lg-12">
+                <div className={styles.image}>
+                  <img src="/img/404-page.jpg" srcSet="/img/404-page@2x.jpg 2x" alt="404 page" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 });

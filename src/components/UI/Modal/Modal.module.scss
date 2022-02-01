@@ -22,9 +22,6 @@
   transition: color 0.25s $ease;
   :global .svg-icon {
     font-size: 26px;
-    &.svg-icon--arrow-left {
-      display: none;
-    }
   }
   span {
     display: none;

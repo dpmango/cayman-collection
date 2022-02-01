@@ -5,6 +5,7 @@
   line-height: 1;
   padding: 24px 30px 26px;
   border-radius: 0;
+  border: 2px solid transparent;
   transition: background 0.25s $ease, color 0.25s $ease;
   &._primary {
     background: $colorPrimary;
