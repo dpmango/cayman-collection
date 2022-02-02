@@ -1,32 +1,27 @@
-import React, { useContext, Profiler, useEffect } from 'react';
-import { observer } from 'mobx-react-lite';
-import { Helmet } from 'react-helmet';
-
+import React from 'react';
 import { useQuery } from '@hooks';
-import { UiStoreContext, SessionStoreContext } from '@store';
-
-import { HeroBanner, CtaBanner, TextBanner, ScheduleCallBanner } from '@c/Banners';
+import { Helmet } from 'react-helmet';
+import { content } from './Content.js';
+import { observer } from 'mobx-react-lite';
 import { PaginationBar } from '@c/Pagination';
+import { CtaBanner, HeroBanner, ScheduleCallBanner, TextBanner } from '@c/Banners';
 import {
-  HomeIntro,
+  HomeFaq,
   HomeFeatures,
-  HomeInformation,
-  HomeSteps,
   HomeInfoBlock,
   HomeInfoBlockAlt,
+  HomeInformation,
+  HomeIntro,
   HomeStats,
+  HomeSteps,
   HomeTestimonials,
-  HomeFaq,
 } from '@c/Home';
-import { content } from './Content.js';
 
 const HomePage = observer(() => {
-  const query = useQuery();
-
   return (
     <>
       <Helmet>
-        <title>Home Page</title>
+        <title>Cayman Collection</title>
       </Helmet>
 
       <HeroBanner theme="main" {...content.banner} />
