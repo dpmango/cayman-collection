@@ -12,7 +12,8 @@
     "lint:js:fix": "eslint './src/**/*.{js,jsx}' --fix",
     "lint:css:fix": "stylelint './src/**/*.{css,less,scss,sass}' --fix",
     "deploy": "yarn build:test && cp build/index.html build/200.html && surge --project ./build --domain cayman-collection.surge.sh",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prod": "clear && env-cmd -f ./.env.prod.json cross-env GENERATE_SOURCEMAP=false craco build --stats --prod && rsync --delete -avzi build/* root@cc:/var/www/cc_front"
   },
   "husky": {
     "hooks": {
