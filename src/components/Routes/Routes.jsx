@@ -9,6 +9,7 @@ import Home from './Home';
 import Plan from './Plan';
 import Process from './Process';
 import Properties from './Properties';
+import Property from './Property';
 
 const Routes = () => {
   return (
@@ -25,6 +26,9 @@ const Routes = () => {
         </Route>
         <Route exact path="/property">
           <Properties />
+        </Route>
+        <Route exact path="/property/:id">
+          <Property />
         </Route>
 
         <Route component={NoMatch} />

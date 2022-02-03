@@ -1,0 +1,101 @@
+.container {
+  position: relative;
+  padding: 145px 0 70px;
+  background: url('./assets/decor-figures.svg') no-repeat left 145px;
+}
+
+.intro {
+  :global {
+    .h2-title {
+      max-width: 940px;
+      margin-bottom: 34px;
+    }
+    p {
+      margin-bottom: 1.3em;
+      & + h2 {
+        margin-top: 56px;
+      }
+    }
+  }
+}
+
+.grid {
+  margin-top: 92px;
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 20px;
+}
+
+.listCard {
+  flex: 1 0 auto;
+  background: #fafafa;
+  padding: 54px 20px 62px;
+  display: flex;
+  justify-content: center;
+}
+.listCardWrapper {
+  flex: 0 1 auto;
+}
+.listLabel {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1;
+  color: $colorGray;
+}
+.listValue {
+  margin: 2px 0 0;
+}
+
+@include r($xl) {
+  .container {
+    padding-top: 90px;
+    background-image: none;
+  }
+
+  // .waysGrid {
+  //   // grid-template-columns: 1fr;
+  // }
+}
+
+@include r($lg) {
+  .grid {
+    margin-top: 60px;
+  }
+
+  .listCard {
+    padding: 36px 32px 36px;
+  }
+}
+
+@include r($md) {
+  .container {
+    padding: 50px 0 70px;
+  }
+
+  .head {
+    :global .h2-title {
+      margin-bottom: 36px;
+    }
+  }
+
+  .grid {
+    margin-top: 44px;
+    grid-gap: 10px;
+  }
+
+  .listLabel {
+    font-size: 18px;
+  }
+
+  .listValue {
+    margin-top: 4px;
+    font-size: 26px;
+  }
+}
+
+@include r($sm) {
+  .listCard {
+    width: 100%;
+    display: block;
+  }
+}
