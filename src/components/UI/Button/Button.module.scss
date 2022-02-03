@@ -7,9 +7,11 @@
   border-radius: 0;
   border: 2px solid transparent;
   transition: background 0.25s $ease, color 0.25s $ease;
+
   &._primary {
     background: $colorPrimary;
     color: white;
+
     &:hover {
       background: #4d74fd;
     }
@@ -19,6 +21,7 @@
       border: 2px solid $colorPrimary;
       padding: 14px 24px;
       color: $colorPrimary;
+
       &:hover {
         color: white;
         background: $colorPrimary;
@@ -30,6 +33,7 @@
       border-color: rgba(black, 0.3);
       cursor: not-allowed;
       pointer-events: none;
+
       &:hover {
         background: transparent;
         color: rgba(black, 0.3);
@@ -37,16 +41,20 @@
       }
     }
   }
+
   &._accent {
     background: $colorAccent;
     color: white;
+
     &:hover {
       background: rgba($colorAccent, 0.8);
     }
+
     &._outline {
       background: transparent;
       border: 2px solid rgba($colorAccent, 0.3);
       color: $colorAccent;
+
       &:hover {
         color: white;
         background: $colorAccent;
@@ -61,45 +69,54 @@
     font-size: 14px;
     border-radius: 8px;
   }
+
   &._big {
     padding: 18px 15px;
     border-radius: 12px;
   }
+
   &._block {
     display: block;
     width: 100%;
   }
+
   // icons
   &._iconed {
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
+
   &._iconLeft {
     svg {
       margin-right: 16px;
     }
   }
+
   &._iconRight {
     svg {
       margin-left: 16px;
     }
   }
+
   &._loading {
     position: relative;
     // font-size: 0;
     color: transparent;
+
     .spinner {
       position: absolute;
       top: 50%;
       left: 50%;
     }
   }
+
   &[disabled] {
     background: rgba($colorGray, 0.3);
     color: white;
     cursor: not-allowed;
     pointer-events: none;
+
     &:hover {
       background: rgba($colorGray, 0.3);
     }
