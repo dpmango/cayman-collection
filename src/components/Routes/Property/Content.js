@@ -87,5 +87,55 @@ export const content = {
       { id: 6, label: 'Will increse with inflation', value: '2% Dividends' },
       { id: 7, label: 'Principal under Management', value: '$7,000,000' },
     ],
+    property: {
+      title: 'Return on Property:',
+      chart: [
+        {
+          name: 'y0',
+          income: 0,
+        },
+        {
+          name: 'y5',
+          income: 1.2,
+        },
+        {
+          name: 'y10',
+          income: 2.4,
+        },
+        {
+          name: 'y15',
+          income: 4.8,
+        },
+        {
+          name: 'y20',
+          income: 8,
+        },
+      ],
+    },
+    princiapal: {
+      title: 'Return on Princiapal:',
+      chart: [
+        {
+          name: 'y0',
+          income: 0,
+        },
+        {
+          name: 'y5',
+          income: 1.2,
+        },
+        {
+          name: 'y10',
+          income: 2.4,
+        },
+        {
+          name: 'y15',
+          income: 4.8,
+        },
+        {
+          name: 'y20',
+          income: 8,
+        },
+      ],
+    },
   },
 };

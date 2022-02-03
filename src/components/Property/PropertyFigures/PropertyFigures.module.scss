@@ -13,10 +13,27 @@
     p {
       margin-bottom: 1.3em;
       & + h2 {
-        margin-top: 56px;
+        margin-top: 80px;
       }
     }
   }
+}
+
+.section {
+  margin: 140px 0;
+}
+
+.sectionHead {
+  padding: 30px 0;
+  background: #f4f3fa;
+}
+
+.sectionContent {
+  position: relative;
+}
+
+.chart {
+  margin-top: 120px;
 }
 
 .grid {
