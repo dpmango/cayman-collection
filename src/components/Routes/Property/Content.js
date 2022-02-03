@@ -137,5 +137,10 @@ export const content = {
         },
       ],
     },
+    list2: [
+      { id: 5, label: 'Annualised rate of return', value: '4% Capital Return' },
+      { id: 6, label: 'Will increse with inflation', value: '2% Dividends' },
+      { id: 7, label: 'Principal under Management', value: '$7,000,000' },
+    ],
   },
 };

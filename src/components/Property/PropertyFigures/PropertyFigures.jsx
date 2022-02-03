@@ -2,10 +2,10 @@ import React from 'react';
 import cns from 'classnames';
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-import { SvgIcon } from '@ui';
+import { SvgIcon, CustomChart } from '@ui';
 import styles from './PropertyFigures.module.scss';
 
-const PropertyFigures = ({ className, intro, list, property, princiapal }) => {
+const PropertyFigures = ({ className, intro, list, property, princiapal, list2 }) => {
   return (
     <section className={cns(styles.container, className)}>
       <div className="container">
@@ -29,15 +29,7 @@ const PropertyFigures = ({ className, intro, list, property, princiapal }) => {
           <div className="container">
             <div className="container-inner">
               <div className={styles.chart}>
-                <ResponsiveContainer width="100%" height={690}>
-                  <LineChart width={500} height={300} data={property.chart}>
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Line type="monotone" dataKey="income" stroke="#666565" activeDot={{ r: 2 }} />
-                  </LineChart>
-                </ResponsiveContainer>
+                <CustomChart />
               </div>
             </div>
           </div>
@@ -68,15 +60,18 @@ const PropertyFigures = ({ className, intro, list, property, princiapal }) => {
                   ))}
               </div>
               <div className={styles.chart}>
-                <ResponsiveContainer width="100%" height={690}>
-                  <LineChart width={500} height={300} data={princiapal.chart}>
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Line type="monotone" dataKey="income" stroke="#666565" activeDot={{ r: 2 }} />
-                  </LineChart>
-                </ResponsiveContainer>
+                <CustomChart />
+              </div>
+              <div className={styles.grid}>
+                {list2 &&
+                  list2.map((el, idx) => (
+                    <div className={styles.listCard} key={el.id}>
+                      <div className={styles.listCardWrapper}>
+                        <label className={styles.listLabel}>{el.label}</label>
+                        <p className={cns(styles.listValue, 'h3-title')}>{el.value}</p>
+                      </div>
+                    </div>
+                  ))}
               </div>
             </div>
           </div>

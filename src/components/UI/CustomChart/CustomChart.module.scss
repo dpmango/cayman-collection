@@ -1,0 +1,152 @@
+.chart {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 1060px;
+}
+
+.chartWrapper {
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.axisY {
+  flex: 0 0 90px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid $colorGray;
+}
+
+.axisYCol {
+  flex: 1 1 auto;
+  transform: translateY(-1.4em);
+  font-size: 24px;
+  color: $colorGray;
+  span {
+    font-size: 36px;
+  }
+}
+
+.body {
+  position: relative;
+  flex: 0 0 calc(100% - 90px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.bodyDecor {
+  height: 90px;
+  background: $colorPrimaryDark;
+}
+
+.bodyGraph {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent url('./assets/exponential.svg') no-repeat center center;
+  background-size: contain;
+}
+
+.tooltip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #806644;
+  border-radius: 31px;
+  color: white;
+  padding: 50px 56px;
+}
+
+.tooltipSection {
+  font-size: 36px;
+  span {
+    display: block;
+    font-size: 18px;
+  }
+  & + & {
+    margin-top: 22px;
+  }
+}
+
+.bottom {
+  flex: 0 0 auto;
+}
+
+.axisX {
+  margin-top: 60px;
+  padding-left: 90px;
+  padding-bottom: 26px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $colorGray;
+}
+
+.axisXCol {
+  position: relative;
+  flex: 0 0 auto;
+  font-size: 36px;
+  line-height: 120%;
+  color: $colorGray;
+  span {
+    position: relative;
+    &::after {
+      display: inline-block;
+      content: ' ';
+      position: absolute;
+      left: 50%;
+      width: 1px;
+      height: 50px;
+      top: 100%;
+      background: $colorGray;
+    }
+  }
+  &:first-child span::after {
+    left: 0;
+  }
+  &:last-child span::after {
+    left: 100%;
+  }
+}
+
+.legend {
+  position: relative;
+  background: #fafafa;
+  padding: 56px 40px 52px 90px;
+}
+
+.legendTitle {
+  font-weight: 300;
+}
+
+.legendDescription {
+  margin-top: 16px;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 1.5px;
+}
+
+.control {
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+
+.controlGrab {
+  display: flex;
+  align-items: center;
+  color: $colorPrimaryDark;
+  cursor: move;
+  :global .svg-icon {
+    font-size: 20px;
+    &.svg-icon--control-grab {
+      font-size: 64px;
+      margin-left: 24px;
+      margin-right: 24px;
+    }
+  }
+}

@@ -13,3 +13,4 @@ export { default as Toast } from './Toast';
 export { default as LazyMedia } from './LazyMedia';
 export { default as File } from './File';
 export { default as RangeSlider } from './RangeSlider';
+export { default as CustomChart } from './CustomChart';
