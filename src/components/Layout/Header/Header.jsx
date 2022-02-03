@@ -1,11 +1,11 @@
-import React, { useContext, useState, useRef, useCallback, useMemo, useEffect } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import cns from 'classnames';
 import throttle from 'lodash/throttle';
 
-import { SvgIcon, Button } from '@ui';
-import { useOnClickOutside, useEventListener, useWindowSize } from '@hooks';
+import { Button, SvgIcon } from '@ui';
+import { useEventListener, useOnClickOutside, useWindowSize } from '@hooks';
 import { UiStoreContext } from '@store';
 
 import styles from './Header.module.scss';
@@ -88,8 +88,9 @@ const Header = observer(({ className }) => {
               <Logo />
             </Link>
             <div className={styles.cta}>
-              <Button outline>
+              <Button outline className={styles.phone}>
                 <SvgIcon name="phone" />
+                <span className={styles.schedule}>Schedule a call</span>
               </Button>
             </div>
           </div>

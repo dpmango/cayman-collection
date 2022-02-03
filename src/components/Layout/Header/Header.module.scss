@@ -5,12 +5,41 @@
   transition: transform 0.25s $ease;
   will-change: transform;
   backface-visibility: hidden;
+
   &._scrolled {
     transform: translate3d(0, -36px, 0);
+
     .wrapper {
       padding-bottom: 16px;
     }
   }
+}
+
+.phone {
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    .schedule {
+      margin: 0 0 0 12px;
+      width: 230px;
+      color: white;
+    }
+  }
+}
+
+.schedule {
+  font-family: Marisa, serif;
+  font-size: 28px;
+  line-height: 1;
+  white-space: nowrap;
+  margin: 0 0 0;
+  color: #706f6f;
+  width: 0;
+  overflow: hidden;
+  transition: all 0.25s $ease;
 }
 
 .wrapper {
@@ -25,6 +54,7 @@
   margin-left: 20px;
   margin-right: 20px;
   font-size: 0;
+
   img,
   svg {
     max-width: 100%;
@@ -39,10 +69,12 @@
 
 .cta {
   flex: 0 0 60px;
+
   :global button {
     padding-left: 16px !important;
     padding-right: 16px !important;
     font-size: 0;
+
     .svg-icon {
       font-size: 22px;
     }
@@ -53,6 +85,7 @@
   .header {
     &._scrolled {
       transform: translate3d(0, -20px, 0);
+
       .wrapper {
         padding-bottom: 10px;
       }
@@ -77,6 +110,7 @@
   }
   .hamburger {
     flex-basis: 46px;
+
     :global .hamburger {
       transform: scale(0.6);
       transform-origin: left center;
@@ -84,6 +118,7 @@
   }
   .logo {
     margin-left: 0;
+
     img,
     svg {
       max-width: 270px;
@@ -115,9 +150,11 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s $ease;
+
   &._active {
     opacity: 1;
     pointer-events: all;
+
     .menuWrapper {
       transform: none;
     }
@@ -137,6 +174,7 @@
   overflow-y: auto;
   transform: translate3d(-100%, 0, 0);
   transition: transform 0.25s $ease;
+
   :global .hamburger {
     position: absolute;
     z-index: 3;
@@ -149,13 +187,16 @@
   list-style: none;
   margin: 0;
   padding: 0;
+
   li {
     display: block;
     border-top: 1px solid $borderColor;
+
     &:first-child {
       border-top: 0;
     }
   }
+
   a {
     display: inline-block;
     font-size: 24px;
@@ -164,6 +205,7 @@
     padding: 32px 0;
     color: $fontColor;
     transition: color 0.25s $ease;
+
     &:hover {
       color: $colorPrimary;
     }
@@ -179,6 +221,7 @@
 .menuNested {
   position: relative;
   cursor: pointer;
+
   &::after,
   &::before {
     display: inline-block;
@@ -191,19 +234,23 @@
     background: $colorPrimary;
     transition: transform 0.25s $ease;
   }
+
   &::before {
     transform: rotate(90deg);
   }
+
   ul {
     display: none;
     margin: 0;
     padding: 0;
     cursor: default;
+
     li {
       position: relative;
       border-top: 0;
       padding-left: 40px;
       margin-bottom: 20px;
+
       &::before {
         display: inline-block;
         content: ' ';
@@ -216,17 +263,21 @@
         background: $fontColor;
       }
     }
+
     a {
       padding: 8px 0;
     }
   }
+
   &._active {
     &::before {
       transform: rotate(-180deg);
     }
+
     &::after {
       transform: rotate(-180deg);
     }
+
     ul {
       display: block;
     }
@@ -236,6 +287,7 @@
 @include r($md) {
   .menuWrapper {
     padding: 36px 42px 24px 36px;
+
     :global .hamburger {
       top: 34px;
       right: 34px;
@@ -255,15 +307,18 @@
       top: 34px;
       right: 8px;
     }
+
     &::before {
       transform: rotate(90deg);
     }
+
     ul {
       li {
         position: relative;
         border-top: 0;
         padding-left: 40px;
         margin-bottom: 20px;
+
         &::before {
           left: 20px;
           top: 50%;
@@ -271,6 +326,7 @@
           height: 5px;
         }
       }
+
       a {
         padding: 6px 0;
       }
