@@ -1,10 +1,8 @@
-import React, { useCallback, useState, useMemo, memo, useRef, useEffect } from 'react';
+import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import cns from 'classnames';
 import uniqueId from 'lodash/uniqueId';
 import debounce from 'lodash/debounce';
-
-import { SvgIcon } from '@ui';
 import { useFirstRender } from '@hooks';
 
 import styles from './NumInput.module.scss';
@@ -170,7 +168,7 @@ NumInput.propTypes = {
   inputRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({ current: PropTypes.instanceOf(Element) })]),
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   variant: PropTypes.string,
-  error: PropTypes.oneOfType([PropTypes.string, PropTypes.boolean]),
+  error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   showError: PropTypes.bool,
   onChange: PropTypes.func,
   onEnterKey: PropTypes.func,

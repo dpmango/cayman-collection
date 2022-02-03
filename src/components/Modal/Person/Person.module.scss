@@ -92,7 +92,7 @@
 .socialsLabel {
   margin-right: 32px;
   font-size: 22px;
-  line-height: (28 / 22);
+  line-height: calc(28 / 22);
   color: $colorGray;
 }
 

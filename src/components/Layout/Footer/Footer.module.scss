@@ -7,6 +7,7 @@
 
 .menuTitle {
   color: $colorGray;
+
   :global .svg-icon {
     display: none;
     position: absolute;
@@ -28,19 +29,22 @@
   list-style: none;
   margin: 0;
   padding: 0;
+
   li {
     display: block;
     margin-top: 20px;
   }
+
   a {
     display: inline-block;
     position: relative;
     padding: 6px 0;
     font-family: $robotoFont;
     font-size: 21px;
-    line-height: (25 / 21);
+    line-height: calc(25 / 21);
     color: $colorGray;
     transition: color 0.25s $ease;
+
     &:hover {
       color: $colorPrimary;
     }
@@ -51,6 +55,7 @@
   position: relative;
   max-width: 375px;
   padding-right: 30px;
+
   form {
     position: relative;
     margin-top: 42px;
@@ -72,13 +77,16 @@
   box-shadow: none;
   border-bottom: 1px solid $borderColor;
   transition: border 0.25s $ease;
+
   &::placeholder {
     color: rgba($colorGray, 0.5);
   }
+
   &:active,
   &:focus {
     border-color: $colorGray;
   }
+
   &.error {
     color: $colorRed;
     border-color: $colorRed;
@@ -96,9 +104,11 @@
   background: $colorGray;
   color: white;
   transition: background 0.25s $ease;
+
   :global .svg-icon {
     font-size: 20px;
   }
+
   &:hover {
     background: $colorPrimary;
   }
@@ -116,13 +126,16 @@
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
+
   li {
     display: block;
     margin-right: 56px;
+
     &:last-child {
       margin-right: 0;
     }
   }
+
   a {
     display: inline-block;
     position: relative;
@@ -130,8 +143,9 @@
     color: $colorGray;
     font-weight: 300;
     font-size: 21px;
-    line-height: (31 / 21);
+    line-height: calc(31 / 21);
     transition: color 0.25s $ease;
+
     &:hover {
       color: $colorPrimary;
     }
@@ -145,27 +159,34 @@
   flex-wrap: wrap;
   margin: -6px;
   padding: 0;
+
   li {
     display: block;
     margin-right: 42px;
+
     &:last-child {
       margin-right: 0;
     }
   }
+
   a {
     display: inline-block;
     position: relative;
     padding: 6px;
     color: $colorGray;
     transition: color 0.25s $ease;
+
     &:hover {
       color: $colorPrimary;
     }
+
     :global .svg-icon {
       font-size: 24px;
+
       &--social-facebook {
         font-size: 27px;
       }
+
       &--social-instagram {
         font-size: 30px;
       }
@@ -192,12 +213,14 @@
 @include r($lg) {
   .main {
     padding: 52px 0;
+
     :global .col-5 {
       order: 2;
     }
   }
   .subscribe {
     margin-top: 24px;
+
     form {
       margin-top: 24px;
     }
@@ -224,21 +247,26 @@
     position: relative;
     padding: 20px 0;
     transition: color 0.25s $ease;
+
     :global .svg-icon {
       display: block;
     }
+
     &:hover {
       color: $colorPrimary;
+
       :global .svg-icon {
         color: $colorPrimaryDark;
       }
     }
+
     &::after,
     &::before {
       display: inline-block;
       content: ' ';
       position: absolute;
     }
+
     &::after {
       bottom: 0;
       left: 0;
@@ -248,12 +276,15 @@
       transition: opacity 0.15s $ease, transform 0.15s $ease;
       will-change: transform;
     }
+
     &._active {
       color: $fontColor;
+
       &::after {
         opacity: 0;
         transform: translateY(-4px);
       }
+
       :global .svg-icon {
         transform: rotate(180deg);
       }
@@ -262,12 +293,15 @@
 
   .menuList {
     display: none;
+
     li {
       margin-top: 8px;
+
       &:first-child {
         margin-top: 0;
       }
     }
+
     &._active {
       display: block;
     }
@@ -276,9 +310,11 @@
   .subscribe {
     margin-top: 18px;
     padding-right: 0;
+
     form {
       margin-top: 18px;
     }
+
     :global .h5-title {
       font-size: 21px;
     }
@@ -301,6 +337,7 @@
 
   .bottomMenu {
     justify-content: space-between;
+
     a {
       font-size: 16px;
     }

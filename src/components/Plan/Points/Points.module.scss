@@ -59,7 +59,7 @@
   margin: 10px 0 0;
   font-weight: 300;
   font-size: 35px;
-  line-height: (50 / 35);
+  line-height: calc(50 / 35);
   color: $colorGray;
 }
 

@@ -18,6 +18,7 @@
 .form {
   display: flex;
   flex-direction: column;
+
   form {
     position: relative;
     width: 100%;
@@ -32,7 +33,7 @@
   width: 100%;
   padding: 18px 70px 27px 0;
   font-size: 21px;
-  line-height: (25 / 21);
+  line-height: calc(25 / 21);
   letter-spacing: -0.286364px;
   font-family: $robotoFont;
   color: $fontColor;
@@ -41,13 +42,16 @@
   box-shadow: none;
   border-bottom: 1px solid $borderColor;
   transition: border 0.25s $ease;
+
   &::placeholder {
     color: rgba($colorGray, 0.5);
   }
+
   &:active,
   &:focus {
     border-color: $colorGray;
   }
+
   &.error {
     color: $colorRed;
     border-color: $colorRed;
@@ -65,9 +69,11 @@
   background: $colorGray;
   color: white;
   transition: background 0.25s $ease;
+
   :global .svg-icon {
     font-size: 20px;
   }
+
   &:hover {
     background: $colorPrimary;
   }
