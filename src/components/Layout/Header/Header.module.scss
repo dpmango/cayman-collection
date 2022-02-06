@@ -21,7 +21,10 @@
   align-items: center;
   justify-content: center;
 
+  &.active,
   &:hover {
+    background: $colorPrimary !important;
+
     .schedule {
       margin: 0 0 0 12px;
       width: 230px;

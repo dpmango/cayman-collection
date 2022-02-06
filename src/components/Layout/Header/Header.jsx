@@ -15,6 +15,7 @@ const Header = observer(({ className }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpened, setMenuOpened] = useState(false);
   const [openedId, setOpenedId] = useState(null);
+  const [active, setActive] = useState(false);
 
   const location = useLocation();
   const { width } = useWindowSize();
@@ -72,6 +73,11 @@ const Header = observer(({ className }) => {
     setMenuOpened(false);
   }, [location.key]);
 
+  useEffect(() => {
+    setActive(true);
+    setTimeout(() => setActive(false), 2000);
+  }, []);
+
   return (
     <>
       <header className={cns(styles.header, scrolled && styles._scrolled, className)} ref={headerRef}>
@@ -88,7 +94,7 @@ const Header = observer(({ className }) => {
               <Logo />
             </Link>
             <div className={styles.cta}>
-              <Button outline className={styles.phone}>
+              <Button outline className={cns(styles.phone, active && styles.active)}>
                 <SvgIcon name="phone" />
                 <span className={styles.schedule}>Schedule a call</span>
               </Button>
