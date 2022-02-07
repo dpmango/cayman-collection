@@ -69,7 +69,7 @@
 .metaLabel {
   font-family: $robotoFont;
   font-size: 15px;
-  line-height: (24 / 15);
+  line-height: calc(24 / 15);
   color: $colorGray;
 }
 

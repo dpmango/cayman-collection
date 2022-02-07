@@ -1,15 +1,12 @@
-import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { observer } from 'mobx-react-lite';
 import cns from 'classnames';
 import throttle from 'lodash/throttle';
-
 import { Button, SvgIcon } from '@ui';
-import { useEventListener, useOnClickOutside, useWindowSize } from '@hooks';
-import { UiStoreContext } from '@store';
-
 import styles from './Header.module.scss';
+import { observer } from 'mobx-react-lite';
+import { Link, useLocation } from 'react-router-dom';
 import { ReactComponent as Logo } from '@assets/logo.svg';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { useEventListener, useOnClickOutside, useWindowSize } from '@hooks';
 
 const Header = observer(({ className }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -19,9 +16,6 @@ const Header = observer(({ className }) => {
 
   const location = useLocation();
   const { width } = useWindowSize();
-
-  const { activeModal } = useContext(UiStoreContext);
-  const uiContext = useContext(UiStoreContext);
 
   const headerRef = useRef(null);
   const menuRef = useRef(null);
@@ -39,7 +33,6 @@ const Header = observer(({ className }) => {
 
   const handleScroll = useCallback(
     throttle((e) => {
-      // const nearFooter = window.scrollY + window.innerHeight > document.body.scrollHeight - 375;
       const startStickyAt = 0;
 
       if (window.scrollY > startStickyAt) {
@@ -61,12 +54,7 @@ const Header = observer(({ className }) => {
 
   useOnClickOutside(
     menuRef,
-    useCallback(
-      (e) => {
-        setMenuOpened(false);
-      },
-      [setMenuOpened]
-    )
+    useCallback(() => setMenuOpened(false), [setMenuOpened])
   );
 
   useEffect(() => {
@@ -85,9 +73,9 @@ const Header = observer(({ className }) => {
           <div className={styles.wrapper}>
             <div className={styles.hamburger}>
               <div className={cns('hamburger', menuOpened && 'is-active')} onClick={() => setMenuOpened(!menuOpened)}>
-                <span></span>
-                <span></span>
-                <span></span>
+                <span />
+                <span />
+                <span />
               </div>
             </div>
             <Link to="/" className={styles.logo}>
@@ -106,9 +94,9 @@ const Header = observer(({ className }) => {
       <div className={cns(styles.menu, menuOpened && styles._active)}>
         <div className={styles.menuWrapper} ref={menuRef}>
           <div className={cns('hamburger', menuOpened && 'is-active')} onClick={() => setMenuOpened(!menuOpened)}>
-            <span></span>
-            <span></span>
-            <span></span>
+            <span />
+            <span />
+            <span />
           </div>
           <ul className={styles.menuList}>
             <li>
