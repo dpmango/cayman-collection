@@ -13,7 +13,7 @@ import Property from './Property';
 import Proposal from './Proposal';
 import Blog from './Blog';
 import HubSpot from '../HubSpot';
-// import BlogDetails from './BlogDetails';
+import BlogDetail from './BlogDetail';
 
 const Routes = () => {
   return (
@@ -40,9 +40,9 @@ const Routes = () => {
         <Route exact path="/blog">
           <Blog />
         </Route>
-        {/* <Route exact path="/blog/:id">
-          <BlogDetails />
-        </Route> */}
+        <Route exact path="/blog/:id">
+          <BlogDetail />
+        </Route>
 
         <Route component={NoMatch} />
       </Switch>

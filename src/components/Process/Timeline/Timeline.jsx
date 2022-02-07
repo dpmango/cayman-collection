@@ -57,11 +57,12 @@ const Timeline = ({ className, title, timeline, faq }) => {
   useEffect(() => {
     if (timelineRef && timelineRef.current) {
       timelineRef.current.addEventListener('scroll', handleScroll, false);
-      return () => {
-        timelineRef.current.removeEventListener('scroll', handleScroll, false);
-      };
+
+      // return () => {
+      //   timelineRef.current.removeEventListener('scroll', handleScroll, false);
+      // };
     }
-  }, [handleScroll]);
+  }, [handleScroll, timelineRef.current]);
 
   return (
     <div className={cns(styles.container, className)}>
