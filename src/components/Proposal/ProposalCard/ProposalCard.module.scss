@@ -1,0 +1,65 @@
+.card {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 45px 252px 4fr 2fr 1fr 2fr;
+  padding: 16px 70px 16px 30px;
+  border-bottom: 1px solid #e3e3e3;
+  color: $colorGray;
+  :global .numinput {
+    max-width: 160px;
+  }
+}
+
+.remove {
+  padding: 10px;
+  color: $colorGray;
+  cursor: pointer;
+  font-size: 0;
+  transition: color 0.25s $ease;
+  :global .svg-icon {
+    font-size: 24px;
+  }
+  &:hover {
+    color: $colorRed;
+  }
+}
+
+.image {
+  padding-left: 26px;
+  font-size: 0;
+  img {
+    width: 100%;
+  }
+}
+
+.title {
+  padding-right: 16px;
+  padding-left: 40px;
+  font-family: $robotoFont;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.43;
+  letter-spacing: 0.02em;
+}
+
+.description,
+.helper {
+  font-family: $robotoFont;
+  font-size: 18px;
+  line-height: 1.33;
+  letter-spacing: 0.02em;
+  padding-right: 6px;
+}
+
+.price {
+  // margin-left: auto;
+  text-align: right;
+  font-family: $robotoFont;
+  font-size: 23px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  &._negative {
+    font-weight: 700;
+    color: $colorAccent;
+  }
+}

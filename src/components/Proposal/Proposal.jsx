@@ -1,0 +1,87 @@
+import React, { useState, useCallback, useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import cns from 'classnames';
+
+import { SvgIcon, Button } from '@ui';
+import { numberWithCommas } from '@helpers';
+import { ProposalCard } from '@c/Proposal';
+import styles from './Proposal.module.scss';
+
+const Proposal = ({ className, title, description, list }) => {
+  const [cartItems, setCartItems] = useState(list);
+
+  const handleRemoveClick = useCallback(
+    (id) => {
+      setCartItems(cartItems.filter((x) => x.id !== id));
+    },
+    [cartItems]
+  );
+
+  const handleCounterChange = useCallback(
+    (id, value) => {
+      const cartItemsNew = [
+        ...cartItems.map((x) =>
+          x.id === id
+            ? {
+                ...x,
+                counter: value,
+              }
+            : { ...x }
+        ),
+      ];
+      setCartItems(cartItemsNew);
+    },
+    [cartItems]
+  );
+
+  const totalPrice = useMemo(() => {
+    return cartItems.reduce((acc, x) => (acc += x.price * (x.counter || 1)), 0);
+  }, [cartItems]);
+
+  return (
+    <section className={cns(styles.container, className)}>
+      <div className="container">
+        <div className="container-inner">
+          <h1 className={cns('h0-title', styles.title)}>{title}</h1>
+          <div className={cns('p-caption', styles.description)}>{description}</div>
+
+          <div className={styles.table}>
+            <div className={styles.tableHead}>
+              <span>Products</span>
+              <span>Total</span>
+            </div>
+            <div className={styles.tableBody}>
+              {cartItems &&
+                cartItems.map((x) => (
+                  <ProposalCard
+                    {...x}
+                    onRemoveClick={handleRemoveClick}
+                    onCounterChange={handleCounterChange}
+                    key={x.id}
+                  />
+                ))}
+            </div>
+            <div className={styles.tableTotal}>
+              <div className={styles.tableTotalLabel}>Total</div>
+              <div className={styles.tableTotalPrice}>${numberWithCommas(totalPrice)}</div>
+            </div>
+          </div>
+
+          <div className={styles.actions}>
+            <Link to="/" className={styles.back}>
+              <SvgIcon name="arrow-left-fat" />
+              <span>Ammend Selection</span>
+            </Link>
+            <div className={styles.cta}>
+              <Button theme="gray" variant="small" block>
+                Proceed to Contract
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Proposal;

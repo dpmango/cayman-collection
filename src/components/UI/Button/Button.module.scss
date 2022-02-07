@@ -84,11 +84,31 @@
     }
   }
 
+  &._gray {
+    background: $colorGray;
+    color: white;
+
+    &:hover {
+      background: rgba($colorGray, 0.8);
+    }
+
+    &._outline {
+      background: transparent;
+      border: 2px solid rgba($colorGray, 0.3);
+      color: $colorGray;
+
+      &:hover {
+        color: white;
+        background: $colorGray;
+        border-color: $colorGray;
+      }
+    }
+  }
+
   // variants
   &._small {
-    padding: 7px 15px;
-    font-size: 14px;
-    border-radius: 8px;
+    font-size: 20px;
+    padding: 11px 25px 15px;
   }
 
   &._big {

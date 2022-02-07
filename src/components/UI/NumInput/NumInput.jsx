@@ -28,29 +28,6 @@ const NumInput = ({ className, label, inputRef, variant, value, onChange, onEnte
 
   const [innerValue, setValue] = useState(value);
 
-  // const handleUpClick = (e) => {
-  //   e.preventDefault();
-  //   e.stopPropagation();
-
-  //   const newVal = parseFloat(value) + 0.1;
-
-  //   setValue(newVal.toFixed(1));
-  //   onChange(newVal.toFixed(1));
-  // };
-
-  // const handleDownClick = (e) => {
-  //   e.preventDefault();
-  //   e.stopPropagation();
-
-  //   const newVal = parseFloat(value) - 0.1;
-  //   if (newVal <= 0) {
-  //     return false;
-  //   }
-
-  //   setValue(newVal.toFixed(1));
-  //   onChange(newVal.toFixed(1));
-  // };
-
   const onInputChange = useCallback((e) => {
     const val = e.target.value;
     e.preventDefault();
@@ -84,7 +61,7 @@ const NumInput = ({ className, label, inputRef, variant, value, onChange, onEnte
 
       const split = innerValue && innerValue.toString().split('.');
 
-      if (!innerValue || innerValue < 0.01) {
+      if (!innerValue || innerValue < 1) {
         setValue(1);
         onChange(1);
       } else if (split && split.length > 1) {
@@ -124,7 +101,7 @@ const NumInput = ({ className, label, inputRef, variant, value, onChange, onEnte
   );
 
   useEffect(() => {
-    setValue(value ? value : 0.1);
+    setValue(value ? value : 1);
   }, [value]);
 
   const inputProps = {
@@ -148,7 +125,7 @@ const NumInput = ({ className, label, inputRef, variant, value, onChange, onEnte
       )}
 
       <div className={styles.input_wrapper}>
-        <input type="number" pattern="[0-9]+([\.,][0-9]+)?" step="0.01" min="0.01" {...inputProps} />
+        <input type="number" pattern="[0-9]+([\.,][0-9]+)?" step="1" min="1" max="99" {...inputProps} />
 
         {/* <div className={cns(styles.arrow, styles._up)} onClick={handleUpClick}>
           <SvgIcon name="up"></SvgIcon>

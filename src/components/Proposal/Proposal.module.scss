@@ -1,0 +1,87 @@
+.container {
+  position: relative;
+  padding: 150px 0 145px;
+  background: #f4f3fa;
+  background-image: url('./assets/proposal-decor-left.svg'), url('./assets/proposal-decor-right.svg');
+  background-position: left 120px, right -100px;
+  background-repeat: no-repeat;
+}
+
+.description {
+  margin-top: 52px;
+}
+
+.table {
+  margin-top: 100px;
+  background: white;
+  border: 1px solid #e3e3e3;
+}
+
+.tableHead {
+  display: flex;
+  justify-content: space-between;
+  font-family: $robotoFont;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 35px;
+  letter-spacing: 0.02em;
+  color: $colorGray;
+  padding: 17px 70px 17px 100px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.tableTotal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 52px 70px 72px 100px;
+}
+
+.tableTotalLabel {
+  font-family: $robotoFont;
+  font-size: 23px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: $colorGray;
+  padding-right: 16px;
+}
+
+.tableTotalPrice {
+  font-family: $robotoFont;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 1.36;
+  text-align: right;
+  letter-spacing: 0.04em;
+}
+
+.actions {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  font-family: $robotoFont;
+  font-size: 20px;
+  line-height: 1.43;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: color 0.25s $ease;
+  :global .svg-icon {
+    flex: 0 0 auto;
+    font-size: 16px;
+    margin-right: 18px;
+  }
+  &:hover {
+    color: $colorPrimary;
+  }
+}
+
+.cta {
+  width: 100%;
+  max-width: 300px;
+}

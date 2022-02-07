@@ -38,15 +38,14 @@
     -moz-appearance: textfield;
     display: block;
     width: 100%;
-    max-width: 120px;
     background: white;
     font-family: $baseFont;
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 18px;
+    line-height: 1;
     color: $fontColor;
-    border: 1px solid $borderColor;
-    border-radius: 5px;
-    padding: 14px 20px 13px 10px;
+    border: 1px solid #e3e3e3;
+    border-radius: 0;
+    padding: 9px 20px 9px 26px;
     transition: border 0.25s $ease, color 0.25s $ease, background 0.25s $ease;
     &::placeholder {
       color: $colorGray;
