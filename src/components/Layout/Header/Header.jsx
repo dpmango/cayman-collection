@@ -1,14 +1,19 @@
 import cns from 'classnames';
-import throttle from 'lodash/throttle';
+import Modal from '../../UI/Modal';
 import { Button, SvgIcon } from '@ui';
+import throttle from 'lodash/throttle';
 import styles from './Header.module.scss';
 import { observer } from 'mobx-react-lite';
+import { UiStoreContext } from '../../../store';
 import { Link, useLocation } from 'react-router-dom';
 import { ReactComponent as Logo } from '@assets/logo.svg';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useEventListener, useOnClickOutside, useWindowSize } from '@hooks';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet';
 
 const Header = observer(({ className }) => {
+  const uiContext = useContext(UiStoreContext);
+
   const [scrolled, setScrolled] = useState(false);
   const [menuOpened, setMenuOpened] = useState(false);
   const [openedId, setOpenedId] = useState(null);
@@ -68,6 +73,15 @@ const Header = observer(({ className }) => {
 
   return (
     <>
+      <Modal name="calendar">
+        <div
+          className="meetings-iframe-container"
+          data-src="https://meetings.hubspot.com/hello2759/speak-with-our-concierge-team?embed=true"
+        />
+        <Helmet>
+          <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js" />
+        </Helmet>
+      </Modal>
       <header className={cns(styles.header, scrolled && styles._scrolled, className)} ref={headerRef}>
         <div className="container">
           <div className={styles.wrapper}>
@@ -82,7 +96,10 @@ const Header = observer(({ className }) => {
               <Logo />
             </Link>
             <div className={styles.cta}>
-              <Button outline className={cns(styles.phone, active && styles.active)}>
+              <Button
+                outline
+                onClick={() => uiContext.setModal('calendar')}
+                className={cns(styles.phone, active && styles.active)}>
                 <SvgIcon name="phone" />
                 <span className={styles.schedule}>Schedule a call</span>
               </Button>
