@@ -1,5 +1,4 @@
-import React, { useState, memo, useEffect } from 'react';
-import cns from 'classnames';
+import React, { memo, useEffect, useState } from 'react';
 
 const SvgIcon = ({ name }) => {
   const [viewBox, setViewBox] = useState('0 0 0 0');
