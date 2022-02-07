@@ -1,8 +1,8 @@
 import React from 'react';
 import cns from 'classnames';
-import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 import { SvgIcon, CustomChart } from '@ui';
+import { PropertyPercent } from '@c/Property';
 import styles from './PropertyFigures.module.scss';
 
 const PropertyFigures = ({ className, intro, list, property, princiapal, list2 }) => {
@@ -29,7 +29,10 @@ const PropertyFigures = ({ className, intro, list, property, princiapal, list2 }
           <div className="container">
             <div className="container-inner">
               <div className={styles.chart}>
-                <CustomChart />
+                <CustomChart includeLegend={true} />
+              </div>
+              <div className={styles.percents}>
+                {property.percents && property.percents.map((p, idx) => <PropertyPercent {...p} key={idx} />)}
               </div>
             </div>
           </div>

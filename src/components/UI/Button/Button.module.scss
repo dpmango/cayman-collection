@@ -63,6 +63,27 @@
     }
   }
 
+  &._dark {
+    background: $fontColor;
+    color: white;
+
+    &:hover {
+      background: rgba($fontColor, 0.8);
+    }
+
+    &._outline {
+      background: transparent;
+      border: 2px solid rgba($fontColor, 0.3);
+      color: $fontColor;
+
+      &:hover {
+        color: white;
+        background: $fontColor;
+        border-color: $fontColor;
+      }
+    }
+  }
+
   // variants
   &._small {
     padding: 7px 15px;
@@ -71,8 +92,8 @@
   }
 
   &._big {
-    padding: 18px 15px;
-    border-radius: 12px;
+    font-size: 38px;
+    padding: 28px 30px 30px;
   }
 
   &._block {

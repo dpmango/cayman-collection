@@ -49,21 +49,21 @@ export const content = {
       {
         id: 2,
         image: '/img/property/propertyUnit-2.jpg',
-        title: 'L1 Block',
+        title: 'L2 Block',
         price: '$1.1 million',
         area: '15 units',
       },
       {
         id: 3,
         image: '/img/property/propertyUnit-3.jpg',
-        title: 'L1 Block',
+        title: 'L3 Block',
         price: '$1.1 million',
         area: '15 units',
       },
       {
         id: 4,
-        image: '/img/property/propertyUnit-3.jpg',
-        title: 'L1 Block',
+        image: '/img/property/propertyUnit-4.jpg',
+        title: 'L4 Block',
         price: '$1.1 million',
         area: '15 units',
       },
@@ -89,58 +89,36 @@ export const content = {
     ],
     property: {
       title: 'Return on Property:',
-      chart: [
+      percents: [
         {
-          name: 'y0',
-          income: 0,
+          from: 9.3,
+          to: 11.8,
+          title: 'Property value:',
+          description: 'Property value based on 5 year historical values on <a href="#">Seven Mile Beach.</a>',
         },
         {
-          name: 'y5',
-          income: 1.2,
-        },
-        {
-          name: 'y10',
-          income: 2.4,
-        },
-        {
-          name: 'y15',
-          income: 4.8,
-        },
-        {
-          name: 'y20',
-          income: 8,
+          from: 4,
+          to: 6.2,
+          title: 'Rental income:',
+          description: 'Rental income as a % of property value based on historical values',
         },
       ],
     },
     princiapal: {
       title: 'Return on Princiapal:',
-      chart: [
-        {
-          name: 'y0',
-          income: 0,
-        },
-        {
-          name: 'y5',
-          income: 1.2,
-        },
-        {
-          name: 'y10',
-          income: 2.4,
-        },
-        {
-          name: 'y15',
-          income: 4.8,
-        },
-        {
-          name: 'y20',
-          income: 8,
-        },
-      ],
     },
     list2: [
       { id: 5, label: 'Annualised rate of return', value: '4% Capital Return' },
       { id: 6, label: 'Will increse with inflation', value: '2% Dividends' },
       { id: 7, label: 'Principal under Management', value: '$7,000,000' },
+    ],
+  },
+  proposal: {
+    list: [
+      { label: 'Capital growth on principal:', value: '$2,736,200', tooltip: 'tooltip content' },
+      { label: 'Dividend:', value: '$7,360,254', tooltip: 'tooltip content' },
+      { label: 'Revenue after cost:', value: '$2,736,200', tooltip: 'tooltip content' },
+      { label: 'Property value:', value: '$7,360,254', tooltip: 'tooltip content' },
     ],
   },
 };

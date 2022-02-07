@@ -1,0 +1,30 @@
+.container {
+  padding: 140px 0;
+  background: $colorPeach;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  grid-gap: 58px 52px;
+}
+
+.colLabel {
+  margin-bottom: 30px;
+}
+
+.colValue {
+  display: flex;
+  align-items: center;
+  padding: 22px 18px 22px 26px;
+  background: white;
+}
+
+.colTooltip {
+  position: relative;
+  margin-left: auto;
+  :global .svg-icon {
+    font-size: 50px;
+  }
+}

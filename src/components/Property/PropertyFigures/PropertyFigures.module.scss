@@ -1,6 +1,6 @@
 .container {
   position: relative;
-  padding: 145px 0 70px;
+  padding: 145px 0 0;
   background: url('./assets/decor-figures.svg') no-repeat left 145px;
 }
 
@@ -61,6 +61,13 @@
 }
 .listValue {
   margin: 2px 0 0;
+}
+
+.percents {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 60px;
 }
 
 @include r($xl) {

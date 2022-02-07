@@ -5,7 +5,7 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } f
 import { SvgIcon, CutstomChart } from '@ui';
 import styles from './CustomChart.module.scss';
 
-const CustomChart = ({ className }) => {
+const CustomChart = ({ className, includeLegend }) => {
   return (
     <div className={cns(styles.chart, className)}>
       <div className={styles.chartWrapper}>
@@ -58,17 +58,21 @@ const CustomChart = ({ className }) => {
           </div>
         </div>
 
-        <div className={styles.legend}>
-          <div className={styles.control}>
-            <div className={styles.controlGrab}>
-              <SvgIcon name="arrow-left" />
-              <SvgIcon name="control-grab" />
-              <SvgIcon name="arrow-right" />
+        {includeLegend && (
+          <div className={styles.legend}>
+            <div className={styles.control}>
+              <div className={styles.controlGrab}>
+                <SvgIcon name="arrow-left" />
+                <SvgIcon name="control-grab" />
+                <SvgIcon name="arrow-right" />
+              </div>
             </div>
+            <div className={cns('h2-title', styles.legendTitle)}>Rental income:</div>
+            <p className={styles.legendDescription}>
+              Rental income as a % of property value based on historical values
+            </p>
           </div>
-          <div className={cns('h2-title', styles.legendTitle)}>Rental income:</div>
-          <p className={styles.legendDescription}>Rental income as a % of property value based on historical values</p>
-        </div>
+        )}
       </div>
     </div>
   );

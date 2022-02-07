@@ -1,0 +1,149 @@
+.container {
+  padding: 100px 0 110px;
+  background: #f4f3fa;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 370px;
+  grid-gap: 70px;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+}
+
+.price {
+  position: relative;
+  margin-left: auto;
+  padding-left: 46px;
+  &::before {
+    display: inline-block;
+    content: ' ';
+    position: absolute;
+    top: -4px;
+    bottom: -4px;
+    left: 0;
+    width: 2px;
+    background: rgba(#c4c4c4, 0.5);
+  }
+}
+
+.priceLabel {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1;
+  color: $colorGray;
+}
+
+.priceValue {
+  margin-top: 4px;
+}
+
+.scope {
+  margin: 50px 0 60px;
+  background: #fff;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 24px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.scopeCol {
+  position: relative;
+  color: $colorGray;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  &::after {
+    display: inline-block;
+    content: ' ';
+    position: absolute;
+    right: -30px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba($colorGray, 0.1);
+  }
+  &:last-child::after {
+    display: none;
+  }
+}
+
+.scopeIcon {
+  flex: 0 0 auto;
+  font-size: 0;
+  :global .svg-icon {
+    font-size: 37px;
+  }
+}
+
+.scopeContent {
+  padding-left: 12px;
+}
+
+.scopeLabel {
+  font-family: $robotoFont;
+  font-size: 15px;
+  line-height: 24px;
+  color: $colorGray;
+}
+
+.sidebar {
+  margin-top: -10px;
+  :global button {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
+.sidebarImage {
+  margin-top: 32px;
+  font-size: 0;
+  img {
+    width: 100%;
+  }
+}
+
+.floorPlan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: white;
+  padding: 26px 26px 50px;
+}
+
+.floorPlanLabel {
+  margin-bottom: 12px;
+  font-weight: 300;
+  font-size: 21px;
+  line-height: 1.2;
+  letter-spacing: 0.015em;
+  color: #666565;
+}
+
+.floorPlanZoom {
+  width: 50px;
+  height: 50px;
+  background: $colorAccent;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  transition: background 0.25s $ease;
+  :global .svg-icon {
+    font-size: 20px;
+  }
+  &:hover {
+    background: $colorPrimary;
+  }
+}

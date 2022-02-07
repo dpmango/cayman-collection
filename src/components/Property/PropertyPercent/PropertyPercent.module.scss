@@ -1,0 +1,89 @@
+.container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-bottom: 32px;
+  border-bottom: 1px solid $colorGray;
+}
+
+.sliderFrom,
+.sliderTo {
+  position: relative;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: $colorGray;
+  &::after {
+    display: inline-block;
+    content: ' ';
+    position: absolute;
+    top: calc(100% + 8px);
+    width: 1px;
+    height: 52px;
+    background: $colorGray;
+  }
+}
+
+.sliderFrom::after {
+  left: 0;
+}
+
+.sliderTo::after {
+  right: 0;
+}
+
+.sliderTo {
+  margin-left: auto;
+}
+
+.sliderCurrent {
+  position: absolute;
+  left: 35%;
+  top: -12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sliderValue {
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: $colorGray;
+  margin-right: -0.8em;
+}
+
+.sliderGrab {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  color: $colorPrimaryDark;
+  cursor: move;
+  :global .svg-icon {
+    font-size: 20px;
+    &.svg-icon--control-grab {
+      font-size: 64px;
+      margin-left: 24px;
+      margin-right: 24px;
+    }
+  }
+}
+
+.content {
+  flex: 1 0 auto;
+  background: #fafafa;
+  padding: 100px 90px;
+}
+
+.description {
+  margin-top: 16px;
+}
