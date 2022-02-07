@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { Router, Switch, Route, Redirect } from 'react-router-dom';
+import React from 'react';
+import { Route, Router, Switch } from 'react-router-dom';
 
 import history from '@config/history';
 import Layout from '@c/Layout/';
@@ -12,6 +12,7 @@ import Properties from './Properties';
 import Property from './Property';
 import Proposal from './Proposal';
 import Blog from './Blog';
+import HubSpot from '../HubSpot';
 // import BlogDetails from './BlogDetails';
 
 const Routes = () => {
@@ -51,6 +52,7 @@ const Routes = () => {
 
 const CustomRouter = () => (
   <Router history={history}>
+    <HubSpot />
     <Routes />
   </Router>
 );
