@@ -11,6 +11,8 @@ import Process from './Process';
 import Properties from './Properties';
 import Property from './Property';
 import Proposal from './Proposal';
+import Blog from './Blog';
+// import BlogDetails from './BlogDetails';
 
 const Routes = () => {
   return (
@@ -34,6 +36,12 @@ const Routes = () => {
         <Route exact path="/proposal">
           <Proposal />
         </Route>
+        <Route exact path="/blog">
+          <Blog />
+        </Route>
+        {/* <Route exact path="/blog/:id">
+          <BlogDetails />
+        </Route> */}
 
         <Route component={NoMatch} />
       </Switch>

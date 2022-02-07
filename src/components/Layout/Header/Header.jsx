@@ -117,13 +117,13 @@ const Header = observer(({ className }) => {
               <a href="#">About</a>
               <ul onClick={(e) => e.stopPropagation()}>
                 <li>
-                  <a href="#">Your team</a>
+                  <a href="/team">Your team</a>
                 </li>
                 <li>
-                  <a href="#">Why Cayman</a>
+                  <a href="/about">Why Cayman</a>
                 </li>
                 <li>
-                  <a href="#">Blog</a>
+                  <a href="/blog">Blog</a>
                 </li>
               </ul>
             </li>
@@ -133,13 +133,13 @@ const Header = observer(({ className }) => {
               <a href="#">Help</a>
               <ul onClick={(e) => e.stopPropagation()}>
                 <li>
-                  <a href="#">Your team</a>
+                  <a href="/team">Your team</a>
                 </li>
                 <li>
-                  <a href="#">Why Cayman</a>
+                  <a href="/about">Why Cayman</a>
                 </li>
                 <li>
-                  <a href="#">Blog</a>
+                  <a href="/blog">Blog</a>
                 </li>
               </ul>
             </li>

@@ -1,0 +1,81 @@
+.container {
+  margin: 42px 0 100px;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  a {
+    position: relative;
+    font-size: 24px;
+    line-height: 1.17;
+    letter-spacing: 1.5px;
+    color: $colorPrimary;
+    cursor: pointer;
+    padding: 10px 0;
+    margin-right: 50px;
+    transition: color 0.25s $ease;
+    &::after {
+      display: inline-block;
+      content: ' ';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 100%;
+      height: 3px;
+      background: $fontColor;
+      transition: right 0.25s $ease;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      color: $fontColor;
+    }
+    &._active {
+      color: $fontColor;
+      &::after {
+        right: 0;
+      }
+    }
+  }
+}
+
+.grid {
+  margin-top: 72px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 35px 50px;
+}
+
+.blogCard {
+  margin-bottom: 35px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.more {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  button {
+    width: 93px;
+    height: 93px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #101010;
+    border-radius: 50%;
+    font-size: 0;
+    transition: background 0.25s $ease, color 0.25s $ease;
+    :global .svg-icon {
+      font-size: 22px;
+    }
+    &:hover {
+      background: #101010;
+      color: white;
+    }
+  }
+}

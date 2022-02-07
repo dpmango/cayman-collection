@@ -1,0 +1,34 @@
+.card {
+  display: block;
+  background: #fafafa;
+  transition: box-shadow 0.25s $ease;
+  &:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    .image {
+      filter: grayscale(1);
+    }
+  }
+}
+
+.image {
+  font-size: 0;
+  transition: filter 0.25s $ease;
+  img {
+    width: 100%;
+  }
+}
+
+.content {
+  padding: 40px;
+}
+
+.meta {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1;
+  color: $colorGray;
+}
+
+.title {
+  margin-top: 12px;
+}
