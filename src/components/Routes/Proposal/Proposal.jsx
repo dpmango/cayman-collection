@@ -2,6 +2,7 @@ import React, { useContext, Profiler, useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 import { Helmet } from 'react-helmet';
 
+import Layout from '@c/Layout/';
 import { Proposal } from '@c/Proposal';
 import { content } from './Content.js';
 
@@ -12,7 +13,9 @@ const ProposalPage = observer(() => {
         <title>Proposal</title>
       </Helmet>
 
-      <Proposal {...content} />
+      <Layout>
+        <Proposal {...content} />
+      </Layout>
     </>
   );
 });

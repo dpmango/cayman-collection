@@ -1,0 +1,59 @@
+.container {
+  position: relative;
+  max-width: 440px;
+}
+
+.head {
+  text-align: center;
+}
+
+.description {
+  margin-top: 16px;
+  font-family: $robotoFont;
+  font-size: 20px;
+  line-height: 1.2;
+  color: $colorGray;
+}
+
+.form {
+  margin-top: 32px;
+  :global .input {
+    margin-bottom: 20px;
+  }
+}
+
+.helpers {
+  margin-top: 36px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  a {
+    display: inline-block;
+    margin-left: auto;
+    font-size: 20px;
+    color: $colorAccent;
+    transition: color 0.25s $ease;
+    &:hover {
+      color: $colorPrimary;
+    }
+  }
+}
+
+.cta {
+  margin-top: 42px;
+}
+
+.helper {
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 1.2;
+  color: $colorGray;
+  text-align: center;
+  a {
+    color: $colorAccent;
+    transition: color 0.25s $ease;
+    &:hover {
+      color: $colorPrimary;
+    }
+  }
+}

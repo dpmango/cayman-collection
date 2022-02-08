@@ -1,6 +1,7 @@
 import React, { memo, useEffect, useState } from 'react';
+import cns from 'classnames';
 
-const SvgIcon = ({ name }) => {
+const SvgIcon = ({ className, name }) => {
   const [viewBox, setViewBox] = useState('0 0 0 0');
   const [width, setWidth] = useState('1em');
   const [icon, setIcon] = useState(undefined);
@@ -38,7 +39,7 @@ const SvgIcon = ({ name }) => {
     <svg
       style={{ width: width }}
       viewBox={viewBox}
-      className={`svg-icon svg-icon--${name}`}
+      className={cns(`svg-icon svg-icon--${name}`, className)}
       preserveAspectRatio="none"
       dangerouslySetInnerHTML={{ __html: icon }}
     />

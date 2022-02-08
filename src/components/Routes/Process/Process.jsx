@@ -2,6 +2,7 @@ import React, { useContext, Profiler, useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 import { Helmet } from 'react-helmet';
 
+import Layout from '@c/Layout/';
 import { HeroBanner, CtaBanner, ScheduleCallBanner } from '@c/Banners';
 import { PaginationBar } from '@c/Pagination';
 import { ProcessTimeline } from '@c/Process';
@@ -15,15 +16,17 @@ const PlanPage = observer(() => {
         <title>The Process</title>
       </Helmet>
 
-      <HeroBanner theme="lilac" {...content.banner} />
-      <ProcessTimeline {...content.timelineAcquisition} />
-      <ProcessTimeline {...content.timelineReadiness} />
+      <Layout>
+        <HeroBanner theme="lilac" {...content.banner} />
+        <ProcessTimeline {...content.timelineAcquisition} />
+        <ProcessTimeline {...content.timelineReadiness} />
 
-      <ScheduleCallBanner />
-      <PaginationBar {...content.paginationBar} />
-      <CtaBanner className="mt-4" {...content.ctaBanner} />
+        <ScheduleCallBanner />
+        <PaginationBar {...content.paginationBar} />
+        <CtaBanner className="mt-4" {...content.ctaBanner} />
 
-      <ModalPerson />
+        <ModalPerson />
+      </Layout>
     </>
   );
 });

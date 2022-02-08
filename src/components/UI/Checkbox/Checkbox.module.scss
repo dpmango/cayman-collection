@@ -1,6 +1,12 @@
 .checkbox {
   position: relative;
   display: inline-block;
+  cursor: pointer;
+  &:hover {
+    .checbox_label {
+      color: $fontColor;
+    }
+  }
   &._withError {
     border-color: $colorRed;
     color: $colorRed;
@@ -11,8 +17,9 @@
   &_wrapper {
     position: relative;
     display: inline-flex;
-    align-items: flex-start;
+    align-items: center;
     z-index: 1;
+    cursor: pointer;
   }
   &_input {
     position: absolute;
@@ -26,17 +33,17 @@
   }
   &_box {
     position: relative;
-    width: 14px;
-    height: 14px;
-    border-radius: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
     font-size: 8px;
-    border: 2px solid $fontColor;
+    border: 2px solid #e6e4f5;
     cursor: pointer;
     color: white;
     transition: background 0.25s $ease, border 0.25s $ease;
     &._isChecked {
-      background: $colorLink;
-      border-color: $colorLink;
+      background: $colorAccent;
+      border-color: $colorAccent;
       .checkbox_icon {
         opacity: 1;
       }
@@ -52,9 +59,11 @@
   }
 
   &_label {
-    font-size: 12px;
-    line-height: 18px;
+    font-family: $robotoFont;
+    font-size: 20px;
+    line-height: 120%;
     padding-left: 10px;
+    color: $colorGray;
     a {
       text-decoration: underline;
       &:hover {

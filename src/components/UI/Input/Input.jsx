@@ -75,7 +75,13 @@ const Input = ({
   return (
     <div
       style={props.style}
-      className={cns(styles.input, variant && VariantClasses[variant], modifier && styles[`_${modifier}`], className)}>
+      className={cns(
+        styles.input,
+        variant && VariantClasses[variant],
+        modifier && styles[`_${modifier}`],
+        className,
+        'input'
+      )}>
       {label && (
         <label className={styles.label} htmlFor={id}>
           {label}

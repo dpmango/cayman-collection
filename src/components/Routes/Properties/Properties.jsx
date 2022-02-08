@@ -2,6 +2,7 @@ import React, { useContext, Profiler, useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 import { Helmet } from 'react-helmet';
 
+import Layout from '@c/Layout/';
 import { PropertyHeroBanner, QuoteBanner } from '@c/Banners';
 import { PropertyList } from '@c/Property';
 import { HomeFaq } from '@c/Home';
@@ -15,12 +16,14 @@ const PropertyPage = observer(() => {
         <title>The Property</title>
       </Helmet>
 
-      <PropertyHeroBanner {...content.hero} />
-      <PropertyList {...content.properties} />
-      <QuoteBanner {...content.banner} />
-      <HomeFaq theme="peach" {...content.faq} />
+      <Layout>
+        <PropertyHeroBanner {...content.hero} />
+        <PropertyList {...content.properties} />
+        <QuoteBanner {...content.banner} />
+        <HomeFaq theme="peach" {...content.faq} />
 
-      <ModalPerson />
+        <ModalPerson />
+      </Layout>
     </>
   );
 });

@@ -162,9 +162,11 @@ const Header = observer(({ className }) => {
             </li>
           </ul>
           <div className={styles.menuCta}>
-            <Button theme="accent" block>
-              Login
-            </Button>
+            <Link to="/login">
+              <Button theme="accent" block>
+                Login
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

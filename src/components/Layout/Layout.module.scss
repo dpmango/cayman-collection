@@ -4,6 +4,11 @@
   min-height: 100%;
   min-height: 100vh;
   // overflow: hidden;
+  &._auth {
+    .main {
+      padding-top: 0;
+    }
+  }
 }
 
 .header {

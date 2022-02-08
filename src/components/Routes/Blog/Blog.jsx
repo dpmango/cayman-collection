@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 
 import { BlogList } from '@c/Blog';
 import { content } from './Content.js';
+import Layout from '@c/Layout/';
 
 const BlogPage = observer(() => {
   return (
@@ -12,7 +13,9 @@ const BlogPage = observer(() => {
         <title>Blog</title>
       </Helmet>
 
-      <BlogList list={content.list} categories={content.categories} />
+      <Layout>
+        <BlogList list={content.list} categories={content.categories} />
+      </Layout>
     </>
   );
 });
