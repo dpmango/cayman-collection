@@ -14,6 +14,7 @@ import Proposal from './Proposal';
 import Blog from './Blog';
 import HubSpot from '../HubSpot';
 import BlogDetail from './BlogDetail';
+import About from './About';
 
 const Routes = () => {
   return (
@@ -41,6 +42,9 @@ const Routes = () => {
       </Route>
       <Route exact path="/blog/:id">
         <BlogDetail />
+      </Route>
+      <Route exact path="/about">
+        <About />
       </Route>
 
       <Route exact path="/login">

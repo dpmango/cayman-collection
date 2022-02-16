@@ -6,7 +6,7 @@ import { useToasts } from 'react-toast-notifications';
 
 import { SvgIcon } from '@ui';
 
-import styles from './CtaBanner.module.scss';
+import st from './CtaBanner.module.scss';
 
 const Themes = {
   MAIN: 'main',
@@ -57,13 +57,13 @@ const CtaBanner = ({ className, theme, title }) => {
   }, []);
 
   return (
-    <div className={cns(styles.banner, theme && ThemeClasses[theme], className)}>
+    <div className={cns(st.banner, theme && ThemeClasses[theme], className)}>
       <div className="container">
         <div className="container-inner">
-          <div className={styles.content}>
-            <div className={cns('h5-title', styles.title)}>{title}</div>
+          <div className={st.content}>
+            <div className={cns('h5-title', st.title)}>{title}</div>
 
-            <div className={styles.form}>
+            <div className={st.form}>
               <Formik
                 initialValues={formInitial}
                 validateOnChange={false}
@@ -74,7 +74,7 @@ const CtaBanner = ({ className, theme, title }) => {
                     <Field type="email" name="email">
                       {({ field, form: { setFieldValue }, meta }) => (
                         <input
-                          className={cns(styles.formInput, meta.touched && meta.error && styles.error)}
+                          className={cns(st.formInput, meta.touched && meta.error && st.error)}
                           placeholder="Email address"
                           value={field.value}
                           onChange={(e) => {
@@ -85,7 +85,7 @@ const CtaBanner = ({ className, theme, title }) => {
                       )}
                     </Field>
 
-                    <button type="submit" className={styles.formButton} disabled={isSubmitting}>
+                    <button type="submit" className={st.formButton} disabled={isSubmitting}>
                       <SvgIcon name="arrow-right" />
                     </button>
                   </Form>

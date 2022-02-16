@@ -4,7 +4,7 @@ import cns from 'classnames';
 
 import { Modal, SvgIcon, Button } from '@ui';
 import { UiStoreContext } from '@store';
-import styles from './Person.module.scss';
+import st from './Person.module.scss';
 import { content } from './Content.js';
 
 const Person = observer(({ className }) => {
@@ -16,23 +16,23 @@ const Person = observer(({ className }) => {
   }, [modalParams]);
 
   return (
-    <Modal name="person" className={cns(styles.modal, className)}>
-      <div className={cns(styles.container, className)}>
+    <Modal name="person" className={cns(st.modal, className)}>
+      <div className={cns(st.container, className)}>
         {personData && (
-          <div className={styles.grid}>
-            <div className={styles.content}>
-              <div className={styles.contentWrapper}>
-                <div className={cns('h0-title', styles.name)}>{personData.name}</div>
-                <div className={cns('h4-title', styles.position)}>{personData.position}</div>
+          <div className={st.grid}>
+            <div className={st.content}>
+              <div className={st.contentWrapper}>
+                <div className={cns('h0-title', st.name)}>{personData.name}</div>
+                <div className={cns('h4-title', st.position)}>{personData.position}</div>
 
                 <div
-                  className={cns('p-regular', styles.description)}
+                  className={cns('p-regular', st.description)}
                   dangerouslySetInnerHTML={{ __html: personData.description }}
                 />
 
-                <div className={styles.socials}>
-                  <div className={styles.socialsLabel}>Follow us: </div>
-                  <ul className={styles.socialsList}>
+                <div className={st.socials}>
+                  <div className={st.socialsLabel}>Follow us: </div>
+                  <ul className={st.socialsList}>
                     <li>
                       <a href="#" target="_blank">
                         <SvgIcon name="social-linkedin" />
@@ -41,7 +41,7 @@ const Person = observer(({ className }) => {
                   </ul>
                 </div>
 
-                <div className={styles.cta}>
+                <div className={st.cta}>
                   <Button theme="accent" type="submit" iconRight="arrow-right" disabled>
                     Connect Direct
                   </Button>
@@ -52,7 +52,7 @@ const Person = observer(({ className }) => {
               </div>
             </div>
 
-            <div className={styles.image}>
+            <div className={st.image}>
               <img src={personData.image} alt={personData.name} />
             </div>
           </div>

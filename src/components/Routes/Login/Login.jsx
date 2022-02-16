@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 import Layout from '@c/Layout';
 import { AuthLogin } from '@c/Auth';
 import { ReactComponent as Logo } from '@assets/logo.svg';
-import styles from './Login.module.scss';
+import st from './Login.module.scss';
 
 // import { content } from './Content.js';
 
@@ -17,15 +17,15 @@ const LoginPage = observer(() => {
       </Helmet>
 
       <Layout variant="auth">
-        <div className={styles.page}>
-          <div className={styles.content}>
-            <div className={styles.logo}>
+        <div className={st.page}>
+          <div className={st.content}>
+            <div className={st.logo}>
               <Logo />
             </div>
-            <AuthLogin className={styles.form} />
+            <AuthLogin className={st.form} />
           </div>
 
-          <div className={styles.background}>
+          <div className={st.background}>
             <img src="/img/loginBackground.jpg" alt="background image" />
           </div>
         </div>

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import cns from 'classnames';
 
 import { SvgIcon, Button, Input, Checkbox } from '@ui';
-import styles from './Login.module.scss';
+import st from './Login.module.scss';
 
 const formInitial = {
   email: '',
@@ -50,15 +50,15 @@ const Login = ({ className }) => {
   }, []);
 
   return (
-    <div className={cns(styles.container, className)}>
-      <div className={styles.head}>
+    <div className={cns(st.container, className)}>
+      <div className={st.head}>
         <div className="h2-title">Welcome to Financial Security</div>
-        <div className={styles.description}>Welcome! Please enter your details.</div>
+        <div className={st.description}>Welcome! Please enter your details.</div>
       </div>
 
       <Formik initialValues={formInitial} validateOnChange={false} validate={handleValidation} onSubmit={handleSubmit}>
         {({ isSubmitting, setFieldError }) => (
-          <Form className={styles.form}>
+          <Form className={st.form}>
             <Field type="email" name="email">
               {({ field, form: { setFieldValue }, meta }) => (
                 <Input
@@ -86,18 +86,18 @@ const Login = ({ className }) => {
                 />
               )}
             </Field>
-            <div className={styles.helpers}>
+            <div className={st.helpers}>
               <Checkbox isChecked={remember} onChange={() => setRemember(!remember)}>
                 Remember for 30 days
               </Checkbox>
               <Link to="/recover">Forgot password</Link>
             </div>
-            <div className={styles.cta}>
+            <div className={st.cta}>
               <Button type="submit" theme="accent" iconRight="arrow-right" block>
                 Sign In
               </Button>
             </div>
-            <div className={styles.helper}>
+            <div className={st.helper}>
               Don’t have an account? <Link to="/signup">Sign up</Link>{' '}
             </div>
           </Form>

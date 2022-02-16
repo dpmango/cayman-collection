@@ -4,7 +4,7 @@ import cns from 'classnames';
 import uniqueId from 'lodash/uniqueId';
 
 import { SvgIcon } from '@ui';
-import styles from './Checkbox.module.scss';
+import st from './Checkbox.module.scss';
 
 const Checkbox = ({ className, isChecked, error, onChange, children, ...props }) => {
   const id = useMemo(() => {
@@ -21,15 +21,15 @@ const Checkbox = ({ className, isChecked, error, onChange, children, ...props })
   );
 
   return (
-    <div className={cns(styles.checkbox, className, error && styles._withError)}>
-      <input id={id} type="checkbox" className={cns(styles.checkbox_input)} value={isChecked} {...props} />
+    <div className={cns(st.checkbox, className, error && st._withError)}>
+      <input id={id} type="checkbox" className={cns(st.checkbox_input)} value={isChecked} {...props} />
 
-      <label htmlFor={id} className={styles.checkbox_wrapper} onClick={handleChange}>
-        <div className={cns(styles.checkbox_box, isChecked && styles._isChecked)}>
-          <SvgIcon name="checkmark" className={styles.checkbox_icon} />
+      <label htmlFor={id} className={st.checkbox_wrapper} onClick={handleChange}>
+        <div className={cns(st.checkbox_box, isChecked && st._isChecked)}>
+          <SvgIcon name="checkmark" className={st.checkbox_icon} />
         </div>
 
-        <div className={styles.checkbox_label}>{children}</div>
+        <div className={st.checkbox_label}>{children}</div>
       </label>
     </div>
   );

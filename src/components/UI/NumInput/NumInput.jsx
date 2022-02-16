@@ -5,7 +5,7 @@ import uniqueId from 'lodash/uniqueId';
 import debounce from 'lodash/debounce';
 import { useFirstRender } from '@hooks';
 
-import styles from './NumInput.module.scss';
+import st from './NumInput.module.scss';
 
 const Variants = {
   DEFAULT: 'default',
@@ -14,7 +14,7 @@ const Variants = {
 
 const VariantClasses = {
   [Variants.DEFAULT]: null,
-  [Variants.SMALL]: styles._small,
+  [Variants.SMALL]: st._small,
 };
 
 const NumInput = ({ className, label, inputRef, variant, value, onChange, onEnterKey, error, showError, ...props }) => {
@@ -107,7 +107,7 @@ const NumInput = ({ className, label, inputRef, variant, value, onChange, onEnte
   const inputProps = {
     id,
     ref: innerRef,
-    className: cns(styles.input_input, error && styles._withError),
+    className: cns(styles.input_input, error && st._withError),
     value: innerValue,
     autoComplete: `${false}`,
     onChange: onInputChange,
@@ -117,23 +117,23 @@ const NumInput = ({ className, label, inputRef, variant, value, onChange, onEnte
   };
 
   return (
-    <div style={props.style} className={cns(styles.input, variant && VariantClasses[variant], className, 'numinput')}>
+    <div style={props.style} className={cns(st.input, variant && VariantClasses[variant], className, 'numinput')}>
       {label && (
-        <label className={styles.label} htmlFor={id}>
+        <label className={st.label} htmlFor={id}>
           {label}
         </label>
       )}
 
-      <div className={styles.input_wrapper}>
+      <div className={st.input_wrapper}>
         <input type="number" pattern="[0-9]+([\.,][0-9]+)?" step="1" min="1" max="99" {...inputProps} />
 
-        {/* <div className={cns(styles.arrow, styles._up)} onClick={handleUpClick}>
+        {/* <div className={cns(st.arrow, st._up)} onClick={handleUpClick}>
           <SvgIcon name="up"></SvgIcon>
         </div>
-        <div className={cns(styles.arrow, styles._down)} onClick={handleDownClick}>
+        <div className={cns(st.arrow, st._down)} onClick={handleDownClick}>
           <SvgIcon name="down"></SvgIcon>
         </div> */}
-        {error && showError && <div className={styles.error}>{error}</div>}
+        {error && showError && <div className={st.error}>{error}</div>}
       </div>
     </div>
   );

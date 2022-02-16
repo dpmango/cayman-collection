@@ -29,25 +29,15 @@
 
 .wysiwyg {
   margin-top: 52px;
-  p {
-    font-family: $robotoFont;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 1.4;
-    color: $colorGray;
-    & + p {
-      margin-top: 1.4em;
-    }
-  }
-  img {
-    margin: 44px 0;
-    max-width: 100%;
-  }
-  > *:last-child {
-    margin-bottom: 0;
+}
+
+@include r($lg) {
+  .grid {
+    grid-template-columns: 1fr;
   }
 }
+
+// share
 
 .share {
   margin-top: 42px;
@@ -105,6 +95,8 @@
   }
 }
 
+// nav
+
 .nav {
   margin-top: 92px;
   display: flex;
@@ -152,6 +144,7 @@
   }
 }
 
+// sidebar
 .sidebar {
   top: 0;
 }
@@ -177,6 +170,8 @@
   line-height: 1.5;
   color: $colorGray;
 }
+
+// categories
 
 .categories {
   margin-top: 178px;

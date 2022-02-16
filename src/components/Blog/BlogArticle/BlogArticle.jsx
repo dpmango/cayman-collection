@@ -4,10 +4,10 @@ import { Link, useLocation } from 'react-router-dom';
 import cns from 'classnames';
 import { FacebookShareButton, InstapaperShareButton, LinkedinShareButton, TwitterShareButton } from 'react-share';
 
-import { SvgIcon } from '@ui';
+import { SvgIcon, Wysiwyg } from '@ui';
 import { get2xImage } from '@helpers';
 
-import styles from './BlogArticle.module.scss';
+import st from './BlogArticle.module.scss';
 
 const BlogArticle = ({ className, cover, title, content, date, nav, category, categories, recents }) => {
   const location = useLocation();
@@ -18,26 +18,27 @@ const BlogArticle = ({ className, cover, title, content, date, nav, category, ca
   }, []);
 
   return (
-    <div className={cns(styles.container, className)}>
+    <div className={cns(st.container, className)}>
       <div className="container">
         <div className="container-inner">
           {cover && (
-            <div className={styles.cover}>
+            <div className={st.cover}>
               <img src={cover} srcSet={get2xImage(cover)} alt={title} />
             </div>
           )}
 
-          <div className={styles.grid}>
-            <div className={styles.content}>
-              <h1 className={cns('h2-title', styles.title)}>{title}</h1>
-              <div className={styles.meta}>
+          <div className={st.grid}>
+            <div className={st.content}>
+              <h1 className={cns('h2-title', st.title)}>{title}</h1>
+              <div className={st.meta}>
                 {date} / {category}
               </div>
-              <div className={styles.wysiwyg} dangerouslySetInnerHTML={{ __html: content }} />
 
-              <div className={styles.share}>
-                <div className={styles.shareLabel}>Share:</div>
-                <ul className={styles.shareList}>
+              <Wysiwyg className={st.wysiwyg} content={content} />
+
+              <div className={st.share}>
+                <div className={st.shareLabel}>Share:</div>
+                <ul className={st.shareList}>
                   <li>
                     <FacebookShareButton url={shareUrl} quote={'quote'}>
                       <SvgIcon name="social-facebook" />
@@ -56,37 +57,37 @@ const BlogArticle = ({ className, cover, title, content, date, nav, category, ca
                 </ul>
               </div>
 
-              <div className={styles.nav}>
-                <div className={styles.navPrev}>
-                  <span className={styles.navLabel}>previous</span>
-                  <Link className={cns('h5-title', styles.navLink)} to={`/blog/${nav[0].id}`}>
+              <div className={st.nav}>
+                <div className={st.navPrev}>
+                  <span className={st.navLabel}>previous</span>
+                  <Link className={cns('h5-title', st.navLink)} to={`/blog/${nav[0].id}`}>
                     {nav[0].title}
                   </Link>
                 </div>
-                <div className={styles.navNext}>
-                  <span className={styles.navLabel}>next</span>
-                  <Link className={cns('h5-title', styles.navLink)} to={`/blog/${nav[1].id}`}>
+                <div className={st.navNext}>
+                  <span className={st.navLabel}>next</span>
+                  <Link className={cns('h5-title', st.navLink)} to={`/blog/${nav[1].id}`}>
                     {nav[1].title}
                   </Link>
                 </div>
               </div>
             </div>
 
-            <div className={styles.sidebar}>
-              <div className={styles.about}>
+            <div className={st.sidebar}>
+              <div className={st.about}>
                 <div className="h2-title">About me</div>
-                <div className={styles.aboutImage}>
+                <div className={st.aboutImage}>
                   <img src="/img/blog/blogAbout.jpg" srcSet="/img/blog/blogAbout@2x.jpg 2x" alt="" />
                 </div>
-                <div className={styles.aboutDescription}>
+                <div className={st.aboutDescription}>
                   They're gathered man divide you you're first appear living i they're deep without us fourth dominion,
                   cattle fly.
                 </div>
               </div>
 
-              <div className={styles.categories}>
-                <div className={cns('h5-title', styles.categoriesLabel)}>Categories</div>
-                <ul className={styles.categoriesList}>
+              <div className={st.categories}>
+                <div className={cns('h5-title', st.categoriesLabel)}>Categories</div>
+                <ul className={st.categoriesList}>
                   {categories &&
                     categories.map((cat, idx) => (
                       <li key={idx}>
@@ -98,21 +99,21 @@ const BlogArticle = ({ className, cover, title, content, date, nav, category, ca
                 </ul>
               </div>
 
-              <div className={styles.recents}>
-                <div className={cns('h5-title', styles.categoriesLabel)}>Recent Posts</div>
+              <div className={st.recents}>
+                <div className={cns('h5-title', st.categoriesLabel)}>Recent Posts</div>
 
-                <div className={styles.recentsList}>
+                <div className={st.recentsList}>
                   {recents &&
                     recents.map((x) => (
-                      <Link to={`/blog/${x.id}`} className={styles.recentCard} key={x.id}>
-                        <div className={styles.recentCardImage}>
+                      <Link to={`/blog/${x.id}`} className={st.recentCard} key={x.id}>
+                        <div className={st.recentCardImage}>
                           <img src={x.image} srcSet={get2xImage(x.image)} alt={x.title} />
                         </div>
-                        <div className={styles.recentCardContent}>
-                          <div className={styles.recentCardMeta}>
+                        <div className={st.recentCardContent}>
+                          <div className={st.recentCardMeta}>
                             {x.date} / {x.category}
                           </div>
-                          <div className={styles.recentCardTitle}>{x.title}</div>
+                          <div className={st.recentCardTitle}>{x.title}</div>
                         </div>
                       </Link>
                     ))}
@@ -121,12 +122,12 @@ const BlogArticle = ({ className, cover, title, content, date, nav, category, ca
             </div>
           </div>
 
-          {/* <div className={cns(styles.categories)}>
+          {/* <div className={cns(st.categories)}>
             {categories &&
               categories.map((x) => (
                 <a
                   href="#"
-                  className={cns(x.id === category && styles._active)}
+                  className={cns(x.id === category && st._active)}
                   key={x.id}
                   onClick={() => setCategory(x.id)}>
                   {x.label}

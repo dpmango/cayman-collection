@@ -5,7 +5,7 @@ import cns from 'classnames';
 import { SvgIcon, Button } from '@ui';
 import { numberWithCommas } from '@helpers';
 import { ProposalCard } from '@c/Proposal';
-import styles from './Proposal.module.scss';
+import st from './Proposal.module.scss';
 
 const Proposal = ({ className, title, description, list }) => {
   const [cartItems, setCartItems] = useState(list);
@@ -39,18 +39,18 @@ const Proposal = ({ className, title, description, list }) => {
   }, [cartItems]);
 
   return (
-    <section className={cns(styles.container, className)}>
+    <section className={cns(st.container, className)}>
       <div className="container">
         <div className="container-inner">
-          <h1 className={cns('h0-title', styles.title)}>{title}</h1>
-          <div className={cns('p-caption', styles.description)}>{description}</div>
+          <h1 className={cns('h0-title', st.title)}>{title}</h1>
+          <div className={cns('p-caption', st.description)}>{description}</div>
 
-          <div className={styles.table}>
-            <div className={styles.tableHead}>
+          <div className={st.table}>
+            <div className={st.tableHead}>
               <span>Products</span>
               <span>Total</span>
             </div>
-            <div className={styles.tableBody}>
+            <div className={st.tableBody}>
               {cartItems &&
                 cartItems.map((x) => (
                   <ProposalCard
@@ -61,18 +61,18 @@ const Proposal = ({ className, title, description, list }) => {
                   />
                 ))}
             </div>
-            <div className={styles.tableTotal}>
-              <div className={styles.tableTotalLabel}>Total</div>
-              <div className={styles.tableTotalPrice}>${numberWithCommas(totalPrice)}</div>
+            <div className={st.tableTotal}>
+              <div className={st.tableTotalLabel}>Total</div>
+              <div className={st.tableTotalPrice}>${numberWithCommas(totalPrice)}</div>
             </div>
           </div>
 
-          <div className={styles.actions}>
-            <Link to="/" className={styles.back}>
+          <div className={st.actions}>
+            <Link to="/" className={st.back}>
               <SvgIcon name="arrow-left-fat" />
               <span>Ammend Selection</span>
             </Link>
-            <div className={styles.cta}>
+            <div className={st.cta}>
               <Button theme="gray" variant="small" block>
                 Proceed to Contract
               </Button>

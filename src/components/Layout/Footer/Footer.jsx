@@ -7,7 +7,7 @@ import { useToasts } from 'react-toast-notifications';
 
 import { SvgIcon } from '@ui';
 
-import styles from './Footer.module.scss';
+import st from './Footer.module.scss';
 
 const formInitial = {
   email: '',
@@ -62,13 +62,13 @@ const Footer = observer(({ className }) => {
   }, []);
 
   return (
-    <footer className={cns(styles.footer, className)}>
+    <footer className={cns(st.footer, className)}>
       <div className="container">
         <div className="container-inner">
-          <div className={styles.main}>
+          <div className={st.main}>
             <div className="row">
               <div className="col col-5 col-lg-12">
-                <div className={styles.subscribe}>
+                <div className={st.subscribe}>
                   <div className="h5-title c-gray">Subscribe to our newsletter</div>
 
                   <Formik
@@ -81,7 +81,7 @@ const Footer = observer(({ className }) => {
                         <Field type="email" name="email">
                           {({ field, form: { setFieldValue }, meta }) => (
                             <input
-                              className={cns(styles.subscribeInput, meta.touched && meta.error && styles.error)}
+                              className={cns(st.subscribeInput, meta.touched && meta.error && st.error)}
                               placeholder="Email address"
                               value={field.value}
                               onChange={(e) => {
@@ -92,7 +92,7 @@ const Footer = observer(({ className }) => {
                           )}
                         </Field>
 
-                        <button type="submit" className={styles.subscribeButton} disabled={isSubmitting}>
+                        <button type="submit" className={st.subscribeButton} disabled={isSubmitting}>
                           <SvgIcon name="arrow-right" />
                         </button>
                       </Form>
@@ -105,12 +105,12 @@ const Footer = observer(({ className }) => {
                 <div className="row">
                   <div className="col col-4 col-md-12">
                     <div
-                      className={cns(styles.menuTitle, menuActive === 1 && styles._active, 'h6-title')}
+                      className={cns(st.menuTitle, menuActive === 1 && st._active, 'h6-title')}
                       onClick={() => handleMenuTitleClick(1)}>
                       Navigation
                       <SvgIcon name="arrow-down" />
                     </div>
-                    <ul className={cns(styles.menuList, menuActive === 1 && styles._active)}>
+                    <ul className={cns(st.menuList, menuActive === 1 && st._active)}>
                       <li>
                         <a href="#">Home</a>
                       </li>
@@ -127,12 +127,12 @@ const Footer = observer(({ className }) => {
                   </div>
                   <div className="col col-4 col-md-12">
                     <div
-                      className={cns(styles.menuTitle, menuActive === 2 && styles._active, 'h6-title')}
+                      className={cns(st.menuTitle, menuActive === 2 && st._active, 'h6-title')}
                       onClick={() => handleMenuTitleClick(2)}>
                       About
                       <SvgIcon name="arrow-down" />
                     </div>
-                    <ul className={cns(styles.menuList, menuActive === 2 && styles._active)}>
+                    <ul className={cns(st.menuList, menuActive === 2 && st._active)}>
                       <li>
                         <a href="#">Your Team</a>
                       </li>
@@ -146,12 +146,12 @@ const Footer = observer(({ className }) => {
                   </div>
                   <div className="col col-4 col-md-12">
                     <div
-                      className={cns(styles.menuTitle, menuActive === 3 && styles._active, 'h6-title')}
+                      className={cns(st.menuTitle, menuActive === 3 && st._active, 'h6-title')}
                       onClick={() => handleMenuTitleClick(3)}>
                       Help
                       <SvgIcon name="arrow-down" />
                     </div>
-                    <ul className={cns(styles.menuList, menuActive === 3 && styles._active)}>
+                    <ul className={cns(st.menuList, menuActive === 3 && st._active)}>
                       <li>
                         <a href="#">FAQs</a>
                       </li>
@@ -165,8 +165,8 @@ const Footer = observer(({ className }) => {
             </div>
           </div>
 
-          <div className={styles.bottom}>
-            <ul className={styles.bottomMenu}>
+          <div className={st.bottom}>
+            <ul className={st.bottomMenu}>
               <li>
                 <a href="#">Terms & Conditions</a>
               </li>
@@ -175,7 +175,7 @@ const Footer = observer(({ className }) => {
               </li>
             </ul>
 
-            <ul className={styles.bottomSocials}>
+            <ul className={st.bottomSocials}>
               <li>
                 <a href="#" target="_blank">
                   <SvgIcon name="social-linkedin" />

@@ -5,7 +5,7 @@ import cns from 'classnames';
 import { SvgIcon } from '@ui';
 
 import { BlogCard } from '@c/Blog';
-import styles from './BlogList.module.scss';
+import st from './BlogList.module.scss';
 
 const BlogList = ({ className, list, categories }) => {
   const [category, setCategory] = useState(0);
@@ -23,30 +23,30 @@ const BlogList = ({ className, list, categories }) => {
   }, []);
 
   return (
-    <div className={cns(styles.container, className)}>
+    <div className={cns(st.container, className)}>
       <div className="container">
         <div className="container-inner">
-          <div className={cns(styles.categories)}>
+          <div className={cns(st.categories)}>
             {categories &&
               categories.map((x) => (
                 <a
                   href="#"
-                  className={cns(x.id === category && styles._active)}
+                  className={cns(x.id === category && st._active)}
                   key={x.id}
                   onClick={() => setCategory(x.id)}>
                   {x.label}
                 </a>
               ))}
           </div>
-          <div className={styles.grid}>
+          <div className={st.grid}>
             {blogCols &&
               blogCols.map((col, idx) => (
-                <div className={styles.col} key={idx}>
-                  {col && col.map((blog) => <BlogCard className={styles.blogCard} key={blog.id} {...blog} />)}
+                <div className={st.col} key={idx}>
+                  {col && col.map((blog) => <BlogCard className={st.blogCard} key={blog.id} {...blog} />)}
                 </div>
               ))}
           </div>
-          <div className={styles.more}>
+          <div className={st.more}>
             <button>
               <SvgIcon name="arrow-down" />
             </button>

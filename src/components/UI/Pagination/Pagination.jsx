@@ -4,7 +4,7 @@ import cns from 'classnames';
 
 import { SvgIcon } from '@ui';
 import { paginationBuilder } from '@helpers';
-import styles from './Pagination.module.scss';
+import st from './Pagination.module.scss';
 
 const Pagination = ({ page, count, onChange, canPreviousPage, canNextPage, ...props }) => {
   const items = useMemo(() => {
@@ -24,22 +24,22 @@ const Pagination = ({ page, count, onChange, canPreviousPage, canNextPage, ...pr
   };
 
   return (
-    <div className={styles.pagination}>
-      <button disabled={!canPreviousPage} className={styles.button} onClick={handlePrev}>
+    <div className={st.pagination}>
+      <button disabled={!canPreviousPage} className={st.button} onClick={handlePrev}>
         Предыдущая
         <span>Пред</span>
         {/* <SvgIcon name="caret" /> */}
       </button>
 
-      <div className={styles.list}>
+      <div className={st.list}>
         {items.map((item, idx) => (
-          <div key={idx} className={cns(styles.item, item === page && styles._active)}>
+          <div key={idx} className={cns(st.item, item === page && st._active)}>
             {typeof item === 'number' ? <span onClick={() => onChange(item)}>{item}</span> : <span>...</span>}
           </div>
         ))}
       </div>
 
-      <button disabled={!canNextPage} className={styles.button} onClick={handleNext}>
+      <button disabled={!canNextPage} className={st.button} onClick={handleNext}>
         Следующая
         <span>След</span>
         {/* <SvgIcon name="caret" /> */}

@@ -7,7 +7,7 @@ import { SvgIcon } from '@ui';
 import { UiStoreContext } from '@store';
 import { useWindowSize } from '@hooks';
 
-import styles from './Breadcrumbs.module.scss';
+import st from './Breadcrumbs.module.scss';
 
 const Breadcrumbs = observer(({ className, crumbs, ...props }) => {
   const history = useHistory();
@@ -38,10 +38,10 @@ const Breadcrumbs = observer(({ className, crumbs, ...props }) => {
   }, [width]);
 
   return crumbs && crumbs.length > 0 ? (
-    <div className={cns(styles.breadcrumbsScroll, scrolled && width >= 768 && styles._sticky, 'breadcrumbs')}>
+    <div className={cns(st.breadcrumbsScroll, scrolled && width >= 768 && st._sticky, 'breadcrumbs')}>
       <div className="container">
-        <div className={styles.breadcrumbs}>
-          <ul className={styles.breadcrumbsList}>
+        <div className={st.breadcrumbs}>
+          <ul className={st.breadcrumbsList}>
             <li>
               <a href={'/'} onClick={(e) => handleCategoryClick(null, e)}>
                 Главная
@@ -61,7 +61,7 @@ const Breadcrumbs = observer(({ className, crumbs, ...props }) => {
               </li>
             ))}
 
-            <li className={styles.last}>
+            <li className={st.last}>
               <span>{lastCrumb.text}</span>
             </li>
           </ul>

@@ -5,7 +5,7 @@ import cns from 'classnames';
 
 import { SvgIcon } from '@ui';
 
-import styles from './PaginationBar.module.scss';
+import st from './PaginationBar.module.scss';
 
 const Themes = {
   MAIN: 'main',
@@ -17,19 +17,19 @@ const ThemeClasses = {
 
 const PaginationBar = ({ theme, prev, next }) => {
   return (
-    <div className={cns(styles.container, theme && ThemeClasses[theme])}>
+    <div className={cns(st.container, theme && ThemeClasses[theme])}>
       <div className="container">
         <div className="container-inner">
-          <div className={styles.box}>
+          <div className={st.box}>
             {prev && (
               <Link to={prev.link} className={'lg-hidden'}>
                 <SvgIcon name="caret-left" />
-                <div className={cns('h4-title', styles.title)}>{prev.title}</div>
+                <div className={cns('h4-title', st.title)}>{prev.title}</div>
               </Link>
             )}
             {next && (
-              <Link to={next.link} className={styles.nextLink}>
-                <div className={cns('h4-title', styles.title)}>{next.title}</div>
+              <Link to={next.link} className={st.nextLink}>
+                <div className={cns('h4-title', st.title)}>{next.title}</div>
                 <SvgIcon name="caret-right" />
               </Link>
             )}

@@ -2,21 +2,21 @@ import React, { useState } from 'react';
 import cns from 'classnames';
 
 import { SvgIcon, Button } from '@ui';
-import styles from './PropertyProposal.module.scss';
+import st from './PropertyProposal.module.scss';
 
 const PropertyProposal = ({ className, list }) => {
   return (
-    <section className={cns(styles.container, className)}>
+    <section className={cns(st.container, className)}>
       <div className="container">
         <div className="container-inner">
-          <div className={styles.grid}>
+          <div className={st.grid}>
             {list &&
               list.map((x, idx) => (
-                <div className={styles.col} key={idx}>
-                  <div className={cns('h4-title', styles.colLabel)}>{x.label}</div>
-                  <div className={styles.colValue}>
+                <div className={st.col} key={idx}>
+                  <div className={cns('h4-title', st.colLabel)}>{x.label}</div>
+                  <div className={st.colValue}>
                     <span className="h2-title">{x.value}</span>
-                    <div className={styles.colTooltip} data-tip={x.tooltip}>
+                    <div className={st.colTooltip} data-tip={x.tooltip}>
                       <SvgIcon name="info-fill" />
                     </div>
                   </div>

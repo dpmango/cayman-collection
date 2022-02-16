@@ -3,21 +3,21 @@ import cns from 'classnames';
 
 import { SvgIcon, CustomChart } from '@ui';
 import { PropertyPercent } from '@c/Property';
-import styles from './PropertyFigures.module.scss';
+import st from './PropertyFigures.module.scss';
 
 const PropertyFigures = ({ className, intro, list, property, princiapal, list2 }) => {
   return (
-    <section className={cns(styles.container, className)}>
+    <section className={cns(st.container, className)}>
       <div className="container">
         <div className="container-inner">
-          <div className={styles.intro}>
-            <div className={cns(styles.content)} dangerouslySetInnerHTML={{ __html: intro }} />
+          <div className={st.intro}>
+            <div className={cns(st.content)} dangerouslySetInnerHTML={{ __html: intro }} />
           </div>
         </div>
       </div>
 
-      <div className={styles.section}>
-        <div className={styles.sectionHead}>
+      <div className={st.section}>
+        <div className={st.sectionHead}>
           <div className="container">
             <div className="container-inner">
               <h2 className="h2-title">{property.title}</h2>
@@ -25,13 +25,13 @@ const PropertyFigures = ({ className, intro, list, property, princiapal, list2 }
           </div>
         </div>
 
-        <div className={styles.sectionContent}>
+        <div className={st.sectionContent}>
           <div className="container">
             <div className="container-inner">
-              <div className={styles.chart}>
+              <div className={st.chart}>
                 <CustomChart includeLegend={true} />
               </div>
-              <div className={styles.percents}>
+              <div className={st.percents}>
                 {property.percents && property.percents.map((p, idx) => <PropertyPercent {...p} key={idx} />)}
               </div>
             </div>
@@ -39,8 +39,8 @@ const PropertyFigures = ({ className, intro, list, property, princiapal, list2 }
         </div>
       </div>
 
-      <div className={styles.section}>
-        <div className={styles.sectionHead}>
+      <div className={st.section}>
+        <div className={st.sectionHead}>
           <div className="container">
             <div className="container-inner">
               <h2 className="h2-title">{princiapal.title}</h2>
@@ -48,30 +48,30 @@ const PropertyFigures = ({ className, intro, list, property, princiapal, list2 }
           </div>
         </div>
 
-        <div className={styles.sectionContent}>
+        <div className={st.sectionContent}>
           <div className="container">
             <div className="container-inner">
-              <div className={styles.grid}>
+              <div className={st.grid}>
                 {list &&
                   list.map((el, idx) => (
-                    <div className={styles.listCard} key={el.id}>
-                      <div className={styles.listCardWrapper}>
-                        <label className={styles.listLabel}>{el.label}</label>
-                        <p className={cns(styles.listValue, 'h3-title')}>{el.value}</p>
+                    <div className={st.listCard} key={el.id}>
+                      <div className={st.listCardWrapper}>
+                        <label className={st.listLabel}>{el.label}</label>
+                        <p className={cns(st.listValue, 'h3-title')}>{el.value}</p>
                       </div>
                     </div>
                   ))}
               </div>
-              <div className={styles.chart}>
+              <div className={st.chart}>
                 <CustomChart />
               </div>
-              <div className={styles.grid}>
+              <div className={st.grid}>
                 {list2 &&
                   list2.map((el, idx) => (
-                    <div className={styles.listCard} key={el.id}>
-                      <div className={styles.listCardWrapper}>
-                        <label className={styles.listLabel}>{el.label}</label>
-                        <p className={cns(styles.listValue, 'h3-title')}>{el.value}</p>
+                    <div className={st.listCard} key={el.id}>
+                      <div className={st.listCardWrapper}>
+                        <label className={st.listLabel}>{el.label}</label>
+                        <p className={cns(st.listValue, 'h3-title')}>{el.value}</p>
                       </div>
                     </div>
                   ))}

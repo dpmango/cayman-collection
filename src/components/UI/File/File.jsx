@@ -6,7 +6,7 @@ import cns from 'classnames';
 import { SvgIcon, Button } from '@ui';
 import { formatBytes } from '@helpers';
 
-import styles from './File.module.scss';
+import st from './File.module.scss';
 
 const File = ({ className, data, onDelete, onSuccess, onError, ...props }) => {
   const { addToast } = useToasts();
@@ -50,21 +50,21 @@ const File = ({ className, data, onDelete, onSuccess, onError, ...props }) => {
   }, []);
 
   return (
-    <div className={cns(styles.file, className)} data-id={data.id}>
-      <div className={styles.delete} onClick={handleDeleteClick}>
+    <div className={cns(st.file, className)} data-id={data.id}>
+      <div className={st.delete} onClick={handleDeleteClick}>
         <SvgIcon name="close" />
       </div>
-      <div className={styles.content}>
+      <div className={st.content}>
         {data.file.name}
         <span>{formatBytes(data.file.size)}</span>
       </div>
 
-      <div className={cns(styles.progress, (loadDone || data.error) && styles._uploaded)}>
-        <div className={styles.progressInner} style={{ width: `${progress * 0.9}%` }}></div>
+      <div className={cns(st.progress, (loadDone || data.error) && st._uploaded)}>
+        <div className={st.progressInner} style={{ width: `${progress * 0.9}%` }}></div>
       </div>
 
       {data.error && (
-        <div className={styles.repeat}>
+        <div className={st.repeat}>
           <Button variant="small" onClick={handleUpload}>
             Повторить загрузку{' '}
           </Button>

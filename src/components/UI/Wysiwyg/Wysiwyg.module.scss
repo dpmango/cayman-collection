@@ -1,0 +1,233 @@
+.wysiwyg {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 h1 {
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 120%;
+    letter-spacing: -0.025em;
+  }
+
+  h2 {
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+
+  h3 {
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: 0.015em;
+  }
+
+  h4 {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+
+  h5 {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.2;
+    letter-spacing: 1.26px;
+  }
+
+  h6 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 1.5px;
+  }
+
+  p {
+    font-family: $robotoFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 1.4;
+    color: $colorGray;
+    & + p {
+      margin-top: 1.4em;
+    }
+  }
+
+  ul,
+  ol {
+    font-family: $robotoFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 1.4;
+    color: $colorGray;
+    padding: 0;
+
+    li {
+      position: relative;
+      display: block;
+      &::before {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+      }
+    }
+  }
+
+  ul {
+    li {
+      padding-left: 20px;
+      margin-left: 16px;
+      &::before {
+        content: ' ';
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: $fontColor;
+      }
+    }
+  }
+
+  ol {
+    li {
+      padding-left: 32px;
+      counter-increment: section;
+      &::before {
+        left: 0;
+        top: 0.2em;
+        font-size: 0.8em;
+        content: counter(section);
+      }
+    }
+  }
+
+  img {
+    margin: 44px 0;
+    max-width: 100%;
+  }
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: $colorPrimary;
+    transition: color 0.25s $ease;
+    &:hover {
+      color: $colorAccent;
+    }
+  }
+  strong {
+    font-weight: bold;
+    font-weight: 700;
+  }
+
+  blockquote {
+    padding: 20px;
+    background: rgba($colorPrimary, 0.1);
+    border-radius: 8px;
+    font-size: 24px;
+    line-height: 1.25;
+  }
+
+  ul,
+  ol,
+  blockquote {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  p,
+  ul,
+  ol,
+  blockquote,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  table {
+    margin-top: 0;
+    margin-bottom: 0;
+    & + p,
+    & + ul,
+    & + ol,
+    & + blockquote,
+    & + table {
+      margin-top: 1.2em;
+      margin-bottom: 1.2em;
+    }
+    & + h1,
+    & + h2,
+    & + h3,
+    & + h4,
+    & + h5,
+    & + h6 {
+      margin-top: 1.67em;
+    }
+  }
+}
+
+@include r($xl) {
+  .wysiwyg {
+    h1 {
+      font-size: 42px;
+    }
+    h2 {
+      font-size: 40px;
+    }
+    h3 {
+      font-size: 34px;
+    }
+    h4 {
+      font-size: 32px;
+    }
+    h5 {
+      font-size: 28px;
+    }
+    h6 {
+      font-size: 22px;
+    }
+
+    p,
+    ul,
+    ol {
+      font-size: 20px;
+    }
+  }
+}
+
+@include r($md) {
+  .wysiwyg {
+    h1 {
+      font-size: 34px;
+    }
+    h2 {
+      font-size: 32px;
+    }
+    h3 {
+      font-size: 30px;
+    }
+    h4 {
+      font-size: 30px;
+    }
+    h5 {
+      font-size: 26px;
+    }
+    h6 {
+      font-size: 21px;
+    }
+
+    p,
+    ul,
+    ol {
+      font-size: 18px;
+    }
+  }
+}

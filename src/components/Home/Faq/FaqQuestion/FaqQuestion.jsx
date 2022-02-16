@@ -2,19 +2,17 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import cns from 'classnames';
 
-import styles from './FaqQuestion.module.scss';
+import st from './FaqQuestion.module.scss';
 
 const FaqQuestion = ({ className, title, content, defaultOpened }) => {
   const [opened, setOpened] = useState(defaultOpened);
 
   return (
-    <div className={cns(styles.question, opened && styles._opened, className)}>
-      <div className={cns(styles.questionToggle, 'questionToggle')} onClick={() => setOpened(!opened)}>
+    <div className={cns(st.question, opened && st._opened, className)}>
+      <div className={cns(st.questionToggle, 'questionToggle')} onClick={() => setOpened(!opened)}>
         {title}
       </div>
-      {opened && (
-        <div className={cns('p-small', styles.questionContent)} dangerouslySetInnerHTML={{ __html: content }} />
-      )}
+      {opened && <div className={cns('p-small', st.questionContent)} dangerouslySetInnerHTML={{ __html: content }} />}
     </div>
   );
 };

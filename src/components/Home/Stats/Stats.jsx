@@ -2,22 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cns from 'classnames';
 
-import styles from './Stats.module.scss';
+import st from './Stats.module.scss';
 
 const Stats = ({ className, title, cols }) => {
   return (
-    <div className={cns(styles.container, className)}>
+    <div className={cns(st.container, className)}>
       <div className="container">
         <div className="container-inner">
-          <div className={cns('h2-title tac c-gray', styles.title)}>{title}</div>
+          <div className={cns('h2-title tac c-gray', st.title)}>{title}</div>
 
-          <div className={styles.grid}>
+          <div className={st.grid}>
             {cols &&
               cols.length &&
               cols.map((x) => (
-                <div className={styles.col} key={x.id}>
-                  <div className={styles.colTitle} dangerouslySetInnerHTML={{ __html: x.title }} />
-                  <p className={cns(styles.colDescription)}>{x.description}</p>
+                <div className={st.col} key={x.id}>
+                  <div className={st.colTitle} dangerouslySetInnerHTML={{ __html: x.title }} />
+                  <p className={cns(st.colDescription)}>{x.description}</p>
                 </div>
               ))}
           </div>

@@ -9,7 +9,7 @@ import { SvgIcon } from '@ui';
 import { useEventListener } from '@hooks';
 
 import { FaqQuestion } from '@c/Home/Faq';
-import styles from './Timeline.module.scss';
+import st from './Timeline.module.scss';
 
 const timelineCSSWidth = 120;
 
@@ -65,45 +65,45 @@ const Timeline = ({ className, title, timeline, faq }) => {
   }, [handleScroll, timelineRef.current]);
 
   return (
-    <div className={cns(styles.container, className)}>
+    <div className={cns(st.container, className)}>
       <div className="container">
         <div className="container-inner">
-          <div className={cns('h1-title', 'c-gray', styles.title)}>
+          <div className={cns('h1-title', 'c-gray', st.title)}>
             <span dangerouslySetInnerHTML={{ __html: title }} />
           </div>
 
-          <ul className={styles.timelineNav}>
+          <ul className={st.timelineNav}>
             {[1, 2, 3, 4, 5, 6].map((n) => (
-              <li key={n} className={cns(activeCol === n && styles._active)} onClick={() => handleNavClick(n)}>
+              <li key={n} className={cns(activeCol === n && st._active)} onClick={() => handleNavClick(n)}>
                 <span>0{n}</span>
               </li>
             ))}
           </ul>
 
-          <div className={styles.timeline} ref={timelineRef}>
-            <div className={styles.timelineHead}>
+          <div className={st.timeline} ref={timelineRef}>
+            <div className={st.timelineHead}>
               {timeline.head &&
                 timeline.head.map((x, idx) => (
-                  <div className={styles.headCol} key={idx}>
+                  <div className={st.headCol} key={idx}>
                     <span className="h6-title">{x}</span>
                   </div>
                 ))}
             </div>
 
-            <div className={styles.timelineRows}>
+            <div className={st.timelineRows}>
               {timeline.rows &&
                 timeline.rows.map((x, idx) => (
-                  <div className={cns(styles.timelineRow, activeTooltip === x.tooltip.id && styles._active)} key={idx}>
-                    <div className={styles.rowLabel}>
+                  <div className={cns(st.timelineRow, activeTooltip === x.tooltip.id && st._active)} key={idx}>
+                    <div className={st.rowLabel}>
                       <span>{x.label}</span>
                     </div>
-                    <div className={styles.rowProgress}>
+                    <div className={st.rowProgress}>
                       <div
-                        className={styles.rowProgressValue}
+                        className={st.rowProgressValue}
                         style={{ left: `${x.from}%`, right: `${Math.abs(Number(x.to) - 100)}%` }}
                         onMouseEnter={() => handleTimelineHover(x.tooltip.id)}
                         onMouseLeave={() => handletimelineHoverOut()}>
-                        <div className={styles.rowProgressArrow} data-position-to-bottom={timeline.rows.length - idx} />
+                        <div className={st.rowProgressArrow} data-position-to-bottom={timeline.rows.length - idx} />
                       </div>
                     </div>
                   </div>
@@ -111,25 +111,23 @@ const Timeline = ({ className, title, timeline, faq }) => {
             </div>
           </div>
 
-          <div className={styles.timelineTooltips}>
+          <div className={st.timelineTooltips}>
             {timeline.rows &&
               timeline.rows.map((x, idx) => (
-                <div className={cns(styles.tooltip, activeTooltip === x.tooltip.id && styles._active)} key={idx}>
-                  <div className={styles.tooltipWrapper}>
-                    <div className={styles.tooltipImage}>
+                <div className={cns(st.tooltip, activeTooltip === x.tooltip.id && st._active)} key={idx}>
+                  <div className={st.tooltipWrapper}>
+                    <div className={st.tooltipImage}>
                       <img src={x.tooltip.image} alt={x.tooltip.title} />
                     </div>
-                    <div className={cns('h5-title', styles.tooltipTitle)}>{x.tooltip.title}</div>
-                    <div
-                      className={styles.tooltipCta}
-                      onClick={() => uiContext.setModal('person', { id: x.tooltip.id })}>
+                    <div className={cns('h5-title', st.tooltipTitle)}>{x.tooltip.title}</div>
+                    <div className={st.tooltipCta} onClick={() => uiContext.setModal('person', { id: x.tooltip.id })}>
                       <SvgIcon name="info" />
                     </div>
                   </div>
                 </div>
               ))}
           </div>
-          <ul className={styles.faq}>{faq && faq.map((question, idx) => <FaqQuestion key={idx} {...question} />)}</ul>
+          <ul className={st.faq}>{faq && faq.map((question, idx) => <FaqQuestion key={idx} {...question} />)}</ul>
         </div>
       </div>
     </div>

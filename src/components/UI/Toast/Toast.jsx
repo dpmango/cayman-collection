@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import cns from 'classnames';
 import { DefaultToast } from 'react-toast-notifications';
 
-import styles from './Toast.module.scss';
+import st from './Toast.module.scss';
 
 const Toast = ({ children, className, ...props }) => {
   return (
-    <DefaultToast {...props} className={cns(styles.toast, className)}>
+    <DefaultToast {...props} className={cns(st.toast, className)}>
       {children}
     </DefaultToast>
   );

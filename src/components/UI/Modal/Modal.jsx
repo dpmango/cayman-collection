@@ -7,7 +7,7 @@ import cns from 'classnames';
 import { UiStoreContext } from '@store/UiStore';
 import { SvgIcon } from '@ui';
 
-import styles from './Modal.module.scss';
+import st from './Modal.module.scss';
 import styles2 from './Modal.scss';
 
 const sharedStyles = {
@@ -81,8 +81,8 @@ const VariantStyles = {
 
 const VariantClasses = {
   [Variants.MAIN]: '',
-  [Variants.NARROW]: styles._narrow,
-  [Variants.THANKS]: styles._thanks,
+  [Variants.NARROW]: st._narrow,
+  [Variants.THANKS]: st._thanks,
 };
 
 const Modifiers = {
@@ -92,7 +92,7 @@ const Modifiers = {
 
 const ModifierClasses = {
   [Modifiers.DEFAULT]: null,
-  [Modifiers.FULL]: styles._full,
+  [Modifiers.FULL]: st._full,
 };
 
 const ModalComponent = observer(({ className, variant, modifier, name, children }) => {
@@ -130,15 +130,15 @@ const ModalComponent = observer(({ className, variant, modifier, name, children 
       contentLabel="Modal">
       <div
         className={cns(
-          styles.container,
+          st.container,
           variant && VariantClasses[variant],
           modifier && ModifierClasses[modifier],
           className
         )}>
-        <div className={cns('close', styles.close)} onClick={closeModal}>
+        <div className={cns('close', st.close)} onClick={closeModal}>
           <SvgIcon name="close" />
         </div>
-        <div className={cns(styles.content, modifier && ModifierClasses[modifier])}>{children}</div>
+        <div className={cns(st.content, modifier && ModifierClasses[modifier])}>{children}</div>
       </div>
     </Modal>
   );

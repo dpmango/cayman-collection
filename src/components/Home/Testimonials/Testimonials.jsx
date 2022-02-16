@@ -6,7 +6,7 @@ import { Navigation } from 'swiper';
 
 import { SvgIcon } from '@ui';
 
-import styles from './Testimonials.module.scss';
+import st from './Testimonials.module.scss';
 import 'swiper/swiper.scss';
 import 'swiper/modules/navigation/navigation.scss';
 import NyTimes from './assets/NYTimes.svg';
@@ -23,23 +23,23 @@ const LogoImage = {
 
 const Testimonials = ({ className, title, list }) => {
   return (
-    <div className={cns(styles.container, className)}>
+    <div className={cns(st.container, className)}>
       <div className="container">
         <div className="container-inner">
           <div className="h5-title tac c-primary-dark">{title}</div>
 
-          <Swiper className={styles.slider} modules={[Navigation]} navigation slidesPerView={'auto'} spaceBetween={20}>
-            <div className={styles.sliderIcon}>
+          <Swiper className={st.slider} modules={[Navigation]} navigation slidesPerView={'auto'} spaceBetween={20}>
+            <div className={st.sliderIcon}>
               <SvgIcon name="quotes" />
             </div>
 
             {list &&
               list.map((slide, idx) => (
-                <SwiperSlide className={styles.slide} key={slide.id}>
-                  <div className={styles.slideContent}>
+                <SwiperSlide className={st.slide} key={slide.id}>
+                  <div className={st.slideContent}>
                     {slide.title && <div className="h1-title c-primary">{slide.title}</div>}
                     {slide.description && <p className="p-huge">{slide.description}</p>}
-                    {slide.logo && <img className={styles.slideLogo} src={LogoImage[slide.logo]} />}
+                    {slide.logo && <img className={st.slideLogo} src={LogoImage[slide.logo]} />}
                   </div>
                 </SwiperSlide>
               ))}

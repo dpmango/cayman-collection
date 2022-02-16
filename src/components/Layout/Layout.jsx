@@ -5,7 +5,7 @@ import cns from 'classnames';
 import Header from '@c/Layout/Header';
 import Footer from '@c/Layout/Footer';
 
-import styles from './Layout.module.scss';
+import st from './Layout.module.scss';
 
 const Variants = {
   MAIN: 'main',
@@ -14,15 +14,15 @@ const Variants = {
 
 const VariantClasses = {
   [Variants.MAIN]: '',
-  [Variants.AUTH]: styles._auth,
+  [Variants.AUTH]: st._auth,
 };
 
 const Layout = ({ variant, children }) => {
   return (
-    <div className={cns(styles.layout, variant && VariantClasses[variant])}>
-      {variant === 'main' && <Header className={styles.header} />}
+    <div className={cns(st.layout, variant && VariantClasses[variant])}>
+      {variant === 'main' && <Header className={st.header} />}
 
-      <main className={styles.main}>{children}</main>
+      <main className={st.main}>{children}</main>
 
       {variant === 'main' && <Footer />}
     </div>

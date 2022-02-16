@@ -7,7 +7,7 @@ import { Navigation } from 'swiper';
 import { Modal, SvgIcon, Button } from '@ui';
 import { UiStoreContext } from '@store';
 
-import styles from './Points.module.scss';
+import st from './Points.module.scss';
 import { content } from './Content.js';
 import PointPasportSvg from '@c/Plan/Points/assets/points-passport.svg';
 import PointsPortfolioSvg from '@c/Plan/Points/assets/points-portfolio.svg';
@@ -40,10 +40,10 @@ const Points = observer(({ className }) => {
   }, [modalParams]);
 
   return (
-    <Modal name="points" className={cns(styles.modal, className)}>
-      <div className={cns(styles.container, className)}>
+    <Modal name="points" className={cns(st.modal, className)}>
+      <div className={cns(st.container, className)}>
         <Swiper
-          className={styles.slider}
+          className={st.slider}
           modules={[Navigation]}
           loop
           navigation
@@ -51,15 +51,15 @@ const Points = observer(({ className }) => {
           onSwiper={(swiper) => setSwiperInstance(swiper)}>
           {content &&
             content.map((slide, idx) => (
-              <SwiperSlide className={styles.slide} key={slide.id}>
+              <SwiperSlide className={st.slide} key={slide.id}>
                 <div className={cns('h2-title c-gray md-hidden')}>{slide.title}</div>
 
-                <div className={styles.slideWrapper}>
-                  <div className={styles.slideImage}>{slide.iconId && <img src={images[slide.iconId]} />}</div>
-                  <div className={styles.slideContent}>
+                <div className={st.slideWrapper}>
+                  <div className={st.slideImage}>{slide.iconId && <img src={images[slide.iconId]} />}</div>
+                  <div className={st.slideContent}>
                     <div className={cns('h2-title c-gray md-visible')}>{slide.title}</div>
-                    <p className={cns('p-caption color-font', styles.slideDescription)}>{slide.description}</p>
-                    <ul className={styles.socialsList}>
+                    <p className={cns('p-caption color-font', st.slideDescription)}>{slide.description}</p>
+                    <ul className={st.socialsList}>
                       <li>
                         <a href="#" target="_blank">
                           <SvgIcon name="social-facebook" />

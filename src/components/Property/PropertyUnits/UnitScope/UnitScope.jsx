@@ -5,7 +5,7 @@ import Lightbox from 'react-image-lightbox';
 
 import { Button, SvgIcon } from '@ui';
 
-import styles from './UnitScope.module.scss';
+import st from './UnitScope.module.scss';
 import 'react-image-lightbox/style.css'; // This only needs to be imported once in your app
 
 const UnitScope = ({ className, unitId }) => {
@@ -14,45 +14,45 @@ const UnitScope = ({ className, unitId }) => {
   if (!unitId) return null;
 
   return (
-    <section className={cns(styles.container, className)}>
+    <section className={cns(st.container, className)}>
       <div className="container">
         <div className="container-inner">
-          <div className={styles.grid}>
-            <div className={styles.body}>
-              <div className={styles.head}>
-                <div className={cns('h1-title', styles.title)}>L-3 Block</div>
-                <div className={styles.price}>
-                  <div className={styles.priceLabel}>Price</div>
-                  <div className={cns('h5-title', styles.priceValue)}>$850,000</div>
+          <div className={st.grid}>
+            <div className={st.body}>
+              <div className={st.head}>
+                <div className={cns('h1-title', st.title)}>L-3 Block</div>
+                <div className={st.price}>
+                  <div className={st.priceLabel}>Price</div>
+                  <div className={cns('h5-title', st.priceValue)}>$850,000</div>
                 </div>
               </div>
 
-              <div className={styles.scope}>
-                <div className={styles.scopeCol}>
-                  <div className={styles.scopeIcon}>
+              <div className={st.scope}>
+                <div className={st.scopeCol}>
+                  <div className={st.scopeIcon}>
                     <SvgIcon name="area" />
                   </div>
-                  <div className={styles.scopeContent}>
-                    <div className={cns('h6-title', styles.scopeValue)}>1240</div>
-                    <div className={styles.scopeLabel}>Area m²</div>
+                  <div className={st.scopeContent}>
+                    <div className={cns('h6-title', st.scopeValue)}>1240</div>
+                    <div className={st.scopeLabel}>Area m²</div>
                   </div>
                 </div>
-                <div className={styles.scopeCol}>
-                  <div className={styles.scopeIcon}>
+                <div className={st.scopeCol}>
+                  <div className={st.scopeIcon}>
                     <SvgIcon name="bedrooms" />
                   </div>
-                  <div className={styles.scopeContent}>
-                    <div className={cns('h6-title', styles.scopeValue)}>3</div>
-                    <div className={styles.scopeLabel}>Bedrooms</div>
+                  <div className={st.scopeContent}>
+                    <div className={cns('h6-title', st.scopeValue)}>3</div>
+                    <div className={st.scopeLabel}>Bedrooms</div>
                   </div>
                 </div>
-                <div className={styles.scopeCol}>
-                  <div className={styles.scopeIcon}>
+                <div className={st.scopeCol}>
+                  <div className={st.scopeIcon}>
                     <SvgIcon name="bathrooms" />
                   </div>
-                  <div className={styles.scopeContent}>
-                    <div className={cns('h6-title', styles.scopeValue)}>2</div>
-                    <div className={styles.scopeLabel}>Bathrooms</div>
+                  <div className={st.scopeContent}>
+                    <div className={cns('h6-title', st.scopeValue)}>2</div>
+                    <div className={st.scopeLabel}>Bathrooms</div>
                   </div>
                 </div>
               </div>
@@ -69,17 +69,17 @@ const UnitScope = ({ className, unitId }) => {
                 </p>
               </div>
             </div>
-            <div className={styles.sidebar}>
+            <div className={st.sidebar}>
               <Button theme="accent" variant="big" block>
                 Add to proposal +
               </Button>
-              <div className={styles.sidebarImage}>
+              <div className={st.sidebarImage}>
                 <img src="/img/property/gallery-main.jpg" alt="main image" />
               </div>
-              <div className={styles.floorPlan}>
-                <div className={cns(styles.floorPlanLabel)}>Floor Plan</div>
+              <div className={st.floorPlan}>
+                <div className={cns(st.floorPlanLabel)}>Floor Plan</div>
                 <img src="/img/property/floorPlan.png" srcSet="/img/property/floorPlan@2x.png 2x" alt="" />
-                <div className={styles.floorPlanZoom} onClick={() => setLightboxOpened(true)}>
+                <div className={st.floorPlanZoom} onClick={() => setLightboxOpened(true)}>
                   <SvgIcon name="zoom" />
                 </div>
               </div>

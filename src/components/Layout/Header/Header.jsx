@@ -2,7 +2,7 @@ import cns from 'classnames';
 import Modal from '../../UI/Modal';
 import { Button, SvgIcon } from '@ui';
 import throttle from 'lodash/throttle';
-import styles from './Header.module.scss';
+import st from './Header.module.scss';
 import { observer } from 'mobx-react-lite';
 import { UiStoreContext } from '../../../store';
 import { Link, useLocation } from 'react-router-dom';
@@ -82,40 +82,40 @@ const Header = observer(({ className }) => {
           <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js" />
         </Helmet>
       </Modal>
-      <header className={cns(styles.header, scrolled && styles._scrolled, className)} ref={headerRef}>
+      <header className={cns(st.header, scrolled && st._scrolled, className)} ref={headerRef}>
         <div className="container">
-          <div className={styles.wrapper}>
-            <div className={styles.hamburger}>
+          <div className={st.wrapper}>
+            <div className={st.hamburger}>
               <div className={cns('hamburger', menuOpened && 'is-active')} onClick={() => setMenuOpened(!menuOpened)}>
                 <span />
                 <span />
                 <span />
               </div>
             </div>
-            <Link to="/" className={styles.logo}>
+            <Link to="/" className={st.logo}>
               <Logo />
             </Link>
-            <div className={styles.cta}>
+            <div className={st.cta}>
               <Button
                 outline
                 onClick={() => uiContext.setModal('calendar')}
-                className={cns(styles.phone, active && styles.active)}>
+                className={cns(st.phone, active && st.active)}>
                 <SvgIcon name="phone" />
-                <span className={styles.schedule}>Schedule a call</span>
+                <span className={st.schedule}>Schedule a call</span>
               </Button>
             </div>
           </div>
         </div>
       </header>
 
-      <div className={cns(styles.menu, menuOpened && styles._active)}>
-        <div className={styles.menuWrapper} ref={menuRef}>
+      <div className={cns(st.menu, menuOpened && st._active)}>
+        <div className={st.menuWrapper} ref={menuRef}>
           <div className={cns('hamburger', menuOpened && 'is-active')} onClick={() => setMenuOpened(!menuOpened)}>
             <span />
             <span />
             <span />
           </div>
-          <ul className={styles.menuList}>
+          <ul className={st.menuList}>
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -128,9 +128,7 @@ const Header = observer(({ className }) => {
             <li>
               <Link to="/property">The Property</Link>
             </li>
-            <li
-              className={cns(styles.menuNested, openedId === 1 && styles._active)}
-              onClick={() => handleMenuNestedClick(1)}>
+            <li className={cns(st.menuNested, openedId === 1 && st._active)} onClick={() => handleMenuNestedClick(1)}>
               <a href="#">About</a>
               <ul onClick={(e) => e.stopPropagation()}>
                 <li>
@@ -144,9 +142,7 @@ const Header = observer(({ className }) => {
                 </li>
               </ul>
             </li>
-            <li
-              className={cns(styles.menuNested, openedId === 2 && styles._active)}
-              onClick={() => handleMenuNestedClick(2)}>
+            <li className={cns(st.menuNested, openedId === 2 && st._active)} onClick={() => handleMenuNestedClick(2)}>
               <a href="#">Help</a>
               <ul onClick={(e) => e.stopPropagation()}>
                 <li>
@@ -161,7 +157,7 @@ const Header = observer(({ className }) => {
               </ul>
             </li>
           </ul>
-          <div className={styles.menuCta}>
+          <div className={st.menuCta}>
             <Link to="/login">
               <Button theme="accent" block>
                 Login
