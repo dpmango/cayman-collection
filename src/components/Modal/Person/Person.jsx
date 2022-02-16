@@ -12,7 +12,7 @@ const Person = observer(({ className }) => {
 
   const personData = useMemo(() => {
     // TODO - change id 1 by modalParams.id or connect api sending data
-    return modalParams ? content[1] : null;
+    return modalParams ? content[modalParams.id || 1] : null;
   }, [modalParams]);
 
   return (

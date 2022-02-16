@@ -46,7 +46,7 @@ const Figures = ({ className, title, content, list, ways }) => {
                   <div className={cns(st.wayCard, el.num && st._numed)} key={el.id}>
                     <div
                       className={cns(
-                        styles.wayCardIcons,
+                        st.wayCardIcons,
                         [1, 3].includes(Number(el.num)) && st._equals,
                         [2, 4].includes(Number(el.num)) && st._plus
                       )}>

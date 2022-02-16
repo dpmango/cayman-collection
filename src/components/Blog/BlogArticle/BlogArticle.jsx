@@ -1,9 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import cns from 'classnames';
 import { FacebookShareButton, InstapaperShareButton, LinkedinShareButton, TwitterShareButton } from 'react-share';
 
+import { UiStoreContext } from '@store';
 import { SvgIcon, Wysiwyg } from '@ui';
 import { get2xImage } from '@helpers';
 
@@ -11,6 +12,7 @@ import st from './BlogArticle.module.scss';
 
 const BlogArticle = ({ className, cover, title, content, date, nav, category, categories, recents }) => {
   const location = useLocation();
+  const uiContext = useContext(UiStoreContext);
 
   const shareUrl = useMemo(() => {
     const baseUrl = 'https://cayman-collection.surge.sh';
@@ -76,9 +78,11 @@ const BlogArticle = ({ className, cover, title, content, date, nav, category, ca
             <div className={st.sidebar}>
               <div className={st.about}>
                 <div className="h2-title">About me</div>
-                <div className={st.aboutImage}>
+
+                <div className={st.aboutImage} onClick={() => uiContext.setModal('person', { id: 2 })}>
                   <img src="/img/blog/blogAbout.jpg" srcSet="/img/blog/blogAbout@2x.jpg 2x" alt="" />
                 </div>
+
                 <div className={st.aboutDescription}>
                   They're gathered man divide you you're first appear living i they're deep without us fourth dominion,
                   cattle fly.

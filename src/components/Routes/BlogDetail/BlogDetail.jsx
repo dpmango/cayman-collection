@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 
 import Layout from '@c/Layout/';
 import { BlogArticle } from '@c/Blog';
+import { ModalPerson } from '@c/Modal';
 import { content } from './Content.js';
 
 const BlogPage = observer(() => {
@@ -16,6 +17,8 @@ const BlogPage = observer(() => {
       <Layout>
         <BlogArticle {...content} />
       </Layout>
+
+      <ModalPerson />
     </>
   );
 });

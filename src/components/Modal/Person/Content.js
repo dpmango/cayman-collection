@@ -8,4 +8,12 @@ export const content = {
     `,
     image: '/img/person-Fleur.jpg',
   },
+  2: {
+    name: 'Bec Swanson',
+    position: 'Client Experience Manager',
+    description: `
+      <p>Originally from Australia, Bec moved to the Cayman Islands in 2012. With years of experience in the tourism industry (specializing in premium corporate events) she is our resident expert on all things Cayman, from where to get the tastiest fried fish to how to select the best neighbourhood for your investment property. </p>
+    `,
+    image: '/img/person-Bec.jpg',
+  },
 };

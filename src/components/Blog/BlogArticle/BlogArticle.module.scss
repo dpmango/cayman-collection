@@ -157,8 +157,17 @@
 .aboutImage {
   margin-top: 16px;
   font-size: 0;
+  cursor: pointer;
   img {
     width: 100%;
+    transition: filter 0.25s $ease;
+    will-change: filter;
+    transform-style: preserve-3d;
+  }
+  &:hover {
+    img {
+      filter: grayscale(0.5);
+    }
   }
 }
 
