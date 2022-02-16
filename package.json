@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "author": "Sergey Khmelevskoy <sergey@khmelevskoy.co> (https://github.com/dpmango/)",
   "private": true,
+  "license": "UNLICENSED",
   "scripts": {
     "start": "env-cmd -f ./.env.dev.json cross-env craco start",
     "build": "env-cmd -f ./.env.prod.json cross-env GENERATE_SOURCEMAP=false craco build",
