@@ -107,7 +107,7 @@ const NumInput = ({ className, label, inputRef, variant, value, onChange, onEnte
   const inputProps = {
     id,
     ref: innerRef,
-    className: cns(styles.input_input, error && st._withError),
+    className: cns(st.input_input, error && st._withError),
     value: innerValue,
     autoComplete: `${false}`,
     onChange: onInputChange,
