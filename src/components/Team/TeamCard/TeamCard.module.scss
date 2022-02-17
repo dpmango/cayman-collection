@@ -6,7 +6,7 @@
   cursor: pointer;
   &:hover {
     .image {
-      filter: grayscale(0.5);
+      filter: contrast(150%);
     }
   }
 }

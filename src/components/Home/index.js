@@ -7,3 +7,4 @@ export { default as HomeInfoBlockAlt } from './InfoBlockAlt';
 export { default as HomeStats } from './Stats';
 export { default as HomeTestimonials } from './Testimonials';
 export { default as HomeFaq } from './Faq';
+export { default as HomeBenefits } from './Benefits';

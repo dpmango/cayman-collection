@@ -14,7 +14,7 @@ const TeamList = ({ className, title, list }) => {
     <div className={cns(st.container, className)}>
       <div className="container">
         <div className="container-inner">
-          <div className="h2-title">{title}</div>
+          <div className="h1-title">{title}</div>
 
           <div className={st.grid}>
             {list &&

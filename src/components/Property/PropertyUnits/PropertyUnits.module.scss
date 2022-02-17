@@ -76,7 +76,7 @@
   }
   &:hover:not(._selected) {
     .unitImage {
-      filter: grayscale(1);
+      filter: contrast(150%);
     }
   }
   &._selected {

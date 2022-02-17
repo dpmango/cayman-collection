@@ -22,7 +22,7 @@ export const content = {
       },
       {
         id: 3,
-        image: '/img/team/fleur.jpg',
+        image: null,
         title: 'Hugo Lodge',
         position: 'Compliance',
       },
@@ -68,6 +68,27 @@ export const content = {
       },
       { id: 2, title: '$100M+', description: 'in business deals' },
       { id: 3, title: '$100M+', description: 'Wealth  managed' },
+    ],
+  },
+  benefits: {
+    title: 'Efficiency, Transparency & Expertise.',
+    subtitle: 'Cayman Collection  is underpinned by 3 key principles:',
+    list: [
+      {
+        label: 'Efficiency:',
+        description:
+          'The research and hard work has already been done, saving you time and money with our seamless process.',
+      },
+      {
+        label: 'Transparency:',
+        description:
+          'We communicate with you every step of the way, and provide an allocated personal contact for all your questions.',
+      },
+      {
+        label: 'Expedience:',
+        description:
+          'No one knows this process better than us. You’ll have access to the best person in every field you need, all through a single point of contact.',
+      },
     ],
   },
 };

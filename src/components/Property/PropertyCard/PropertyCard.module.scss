@@ -6,7 +6,7 @@
   &:hover {
     box-shadow: none;
     .image {
-      filter: grayscale(1);
+      filter: contrast(150%);
     }
   }
 }

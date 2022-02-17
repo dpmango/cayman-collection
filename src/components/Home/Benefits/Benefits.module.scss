@@ -1,0 +1,46 @@
+.container {
+  position: relative;
+  padding: 92px 0 100px;
+  background-color: $colorPeach;
+}
+
+.grid {
+  margin-top: 92px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.col {
+  position: relative;
+}
+
+.colDesc {
+  margin-top: 36px;
+  max-width: 320px;
+}
+
+@include r($xl) {
+  .container {
+    padding: 80px 0 90px;
+  }
+  .grid {
+    margin-top: 60px;
+  }
+}
+
+@include r($lg) {
+  .grid {
+    display: block;
+  }
+}
+
+@include r($md) {
+  .container {
+    padding: 50px 0 70px;
+    background-image: none;
+  }
+
+  .grid {
+    margin-top: 32px;
+  }
+}

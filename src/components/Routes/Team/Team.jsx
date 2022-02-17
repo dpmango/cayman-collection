@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 
 import Layout from '@c/Layout/';
 import { HeroBanner, ScheduleCallBanner } from '@c/Banners';
-import { HomeStats } from '@c/Home';
+import { HomeStats, HomeBenefits } from '@c/Home';
 import { TeamList } from '@c/Team';
 import { ModalPerson } from '@c/Modal';
 import { content } from './Content.js';
@@ -19,6 +19,7 @@ const TeamPage = observer(() => {
       <Layout>
         <HeroBanner theme="lilac" {...content.banner} />
         <ScheduleCallBanner />
+        <HomeBenefits {...content.benefits} />
         <TeamList {...content.team} />
         <ScheduleCallBanner />
         <HomeStats className="mt-4 mt-md-3" {...content.stats} />
