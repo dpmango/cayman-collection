@@ -8,6 +8,7 @@
   margin-top: 92px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
 }
 
 .col {
@@ -42,5 +43,6 @@
 
   .grid {
     margin-top: 32px;
+    grid-gap: 20px;
   }
 }

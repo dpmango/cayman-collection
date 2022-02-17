@@ -9,9 +9,21 @@
   grid-gap: 35px 45px;
 }
 
-.blogCard {
-  margin-bottom: 35px;
+.teamCard {
+  height: 100%;
   &:last-child {
     margin-bottom: 0;
+  }
+}
+
+@include r($lg) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@include r($sm) {
+  .grid {
+    grid-template-columns: 1fr;
   }
 }

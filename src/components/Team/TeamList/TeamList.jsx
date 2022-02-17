@@ -20,7 +20,7 @@ const TeamList = ({ className, title, list }) => {
             {list &&
               list.map((t, idx) => (
                 <div className={st.col} key={t.id || idx}>
-                  <TeamCard className={st.blogCard} key={t.id} {...t} />
+                  <TeamCard className={st.teamCard} key={t.id} {...t} />
                 </div>
               ))}
           </div>

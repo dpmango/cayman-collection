@@ -6,6 +6,7 @@ import Layout from '@c/Layout/';
 import { HeroBanner, ScheduleCallBanner } from '@c/Banners';
 import { HomeStats, HomeBenefits } from '@c/Home';
 import { TeamList } from '@c/Team';
+import { CeoNote } from '@c/Static';
 import { ModalPerson } from '@c/Modal';
 import { content } from './Content.js';
 
@@ -23,6 +24,7 @@ const TeamPage = observer(() => {
         <TeamList {...content.team} />
         <ScheduleCallBanner />
         <HomeStats className="mt-4 mt-md-3" {...content.stats} />
+        <CeoNote {...content.CeoNote} />
       </Layout>
 
       <ModalPerson />

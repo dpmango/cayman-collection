@@ -91,4 +91,13 @@ export const content = {
       },
     ],
   },
+  CeoNote: {
+    title: 'Meet our CEO:',
+    image: '/img/team/ceoNote.jpg',
+    sign: '/img/team/sign-Fleur.jpg',
+    content: `
+    <p>Having spent 10 years in real estate & development, it quickly became clear that our hight net worth clients need us to do much more than the current services in the Cayman market offered.  As a real estate enthusiast I have always been inspired by the energy and impact of the Cayman real estate market, and the growing awareness of the importance of securing your financial future. </p>
+    <p>We want to revolutionise the future of real estate investment in the Cayman Islands, leading the industry to change its thinking. By creating this investment product that not only provides permenent residency in this tax neutral juristiction, but also creates an appreciating asset, we can ensure you maintain a secure financial future. So, we are starting from the ground up with an investment that ticks all the boxes, through a streamlined service with no out-of-pocket expenses.</p>
+    <p>Cayman Collection is all about the future - YOUR future - and we are so excited to help you secure that future through direct investment in the Cayman Islands.</p>`,
+  },
 };
