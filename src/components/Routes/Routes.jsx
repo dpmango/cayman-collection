@@ -15,6 +15,7 @@ import Blog from './Blog';
 import HubSpot from '../HubSpot';
 import BlogDetail from './BlogDetail';
 import About from './About';
+import Team from './Team';
 
 const Routes = () => {
   return (
@@ -45,6 +46,9 @@ const Routes = () => {
       </Route>
       <Route exact path="/about">
         <About />
+      </Route>
+      <Route exact path="/team">
+        <Team />
       </Route>
 
       <Route exact path="/login">

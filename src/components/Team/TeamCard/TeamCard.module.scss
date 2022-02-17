@@ -1,0 +1,45 @@
+.card {
+  display: block;
+  background: #f4f3fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.25s $ease;
+  cursor: pointer;
+  &:hover {
+    .image {
+      filter: grayscale(0.5);
+    }
+  }
+}
+
+.image {
+  position: relative;
+  background: $colorPeach url('./assets/placeholder.svg') no-repeat center bottom;
+  background-size: cover;
+  padding-bottom: 100%;
+  font-size: 0;
+  transition: filter 0.25s $ease;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.content {
+  padding: 40px;
+}
+
+.title {
+  margin-top: 12px;
+  color: $colorGray;
+}
+
+.position {
+  margin-top: 4px;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1;
+  color: $colorGray;
+}

@@ -22,7 +22,7 @@ const HeroBanner = ({ theme, title, description }) => {
           <div className="container-inner">
             <div className={st.content}>
               <div className={cns('h0-title', st.title)} dangerouslySetInnerHTML={{ __html: title }} />
-              <div className={cns('p-caption', st.description)}>{description}</div>
+              <div className={cns('p-caption', st.description)} dangerouslySetInnerHTML={{ __html: description }} />
             </div>
           </div>
         </div>
