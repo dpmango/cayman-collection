@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 
 import Layout from '@c/Layout/';
 import { PropertyGallery, PropertyUnits, PropertyFigures, PropertyProposal } from '@c/Property';
-import { ModalPerson } from '@c/Modal';
+import { ModalPerson, ModalProposal } from '@c/Modal';
 import { content } from './Content.js';
 
 const PropertyPage = observer(() => {
@@ -21,6 +21,7 @@ const PropertyPage = observer(() => {
         <PropertyProposal {...content.proposal} />
 
         <ModalPerson />
+        <ModalProposal />
       </Layout>
     </>
   );

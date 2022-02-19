@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import cns from 'classnames';
 import Lightbox from 'react-image-lightbox';
 
+import { UiStoreContext } from '@store';
 import { Button, SvgIcon } from '@ui';
 
 import st from './UnitScope.module.scss';
@@ -10,6 +11,11 @@ import 'react-image-lightbox/style.css'; // This only needs to be imported once 
 
 const UnitScope = ({ className, unitId }) => {
   const [lightboxOpened, setLightboxOpened] = useState(false);
+  const uiContext = useContext(UiStoreContext);
+
+  const handleProposalAdd = useCallback(() => {
+    uiContext.setModal('proposal', { title: 'Aqua', image: '/img/property/gallery-main.jpg' });
+  }, []);
 
   if (!unitId) return null;
 
@@ -70,7 +76,7 @@ const UnitScope = ({ className, unitId }) => {
               </div>
             </div>
             <div className={st.sidebar}>
-              <Button theme="accent" variant="big" block>
+              <Button theme="accent" variant="big" block onClick={handleProposalAdd}>
                 Add to proposal +
               </Button>
               <div className={st.sidebarImage}>

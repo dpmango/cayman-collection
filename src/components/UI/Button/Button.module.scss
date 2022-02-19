@@ -105,6 +105,48 @@
     }
   }
 
+  &._white {
+    background: white;
+    color: $colorAccent;
+
+    &:hover {
+      background: rgba(white, 0.8);
+    }
+
+    &._outline {
+      background: transparent;
+      border: 2px solid $colorAccent;
+      color: white;
+
+      &:hover {
+        color: white;
+        background: $colorAccent;
+        border-color: $colorAccent;
+      }
+    }
+  }
+
+  &._muted {
+    background: #b7b1e7;
+    color: white;
+
+    &:hover {
+      background: rgba(#b7b1e7, 0.8);
+    }
+
+    &._outline {
+      background: transparent;
+      border: 2px solid rgba(#b7b1e7, 0.3);
+      color: #b7b1e7;
+
+      &:hover {
+        color: white;
+        background: #b7b1e7;
+        border-color: #b7b1e7;
+      }
+    }
+  }
+
   // variants
   &._small {
     font-size: 20px;
