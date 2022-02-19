@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 
 import Layout from '@c/Layout/';
 import { Proposal } from '@c/Proposal';
+import { ModalRestricted } from '@c/Modal';
 import { content } from './Content.js';
 
 const ProposalPage = observer(() => {
@@ -15,6 +16,8 @@ const ProposalPage = observer(() => {
 
       <Layout>
         <Proposal {...content} />
+
+        <ModalRestricted />
       </Layout>
     </>
   );

@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect, useCallback } from 'react';
 import { observer } from 'mobx-react-lite';
+import { useHistory } from 'react-router-dom';
 import cns from 'classnames';
 
 import { Modal, Button } from '@ui';
@@ -8,6 +9,7 @@ import { UiStoreContext } from '@store';
 import st from './Proposal.module.scss';
 
 const Proposal = observer(({ className }) => {
+  const history = useHistory();
   const { modalParams } = useContext(UiStoreContext);
   const uiContext = useContext(UiStoreContext);
 

@@ -1,15 +1,17 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback, useMemo, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import cns from 'classnames';
 
+import { UiStoreContext } from '@store';
 import { SvgIcon, Button } from '@ui';
 import { numberWithCommas } from '@helpers';
+
 import { ProposalCard } from '@c/Proposal';
 import st from './Proposal.module.scss';
 
 const Proposal = ({ className, title, description, list }) => {
   const [cartItems, setCartItems] = useState(list);
-
+  const uiContext = useContext(UiStoreContext);
   const handleRemoveClick = useCallback(
     (id) => {
       setCartItems(cartItems.filter((x) => x.id !== id));
@@ -73,7 +75,7 @@ const Proposal = ({ className, title, description, list }) => {
               <span>Ammend Selection</span>
             </Link>
             <div className={st.cta}>
-              <Button theme="gray" variant="small" block>
+              <Button theme="gray" variant="small" block onClick={() => uiContext.setModal('restricted')}>
                 Proceed to Contract
               </Button>
             </div>
