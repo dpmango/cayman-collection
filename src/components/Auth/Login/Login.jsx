@@ -14,6 +14,7 @@ const formInitial = {
 
 const Login = ({ className }) => {
   const [remember, setRemember] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleValidation = (values) => {
     console.log('validata');

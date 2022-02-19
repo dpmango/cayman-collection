@@ -5,7 +5,9 @@ import cns from 'classnames';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useToasts } from 'react-toast-notifications';
 
+import { UiStoreContext } from '@store';
 import { SvgIcon } from '@ui';
+import { ModalSubscribe } from '@c/Modal';
 
 import st from './Footer.module.scss';
 
@@ -18,6 +20,7 @@ const Footer = observer(({ className }) => {
 
   const [loading, setLoading] = useState(false);
   const [menuActive, setMenuActive] = useState(null);
+  const uiContext = useContext(UiStoreContext);
 
   const handleMenuTitleClick = useCallback(
     (id) => {
@@ -45,6 +48,7 @@ const Footer = observer(({ className }) => {
 
     addToast('Should send email', { appearance: 'success' });
 
+    uiContext.setModal('subscribe');
     // await callbackContext
     //   .submitForm({
     //     type: 'Help',
@@ -81,6 +85,8 @@ const Footer = observer(({ className }) => {
                         <Field type="email" name="email">
                           {({ field, form: { setFieldValue }, meta }) => (
                             <input
+                              type="email"
+                              autoComplete="email"
                               className={cns(st.subscribeInput, meta.touched && meta.error && st.error)}
                               placeholder="Email address"
                               value={field.value}
@@ -200,6 +206,8 @@ const Footer = observer(({ className }) => {
           </div>
         </div>
       </div>
+
+      <ModalSubscribe />
     </footer>
   );
 });

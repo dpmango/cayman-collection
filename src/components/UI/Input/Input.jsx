@@ -66,7 +66,7 @@ const Input = ({
   const inputProps = {
     id,
     ref: inputRef,
-    className: cns(styles.input_input, allowClear && st._withClear, error && st._withError),
+    className: cns(st.input_input, allowClear && st._withClear, error && st._withError),
     value,
     onChange: onInputChange,
     ...props,
@@ -75,13 +75,7 @@ const Input = ({
   return (
     <div
       style={props.style}
-      className={cns(
-        styles.input,
-        variant && VariantClasses[variant],
-        modifier && styles[`_${modifier}`],
-        className,
-        'input'
-      )}>
+      className={cns(st.input, variant && VariantClasses[variant], modifier && st[`_${modifier}`], className, 'input')}>
       {label && (
         <label className={st.label} htmlFor={id}>
           {label}

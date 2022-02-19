@@ -74,6 +74,8 @@ const CtaBanner = ({ className, theme, title }) => {
                     <Field type="email" name="email">
                       {({ field, form: { setFieldValue }, meta }) => (
                         <input
+                          type="email"
+                          autoComplete="email"
                           className={cns(st.formInput, meta.touched && meta.error && st.error)}
                           placeholder="Email address"
                           value={field.value}
