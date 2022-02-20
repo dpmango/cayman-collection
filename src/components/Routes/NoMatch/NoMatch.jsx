@@ -28,7 +28,7 @@ const NoMatchPage = observer(() => {
           <div className="container">
             <div className="container-inner">
               <div className={cns('row', st.row)}>
-                <div className="col col-6 col-lg-12">
+                <div className="col col-6 col-xl-8 col-lg-12">
                   <div className={st.subtitle}>404 error</div>
                   <h1 className={cns('h0-title', st.title)}>Paradise Lost!</h1>
                   <p className={cns('p-regular', st.description)}>
@@ -45,7 +45,7 @@ const NoMatchPage = observer(() => {
                     </Link>
                   </div>
                 </div>
-                <div className="col col-6 col-lg-12">
+                <div className="col col-6 col-xl-4 lg-hidden">
                   <div className={st.image}>
                     <img src="/img/404-page.jpg" srcSet="/img/404-page@2x.jpg 2x" alt="404 page" />
                   </div>
