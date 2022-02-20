@@ -3,16 +3,28 @@ import PropTypes from 'prop-types';
 import cns from 'classnames';
 
 import { SvgIcon } from '@ui';
+import { useWindowSize } from '@hooks';
 
 import { BlogCard } from '@c/Blog';
 import st from './BlogList.module.scss';
 
 const BlogList = ({ className, list, categories }) => {
+  const { width } = useWindowSize();
+
   const [category, setCategory] = useState(0);
 
   const blogCols = useMemo(() => {
     let cols = [[], [], []];
     let colCount = 3;
+
+    if (width < 1200) {
+      cols = [[], []];
+      colCount = 2;
+    } else if (width < 575) {
+      cols = [[]];
+      colCount = 1;
+    }
+
     list.forEach((x, idx) => {
       let tIdx = idx % colCount;
 
@@ -20,7 +32,7 @@ const BlogList = ({ className, list, categories }) => {
     });
 
     return cols;
-  }, []);
+  }, [width]);
 
   return (
     <div className={cns(st.container, className)}>

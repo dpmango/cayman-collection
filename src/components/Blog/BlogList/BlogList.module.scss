@@ -79,3 +79,56 @@
     }
   }
 }
+
+@include r($xl) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@include r($lg) {
+  .categories {
+    padding-left: 20px;
+    padding-right: 0;
+    justify-content: flex-start;
+    a {
+      font-size: 21px;
+      padding: 10px 0;
+      margin-right: 30px;
+    }
+  }
+}
+
+@include r($md) {
+  .container {
+    margin-top: 16px;
+    margin-bottom: 72px;
+  }
+
+  .grid {
+    margin-top: 36px;
+    grid-gap: 30px;
+  }
+
+  .blogCard {
+    margin-bottom: 30px;
+  }
+
+  .more {
+    margin-top: 55px;
+    button {
+      width: 60px;
+      height: 60px;
+
+      :global .svg-icon {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@include r($sm) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

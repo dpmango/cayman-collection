@@ -32,3 +32,9 @@
 .title {
   margin-top: 12px;
 }
+
+@include r($md) {
+  .meta {
+    font-size: 18px;
+  }
+}
