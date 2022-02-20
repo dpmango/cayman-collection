@@ -9,9 +9,12 @@ const Benefits = ({ className, subtitle, title, list }) => {
     <div className={cns(st.container, className)}>
       <div className="container">
         <div className="container-inner">
-          {subtitle && <div className={cns('h4-title c-gray mb-1')}>{subtitle}</div>}
+          <div className={st.head}>
+            {subtitle && <div className={cns('h4-title c-gray mb-1')}>{subtitle}</div>}
 
-          <div className="h0-title c-gray">{title}</div>
+            <div className="h0-title">{title}</div>
+          </div>
+
           <div className={st.grid}>
             {list &&
               list.map((col, idx) => (

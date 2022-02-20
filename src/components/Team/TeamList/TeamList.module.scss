@@ -19,11 +19,22 @@
 @include r($lg) {
   .grid {
     grid-template-columns: 1fr 1fr;
+    grid-gap: 35px;
+  }
+}
+
+@include r($md) {
+  .container {
+    margin: 48px 0 20px;
+  }
+  .grid {
+    margin-top: 26px;
   }
 }
 
 @include r($sm) {
   .grid {
     grid-template-columns: 1fr;
+    grid-gap: 20px;
   }
 }

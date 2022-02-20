@@ -10,6 +10,8 @@ const CeoNote = ({ className, title, content, image, sign }) => {
     <div className={cns(st.container, className)}>
       <div className="container">
         <div className="container-inner">
+          <div className="h0-title c-gray lg-visible">{title}</div>
+
           <div className={st.image}>
             <img src={image} alt="Fleaur sign" />
           </div>
@@ -18,7 +20,7 @@ const CeoNote = ({ className, title, content, image, sign }) => {
             <div>{/* keep */}</div>
 
             <div className={st.content}>
-              <div className="h0-title c-gray">{title}</div>
+              <div className="h0-title c-gray lg-hidden">{title}</div>
 
               <Wysiwyg className={st.wysiwyg} content={content} />
 

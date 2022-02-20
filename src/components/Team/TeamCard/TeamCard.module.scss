@@ -15,7 +15,7 @@
   position: relative;
   background: $colorPeach url('./assets/placeholder.svg') no-repeat center bottom;
   background-size: cover;
-  padding-bottom: 100%;
+  padding-bottom: 103%;
   font-size: 0;
   transition: filter 0.25s $ease;
   img {
@@ -24,6 +24,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -32,7 +33,6 @@
 }
 
 .title {
-  margin-top: 12px;
   color: $colorGray;
 }
 
@@ -42,4 +42,13 @@
   font-size: 20px;
   line-height: 1;
   color: $colorGray;
+}
+
+@include r($md) {
+  .content {
+    padding: 28px 35px 34px;
+  }
+  .position {
+    font-size: 18px;
+  }
 }

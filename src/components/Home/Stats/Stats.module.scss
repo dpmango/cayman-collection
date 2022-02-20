@@ -74,7 +74,7 @@
 
 @include r($lg) {
   .container {
-    padding: 60px 0;
+    padding: 60px 0 48px;
     background-image: none;
   }
 
@@ -105,6 +105,7 @@
   }
 
   .colDescription {
+    margin-top: 4px;
     font-size: 26px;
   }
 }

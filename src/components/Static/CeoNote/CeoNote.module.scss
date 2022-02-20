@@ -34,6 +34,9 @@
 
 .wysiwyg {
   margin-top: 48px;
+  :global p {
+    color: #3d3d3d;
+  }
 }
 
 .sign {
@@ -70,20 +73,36 @@
   .image {
     position: static;
     margin-left: 0;
+    width: 100%;
+    max-width: 320px;
+    margin-top: 36px;
   }
   .grid {
     display: block;
+  }
+
+  .sign {
+    margin-top: 16px;
   }
 }
 
 @include r($md) {
   .container {
-    margin: 50px 0 70px;
+    margin: 50px 0 50px;
     background-image: none;
   }
 
   .grid {
     margin-top: 32px;
     grid-gap: 32px;
+  }
+
+  .sign {
+    margin-top: 20px;
+    display: block;
+    img {
+      margin-top: 16px;
+      margin-left: -20px;
+    }
   }
 }

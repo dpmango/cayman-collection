@@ -23,7 +23,7 @@ const TeamPage = observer(() => {
         <HomeBenefits {...content.benefits} />
         <TeamList {...content.team} />
         <ScheduleCallBanner />
-        <HomeStats className="mt-4 mt-md-3" {...content.stats} />
+        <HomeStats className="mt-md-1" {...content.stats} />
         <CeoNote {...content.CeoNote} />
       </Layout>
 
