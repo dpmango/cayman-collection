@@ -72,3 +72,11 @@
     }
   }
 }
+
+@include r($md) {
+  .checkbox {
+    &_label {
+      font-size: 18px;
+    }
+  }
+}

@@ -21,7 +21,7 @@ const Checkbox = ({ className, isChecked, error, onChange, children, ...props })
   );
 
   return (
-    <div className={cns(st.checkbox, className, error && st._withError)}>
+    <div className={cns(st.checkbox, className, error && st._withError, 'checkbox')}>
       <input id={id} type="checkbox" className={cns(st.checkbox_input)} value={isChecked} {...props} />
 
       <label htmlFor={id} className={st.checkbox_wrapper} onClick={handleChange}>

@@ -29,13 +29,17 @@
   align-items: center;
   a {
     display: inline-block;
-    margin-left: auto;
     font-size: 20px;
     color: $colorAccent;
+    transform: translateY(-0.15em);
     transition: color 0.25s $ease;
     &:hover {
       color: $colorPrimary;
     }
+  }
+  :global .checkbox {
+    flex: 1 1 auto;
+    padding-right: 16px;
   }
 }
 
@@ -54,6 +58,32 @@
     transition: color 0.25s $ease;
     &:hover {
       color: $colorPrimary;
+    }
+  }
+}
+
+@include r($md) {
+  .form {
+    margin-top: 24px;
+  }
+  .description {
+    font-size: 18px;
+  }
+
+  .cta {
+    margin-top: 32px;
+  }
+}
+
+@include r($sm) {
+  .helpers {
+    display: block;
+    :global .checkbox {
+      padding-right: 0;
+    }
+    a {
+      margin-top: 16px;
+      font-size: 18px;
     }
   }
 }

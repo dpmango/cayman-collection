@@ -38,3 +38,48 @@
     object-fit: cover;
   }
 }
+
+@include r($hd) {
+  .content {
+    padding-left: 85px;
+    padding-right: 50px;
+  }
+}
+
+@include r($xl) {
+  .content {
+    padding: 80px 50px;
+  }
+}
+
+@include r($lg) {
+  .content {
+    flex-basis: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    img,
+    svg {
+      max-width: 270px;
+      max-height: 28px;
+    }
+  }
+
+  .form {
+    margin-top: 40px;
+  }
+
+  .background {
+    display: none;
+  }
+}
+
+@include r($md) {
+  .content {
+    padding: 50px 30px 80px;
+  }
+}
