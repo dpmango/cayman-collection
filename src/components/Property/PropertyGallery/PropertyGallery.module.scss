@@ -92,3 +92,41 @@
     width: 100%;
   }
 }
+
+@include r($xl) {
+  .container {
+    padding: 90px 0;
+  }
+
+  .description {
+    margin-top: 24px;
+  }
+}
+
+@include r($lg) {
+  .content {
+    padding-left: 20px;
+  }
+}
+
+@include r($md) {
+  .container {
+    padding: 48px 0 60px;
+  }
+  .description {
+    margin-top: 12px;
+  }
+
+  .meta {
+    margin-left: -20px;
+  }
+
+  .slider {
+    :global .swiper-button-prev {
+      left: 15px;
+    }
+    :global .swiper-button-next {
+      right: 15px;
+    }
+  }
+}
