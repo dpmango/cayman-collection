@@ -10,6 +10,7 @@ const PropertyBanner = ({ className, title, subtitle, sign }) => {
       <div className={st.image}>
         <img src="/img/banner/fleur-banner.png" srcSet="/img/banner/fleur-banner@2x.png 2x" alt="banner image" />
       </div>
+
       <div className="container">
         <div className="container-inner">
           <div className={st.content}>

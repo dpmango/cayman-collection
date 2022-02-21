@@ -17,3 +17,32 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 60px;
 }
+
+@include r($xl) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+  }
+}
+
+@include r($md) {
+  .container {
+    padding: 35px 0 68px;
+  }
+
+  .head {
+    :global .btn {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    :global .btn .svg-icon {
+      margin-right: 0;
+    }
+  }
+
+  .grid {
+    margin-top: 32px;
+    grid-template-columns: 1fr;
+    grid-gap: 25px;
+  }
+}

@@ -80,3 +80,9 @@
   letter-spacing: 0.015em;
   color: $colorGray;
 }
+
+@include r($md) {
+  .card {
+    max-width: 350px;
+  }
+}

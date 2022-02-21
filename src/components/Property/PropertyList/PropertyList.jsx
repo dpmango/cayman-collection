@@ -15,7 +15,7 @@ const PropertyList = ({ className, title, list }) => {
           <div className={cns(st.head)}>
             <h2 className={cns('h1-title')}>{title}</h2>
             <Button iconLeft="filter" theme="accent">
-              Filter Options
+              <span className="md-hidden">Filter Options</span>
             </Button>
           </div>
           <div className={st.grid}>
