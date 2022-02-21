@@ -85,3 +85,95 @@
   width: 100%;
   max-width: 300px;
 }
+
+@include r($xl) {
+  .container {
+    padding: 100px 0 110px;
+    background-image: url('./assets/proposal-decor-left.svg');
+    background-position: left 120px;
+  }
+
+  .description {
+    margin-top: 32px;
+  }
+
+  .table {
+    margin-top: 60px;
+  }
+
+  .tableHead {
+    padding-right: 30px;
+  }
+
+  .tableTotal {
+    padding-right: 30px;
+    padding-bottom: 46px;
+  }
+}
+
+@include r($lg) {
+  .table {
+    background: transparent;
+    border: 0;
+  }
+
+  .tableHead {
+    display: none;
+  }
+
+  .tableTotal {
+    display: block;
+    background: white;
+    margin-top: 40px;
+    padding: 20px;
+  }
+
+  .tableTotalPrice {
+    margin-top: 4px;
+    text-align: left;
+  }
+}
+
+@include r($md) {
+  .container {
+    padding: 40px 0 90px;
+    background-image: none;
+  }
+
+  .head {
+    padding-left: 20px;
+  }
+
+  .description {
+    margin-top: 24px;
+  }
+
+  .table {
+    margin-top: 40px;
+  }
+
+  .tableTotalLabel {
+    font-size: 18px;
+  }
+
+  .tableTotalPrice {
+    font-size: 24px;
+  }
+
+  .actions {
+    margin-top: 24px;
+    flex-direction: column;
+  }
+  .back {
+    text-align: right;
+    font-size: 18px;
+    :global .svg-icon {
+      flex: 0 0 auto;
+      font-size: 14px;
+      margin-right: 14px;
+    }
+  }
+  .cta {
+    margin-top: 42px;
+  }
+}

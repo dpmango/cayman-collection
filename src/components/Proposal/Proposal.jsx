@@ -44,8 +44,10 @@ const Proposal = ({ className, title, description, list }) => {
     <section className={cns(st.container, className)}>
       <div className="container">
         <div className="container-inner">
-          <h1 className={cns('h0-title', st.title)}>{title}</h1>
-          <div className={cns('p-caption', st.description)}>{description}</div>
+          <div className={st.head}>
+            <h1 className={cns('h0-title', st.title)}>{title}</h1>
+            <div className={cns('p-caption', st.description)}>{description}</div>
+          </div>
 
           <div className={st.table}>
             <div className={st.tableHead}>
