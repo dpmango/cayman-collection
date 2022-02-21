@@ -7,11 +7,13 @@
   top: calc(100% + 30px);
   z-index: 10;
   right: 0;
+  min-width: 1px;
   opacity: 0;
   pointer-events: none;
   background: #f4f3fa;
   will-change: opacity;
   transition: opacity 0.25s $ease;
+  overflow: hidden;
   &::before {
     display: inline-block;
     content: ' ';
@@ -74,6 +76,7 @@
 
 .sectionContent {
   flex: 1 1 auto;
+  min-width: 1px;
   padding: 30px 40px;
   background: rgba(white, 0.5);
 }
@@ -98,6 +101,7 @@
 
 .tag {
   position: relative;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -140,6 +144,12 @@
   }
 }
 
+@include r($xl) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @include r($lg) {
   .filter {
     :global .btn {
@@ -148,6 +158,82 @@
     }
     :global .btn .svg-icon {
       margin-right: 0;
+    }
+  }
+}
+
+@include r($md) {
+  .dropdown {
+    left: 0;
+    &::before {
+      right: 20px;
+    }
+  }
+
+  .groups {
+    padding: 0;
+  }
+
+  .section {
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .sectionLabel {
+    flex: 0 0 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+    min-height: 48px;
+  }
+
+  .sectionContent {
+    flex: 0 0 100%;
+    padding: 24px 22px;
+  }
+
+  .sectionBtnRadio {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sectionIcon {
+    :global .svg-icon {
+      font-size: 24px;
+      margin-bottom: 0;
+      margin-right: 12px;
+    }
+  }
+}
+
+@include r($sm) {
+  .tags {
+    padding: 22px 30px;
+  }
+  .tag {
+    padding: 16px 12px 10px;
+    span {
+      font-size: 11px;
+    }
+  }
+
+  .tagIcon {
+    min-height: 30px;
+    :global .svg-icon {
+      font-size: 26px;
+      &.svg-icon--filter-gym {
+        font-size: 22px;
+      }
+      &.svg-icon--filter-deck,
+      &.svg-icon--filter-bar {
+        font-size: 25px;
+      }
+      &.svg-icon--filter-beach,
+      &.svg-icon--filter-conceirge,
+      &.svg-icon--filter-playarea,
+      &.svg-icon--filter-ev {
+        font-size: 30px;
+      }
     }
   }
 }
