@@ -1,0 +1,153 @@
+.filter {
+  margin-left: auto;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 30px);
+  z-index: 10;
+  right: 0;
+  opacity: 0;
+  pointer-events: none;
+  background: #f4f3fa;
+  will-change: opacity;
+  transition: opacity 0.25s $ease;
+  &::before {
+    display: inline-block;
+    content: ' ';
+    position: absolute;
+    top: -16px;
+    right: 10%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 17.5px 22px 17.5px;
+    border-color: transparent transparent white transparent;
+  }
+  &._opened {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.groups {
+  padding: 40px;
+}
+
+.section {
+  display: flex;
+  margin-bottom: 16px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.sectionLabel {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 0 0 110px;
+  min-height: 90px;
+  padding: 14px;
+  font-size: 13px;
+  line-height: 1;
+  color: $colorPrimaryDark;
+}
+
+.sectionIcon {
+  font-size: 0;
+  color: $colorPrimaryDark;
+  text-align: center;
+  :global .svg-icon {
+    font-size: 32px;
+    margin-bottom: 6px;
+  }
+}
+
+.sectionContent {
+  flex: 1 1 auto;
+  padding: 30px 40px;
+  background: rgba(white, 0.5);
+}
+
+.sectionBtnRadio {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 4px;
+  :global .btn {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
+
+.tags {
+  background: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 40px;
+  grid-gap: 15px;
+}
+
+.tag {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #f4f3fa;
+  padding: 20px 14px 10px;
+
+  span {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: $colorPrimaryDark;
+  }
+}
+
+.tagIcon {
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+  color: $colorPrimaryDark;
+  :global .svg-icon {
+    font-size: 32px;
+    &.svg-icon--filter-gym {
+      font-size: 26px;
+    }
+    &.svg-icon--filter-deck,
+    &.svg-icon--filter-bar {
+      font-size: 30px;
+    }
+    &.svg-icon--filter-beach,
+    &.svg-icon--filter-conceirge,
+    &.svg-icon--filter-playarea,
+    &.svg-icon--filter-ev {
+      font-size: 36px;
+    }
+  }
+}
+
+@include r($lg) {
+  .filter {
+    :global .btn {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    :global .btn .svg-icon {
+      margin-right: 0;
+    }
+  }
+}

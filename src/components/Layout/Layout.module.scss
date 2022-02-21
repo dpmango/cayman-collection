@@ -23,6 +23,24 @@
   padding-top: 160px;
 }
 
+.blocker {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(black, 0.35);
+  opacity: 0;
+  transition: opacity 0.25s $ease;
+  pointer-events: none;
+  will-change: opacity;
+  backface-visibility: hidden;
+  &._active {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
 @include r($xl) {
   .main {
     padding-top: 115px;

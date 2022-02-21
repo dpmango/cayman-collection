@@ -4,7 +4,7 @@ import cns from 'classnames';
 
 import { Button } from '@ui';
 
-import { PropertyCard } from '@c/Property';
+import { PropertyCard, PropertiesFilter } from '@c/Property';
 import st from './PropertyList.module.scss';
 
 const PropertyList = ({ className, title, list }) => {
@@ -14,9 +14,7 @@ const PropertyList = ({ className, title, list }) => {
         <div className="container-inner">
           <div className={cns(st.head)}>
             <h2 className={cns('h1-title')}>{title}</h2>
-            <Button iconLeft="filter" theme="accent">
-              <span className="md-hidden">Filter Options</span>
-            </Button>
+            <PropertiesFilter />
           </div>
           <div className={st.grid}>
             {list && list.map((property) => <PropertyCard key={property.id} {...property} />)}

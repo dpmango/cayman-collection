@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import cns from 'classnames';
+import { observer } from 'mobx-react-lite';
 
+import { UiStoreContext } from '@store';
 import Header from '@c/Layout/Header';
 import Footer from '@c/Layout/Footer';
 
@@ -17,7 +19,10 @@ const VariantClasses = {
   [Variants.AUTH]: st._auth,
 };
 
-const Layout = ({ variant, children }) => {
+const Layout = observer(({ variant, children }) => {
+  const { screenBlocked } = useContext(UiStoreContext);
+  const uiContext = useContext(UiStoreContext);
+
   return (
     <div className={cns(st.layout, variant && VariantClasses[variant])}>
       {variant === 'main' && <Header className={st.header} />}
@@ -25,9 +30,13 @@ const Layout = ({ variant, children }) => {
       <main className={st.main}>{children}</main>
 
       {variant === 'main' && <Footer />}
+
+      <div
+        className={cns(st.blocker, screenBlocked && st._active)}
+        onClick={() => uiContext.setScreenBlocked(!screenBlocked)}></div>
     </div>
   );
-};
+});
 
 Layout.propTypes = {
   variant: PropTypes.string,

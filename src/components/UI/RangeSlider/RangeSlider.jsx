@@ -14,7 +14,7 @@ const Range = createSliderWithTooltip(Slider.Range);
 const RangeSlider = ({ className, value, onChange, ...props }) => {
   return (
     <div className={st.slider}>
-      <Range value={value} onChange={onChange} {...props} />
+      <Range value={value} onChange={onChange} tipProps={{ visible: true }} {...props} />
     </div>
   );
 };

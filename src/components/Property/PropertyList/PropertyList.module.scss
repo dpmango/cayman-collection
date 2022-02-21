@@ -4,11 +4,9 @@
 }
 
 .head {
+  position: relative;
   display: flex;
   align-items: center;
-  :global button {
-    margin-left: auto;
-  }
 }
 
 .grid {
@@ -28,16 +26,6 @@
 @include r($md) {
   .container {
     padding: 35px 0 68px;
-  }
-
-  .head {
-    :global .btn {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-    :global .btn .svg-icon {
-      margin-right: 0;
-    }
   }
 
   .grid {

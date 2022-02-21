@@ -5,6 +5,7 @@ export default class UiStore {
   prevModal = null;
   activeModal = null;
   modalParams = null;
+  screenBlocked = false;
 
   constructor() {
     makeAutoObservable(this);
@@ -25,6 +26,10 @@ export default class UiStore {
         this.modalParams = null;
       }
     }, timeoutms);
+  }
+
+  setScreenBlocked(v) {
+    this.screenBlocked = v;
   }
 
   setPageLoaded(v) {
