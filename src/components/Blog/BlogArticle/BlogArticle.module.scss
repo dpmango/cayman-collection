@@ -31,9 +31,44 @@
   margin-top: 52px;
 }
 
+@include r($xl) {
+  .container {
+    margin: 40px 0 80px;
+  }
+  .grid {
+    grid-template-columns: 1fr 320px;
+  }
+}
+
 @include r($lg) {
+  .container {
+    margin-top: 0;
+  }
+
+  .cover {
+    margin-left: -90px;
+    margin-right: -90px;
+    margin-bottom: 50px;
+  }
+
   .grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@include r($md) {
+  .cover {
+    margin-left: -30px;
+    margin-right: -30px;
+  }
+
+  .wysiwyg {
+    margin-top: 40px;
+  }
+
+  .meta {
+    margin-top: 20px;
+    font-size: 18px;
   }
 }
 
@@ -95,52 +130,40 @@
   }
 }
 
-// nav
+@include r($lg) {
+  .share {
+    margin-right: 0;
+  }
+}
 
+@include r($md) {
+  .share {
+    justify-content: flex-start;
+  }
+}
+
+// nav
 .nav {
   margin-top: 92px;
-  display: flex;
   border-top: 1px solid #d6d6d6;
 }
 
-.navPrev,
-.navNext {
-  width: 100%;
-  flex: 0 0 50%;
-  max-width: 50%;
-  padding: 40px 45px;
+@include r($xl) {
+  .nav {
+    margin-top: 60px;
+  }
 }
 
-.navPrev {
-  text-align: right;
-  border-right: 1px solid #d6d6d6;
+@include r($lg) {
+  .nav {
+    margin-top: 32px;
+    border-top: 0;
+  }
 }
 
-// .navNext {
-//   padding-left: 45px;
-// }
-
-.navLabel {
-  display: block;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
-  letter-spacing: 2.43661px;
-  text-transform: uppercase;
-  color: $colorGray;
-}
-
-.navLink {
-  margin-top: 12px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-  transition: color 0.25s $ease;
-  &:hover {
-    color: $colorPrimary;
+@include r($md) {
+  .nav {
+    margin-top: 16px;
   }
 }
 
@@ -180,10 +203,22 @@
   color: $colorGray;
 }
 
-// categories
+@include r($md) {
+  .aboutDescription {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+}
 
+// categories
 .categories {
   margin-top: 178px;
+}
+
+@include r($lg) {
+  .categories {
+    margin-top: 60px;
+  }
 }
 
 // .categoriesLabel {
@@ -209,6 +244,7 @@
   }
 }
 
+// recents
 .recents {
   margin-top: 96px;
 }
@@ -262,4 +298,30 @@
   line-clamp: 2;
   -webkit-box-orient: vertical;
   transition: color 0.25s $ease;
+}
+
+@include r($xl) {
+  // .recents {
+  // }
+
+  .recentCard {
+    margin-bottom: 24px;
+  }
+  .recentCardImage {
+    flex-basis: 90px;
+  }
+
+  .recentCardContent {
+    padding-left: 24px;
+  }
+}
+
+@include r($md) {
+  .recents {
+    margin-top: 48px;
+  }
+
+  .recentsList {
+    margin-top: 22px;
+  }
 }

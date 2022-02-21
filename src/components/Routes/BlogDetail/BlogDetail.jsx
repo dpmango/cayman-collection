@@ -11,7 +11,7 @@ const BlogPage = observer(() => {
   return (
     <>
       <Helmet>
-        <title>Blog page</title>
+        <title>Blog detail page</title>
       </Helmet>
 
       <Layout>

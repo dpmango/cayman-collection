@@ -1,0 +1,78 @@
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navPrev,
+.navNext {
+  width: 100%;
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 40px 45px;
+}
+
+.navPrev {
+  text-align: right;
+  border-right: 1px solid #d6d6d6;
+}
+
+// .navNext {
+//   padding-left: 45px;
+// }
+
+.navLabel {
+  display: block;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 2.43661px;
+  text-transform: uppercase;
+  color: $colorGray;
+}
+
+.navLink {
+  margin-top: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  transition: color 0.25s $ease;
+  &:hover {
+    color: $colorPrimary;
+  }
+}
+
+@include r($xl) {
+  .navPrev,
+  .navNext {
+    padding: 35px 30px;
+  }
+}
+
+@include r($lg) {
+  .navPrev,
+  .navNext {
+    flex-basis: 100%;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .navPrev {
+    text-align: left;
+    border-right: 0;
+    border-bottom: 1px solid #d6d6d6;
+  }
+}
+
+@include r($md) {
+  .navLabel {
+    font-size: 14px;
+  }
+
+  .navLink {
+    margin-top: 4px;
+  }
+}

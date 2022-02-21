@@ -8,6 +8,7 @@ import { UiStoreContext } from '@store';
 import { SvgIcon, Wysiwyg } from '@ui';
 import { get2xImage } from '@helpers';
 
+import { BlogNav } from '@c/Blog';
 import st from './BlogArticle.module.scss';
 
 const BlogArticle = ({ className, cover, title, content, date, nav, category, categories, recents }) => {
@@ -59,22 +60,10 @@ const BlogArticle = ({ className, cover, title, content, date, nav, category, ca
                 </ul>
               </div>
 
-              <div className={st.nav}>
-                <div className={st.navPrev}>
-                  <span className={st.navLabel}>previous</span>
-                  <Link className={cns('h5-title', st.navLink)} to={`/blog/${nav[0].id}`}>
-                    {nav[0].title}
-                  </Link>
-                </div>
-                <div className={st.navNext}>
-                  <span className={st.navLabel}>next</span>
-                  <Link className={cns('h5-title', st.navLink)} to={`/blog/${nav[1].id}`}>
-                    {nav[1].title}
-                  </Link>
-                </div>
-              </div>
+              <BlogNav className={st.nav} nav={nav} />
             </div>
 
+            {/* sidebar */}
             <div className={st.sidebar}>
               <div className={st.about}>
                 <div className="h2-title">About me</div>
@@ -125,19 +114,6 @@ const BlogArticle = ({ className, cover, title, content, date, nav, category, ca
               </div>
             </div>
           </div>
-
-          {/* <div className={cns(st.categories)}>
-            {categories &&
-              categories.map((x) => (
-                <a
-                  href="#"
-                  className={cns(x.id === category && st._active)}
-                  key={x.id}
-                  onClick={() => setCategory(x.id)}>
-                  {x.label}
-                </a>
-              ))}
-          </div> */}
         </div>
       </div>
     </div>
