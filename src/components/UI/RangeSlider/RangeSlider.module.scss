@@ -41,12 +41,12 @@
       &:active,
       &:focus,
       &:hover {
-        background-color: $colorPrimaryDark;
-        border-color: $colorPrimaryDark !important;
+        background-color: $colorAccent;
+        border-color: $colorAccent !important;
       }
       &.rc-slider-handle-dragging {
-        border-color: $colorPrimaryDark !important;
-        box-shadow: 0 0 5px $colorPrimaryDark !important;
+        border-color: $colorAccent !important;
+        box-shadow: 0 0 5px $colorAccent !important;
       }
     }
 

@@ -28,3 +28,42 @@
     font-size: 50px;
   }
 }
+
+@include r($xl) {
+  .container {
+    padding: 100px 0;
+  }
+
+  .colTooltip {
+    :global .svg-icon {
+      font-size: 40px;
+    }
+  }
+}
+
+@include r($lg) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+  }
+}
+
+@include r($md) {
+  .container {
+    padding: 62px 0;
+  }
+
+  .colValue {
+    padding: 14px 18px 14px 22px;
+  }
+
+  .colLabel {
+    margin-bottom: 24px;
+  }
+
+  .colTooltip {
+    :global .svg-icon {
+      font-size: 32px;
+    }
+  }
+}

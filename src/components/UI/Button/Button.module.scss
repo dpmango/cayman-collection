@@ -210,5 +210,9 @@
   .btn {
     font-size: 26px;
     padding: 20px 26px 20px;
+    &._big {
+      font-size: 26px;
+      padding: 20px 26px 20px;
+    }
   }
 }

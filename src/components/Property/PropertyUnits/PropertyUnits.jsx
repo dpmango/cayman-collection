@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cns from 'classnames';
 
-import { Button, SvgIcon, RangeSlider } from '@ui';
+import { Button, SvgIcon, RangeSlider, Select } from '@ui';
 
 import UnitScope from './UnitScope';
 import st from './PropertyUnits.module.scss';
@@ -10,6 +10,12 @@ import st from './PropertyUnits.module.scss';
 const PropertyUnits = ({ className, list }) => {
   const [sliderValue, setSliderValue] = useState([1, 3]); // in millions
   const [selectedUnit, setSelectedUnit] = useState(null);
+
+  const activeUnit = useMemo(() => {
+    if (!list) return null;
+
+    return list.find((x) => x.id === selectedUnit);
+  }, [selectedUnit]);
 
   return (
     <>
@@ -34,6 +40,22 @@ const PropertyUnits = ({ className, list }) => {
             </div>
             <div className={st.unitsScope}>
               Displaying Units between {sliderValue[0]}m & {sliderValue[1]}m{' '}
+            </div>
+
+            <div className={st.mobSelector}>
+              <div className={cns(st.mobSelectorLabel, 'p-small')}>
+                <SvgIcon name="building" />
+                Select Block
+              </div>
+              <div className={st.mobSelectorSelect}>
+                <Select
+                  placeholder="ffff"
+                  isSearchable={false}
+                  value={activeUnit ? { value: selectedUnit, label: activeUnit.title } : {}}
+                  onChange={(v) => setSelectedUnit(v.value)}
+                  options={list && list.map((unit) => ({ label: unit.title, value: unit.id }))}
+                />
+              </div>
             </div>
 
             <div className={st.unitsGrid}>

@@ -30,7 +30,7 @@ const SelectComponent = ({ label, value, className, options, onChange, variant, 
   }, []);
 
   return (
-    <div className={cns(st.select, className, variant && VariantClasses[variant])}>
+    <div className={cns(st.select, className, variant && VariantClasses[variant], 'select')}>
       {label && (
         <label className={st.label} htmlFor={id}>
           {label}

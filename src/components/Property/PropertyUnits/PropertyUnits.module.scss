@@ -11,7 +11,7 @@
   flex: 0 0 auto;
   font-size: 0;
   margin-right: 14px;
-  color: #7f6644;
+  color: $colorPrimaryDark;
   :global .svg-icon {
     font-size: 52px;
   }
@@ -22,7 +22,7 @@
   margin-right: 30px;
   font-weight: 500;
   font-size: 18px;
-  color: #7f6644;
+  color: $colorPrimaryDark;
 }
 
 .headSlider {
@@ -141,4 +141,81 @@
   line-height: 1.2;
   letter-spacing: 0.015em;
   color: $colorGray;
+}
+
+.mobileSelector {
+  display: none;
+}
+
+@include r($lg) {
+  .container {
+    padding: 60px 0 40px;
+    background: #fafafa;
+  }
+  .unitsScope {
+    display: none;
+  }
+
+  .unitsGrid {
+    display: none;
+  }
+
+  .headSlider {
+    margin-bottom: -20px;
+  }
+
+  .mobSelector {
+    margin-top: 36px;
+    background: white;
+    display: flex;
+    min-height: 64px;
+    align-items: center;
+  }
+
+  .mobSelectorLabel {
+    position: relative;
+    flex: 0 0 150px;
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 20px;
+    &::after {
+      display: inline-block;
+      content: ' ';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 1px;
+      background: $borderColor;
+    }
+    :global .svg-icon {
+      flex: 0 0 auto;
+      font-size: 26px;
+      margin-right: 16px;
+    }
+  }
+
+  .mobSelectorSelect {
+    display: flex;
+    width: 100%;
+    :global .select {
+      width: 100%;
+      .react-select__control {
+        border: 0 !important;
+      }
+    }
+  }
+}
+
+@include r($md) {
+  .headIcon {
+    margin-right: 12px;
+    :global .svg-icon {
+      font-size: 26px;
+    }
+  }
+
+  .headLabel {
+    font-size: 15px;
+  }
 }
